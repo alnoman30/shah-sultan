@@ -15,81 +15,67 @@
   <!-- Main Header Shell -->
   <header class="fixed top-0 left-0 right-0 bg-transparent mt-4 sm:mt-5 md:mt-5 lg:mt-6 xl:mt-6 2xl:mt-6 z-50">
     <div class="container">
-      <div class="flex items-center justify-between gap-4">
 
-        <!-- Logo -->
-        <a href="#" class="flex items-center shrink-0">
-          <img src="assets/images/logo.png" alt="shah sultan"
-            class="w-28 sm:w-32 md:w-36 lg:w-40 xl:w-44 2xl:w-[185px]">
+      <div class="flex items-center justify-between gap-4 relative">
+
+        <!-- logo -->
+        <a href="#" id="siteLogo" class="flex items-center shrink-0 z-10">
+          <img src="assets/images/logo.png" alt="shah sultan" class="w-28 sm:w-32 md:w-36 lg:w-40 xl:w-44 2xl:w-46.25">
         </a>
 
+        <!-- Desktop Navigation  -->
+        <nav id="desktopNav"
+          class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-1.5 lg:gap-2 xl:gap-3 2xl:gap-3 p-1.5 lg:p-2 xl:p-3 rounded-[500px] host-grotesk bg-white transition-all duration-300 z-10">
 
-        <!-- Desktop Navigation -->
-        <nav
-          class="hidden md:flex items-center gap-1.5 lg:gap-2 xl:gap-3 2xl:gap-3 p-1.5 lg:p-2 xl:p-3 rounded-[500px] host-grotesk bg-white">
-
+          <!-- Home -->
           <a href="#"
-            class="px-4 py-2 md:px-4 md:py-2 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-6 2xl:py-3 rounded-[500px] bg-[#020914] text-white font-bold text-sm lg:text-base xl:text-[18px] 2xl:text-[18px] leading-[124%] transition-colors">
-            Home
+            class="text-shift-btn px-4 py-2 md:px-4 md:py-2 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-6 2xl:py-3 rounded-[500px] bg-[#020914] text-white font-bold text-sm lg:text-base xl:text-[18px] 2xl:text-[18px] leading-[124%] duration-300 transition-colors">
+            <div class="ct">Home</div>
           </a>
 
+          <!-- Services -->
           <a href="#"
-            class="px-4 py-2 md:px-4 md:py-2 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-6 2xl:py-3 rounded-[500px] text-[#291C69] font-bold text-sm lg:text-base xl:text-[18px] 2xl:text-[18px] leading-[124%] hover:bg-[#020914] hover:text-white transition-colors">
-            Services
+            class="text-shift-btn px-4 py-2 md:px-4 md:py-2 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-6 2xl:py-3 rounded-[500px] text-[#291C69] font-bold text-sm lg:text-base xl:text-[18px] 2xl:text-[18px] leading-[124%] hover:bg-[#020914] hover:text-white duration-300 transition-colors">
+            <div class="ct">Services</div>
           </a>
 
+          <!-- About -->
           <a href="#"
-            class="px-4 py-2 md:px-4 md:py-2 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-6 2xl:py-3 rounded-[500px] text-[#291C69] font-bold text-sm lg:text-base xl:text-[18px] 2xl:text-[18px] leading-[124%] hover:bg-[#020914] hover:text-white transition-colors">
-            About
+            class="text-shift-btn px-4 py-2 md:px-4 md:py-2 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-6 2xl:py-3 rounded-[500px] text-[#291C69] font-bold text-sm lg:text-base xl:text-[18px] 2xl:text-[18px] leading-[124%] hover:bg-[#020914] hover:text-white duration-300 transition-colors">
+            <div class="ct">About</div>
           </a>
 
+          <!-- My Works -->
           <a href="#"
-            class="px-4 py-2 md:px-4 md:py-2 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-6 2xl:py-3 rounded-[500px] text-[#291C69] font-bold text-sm lg:text-base xl:text-[18px] 2xl:text-[18px] leading-[124%] hover:bg-[#020914] hover:text-white transition-colors">
-            My Works
+            class="text-shift-btn px-4 py-2 md:px-4 md:py-2 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-6 2xl:py-3 rounded-[500px] text-[#291C69] font-bold text-sm lg:text-base xl:text-[18px] 2xl:text-[18px] leading-[124%] hover:bg-[#020914] hover:text-white duration-300 transition-colors">
+            <div class="ct">My Works</div>
           </a>
 
         </nav>
 
-
         <!-- Desktop Hire Me -->
-        <div
-          class="hidden md:inline-flex items-center gap-1.5 lg:gap-2 xl:gap-2.5 p-[3px_3px_3px_16px] lg:p-[4px_4px_4px_20px] xl:p-[4px_4px_4px_24px] 2xl:p-[4px_4px_4px_24px] rounded-[500px] bg-[#FF5722] text-white font-bold text-sm lg:text-base xl:text-lg 2xl:text-[20px] leading-[124%] shrink-0">
-
+        <a href="#" id="desktopCta"
+          class="hidden md:inline-flex items-center gap-1.5 lg:gap-2 xl:gap-2.5 p-[4px_4px_4px_24px] rounded-[500px] bg-[#FF5722] text-white font-bold text-sm lg:text-base xl:text-lg 2xl:text-[20px] leading-[124%] shrink-0 ml-auto z-10 transition-shadow duration-300 hover:shadow-[0_0_25px_rgba(255,87,34,0.6)]">
           <span>Hire me</span>
-
-          <div
-            class="w-8 h-8 lg:w-9 lg:h-9 xl:w-10 xl:h-10 2xl:w-10 2xl:h-10 rounded-full bg-white flex items-center justify-center p-1">
+          <div id="ctaIcon" class="select-none pointer-events-none w-12 h-12 flex items-center justify-center">
             <img src="assets/images/upwork-circle-white.svg" alt="Upwork" class="w-full h-full object-contain">
           </div>
-
-        </div>
-
+        </a>
 
         <!-- Mobile Menu Toggle -->
-        <button id="menuToggle" class="md:hidden text-white focus:outline-none p-1.5 sm:p-2 z-50 relative">
-
-          <!-- Hamburger -->
+        <button id="menuToggle" class="md:hidden text-white focus:outline-none p-1.5 sm:p-2 z-50 relative ml-auto">
           <svg id="hamburgerIcon" class="w-7 h-7 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
-            </path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
           </svg>
-
-          <!-- Close -->
           <svg id="closeIcon"
             class="w-7 h-7 sm:w-8 sm:h-8 absolute top-1.5 left-1.5 sm:top-2 sm:left-2 opacity-0 scale-75" fill="none"
             stroke="currentColor" viewBox="0 0 24 24">
-
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-            </path>
-
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
-
         </button>
 
       </div>
     </div>
-
 
     <!-- Mobile Menu Overlay -->
     <div id="mobileMenu"
@@ -129,172 +115,150 @@
       </div>
 
     </div>
-
   </header>
   <!-- Main Header Shell -->
 
   <!-- Banner section -->
   <section
-    class="relative bg-cover bg-center pt-8 pb-20 md:pb-28 rounded-b-[40px] sm:rounded-b-[48px] md:rounded-b-[56px] lg:rounded-b-[68px] xl:rounded-b-[80px] 2xl:rounded-b-[94px] overflow-hidden shadow-[0_25px_70px_rgba(8,21,42,0.4)]"
-    style="background-image: url('assets/images/hero-banner.png');">
-    <div class="container relative z-40">
+    class="relative bg-[#020914] bg-cover bg-center pt-8 pb-16 sm:pb-20 md:pb-24 lg:pb-28 rounded-b-[32px] sm:rounded-b-[48px] md:rounded-b-[56px] lg:rounded-b-[68px] xl:rounded-b-[80px] 2xl:rounded-b-[94px] overflow-hidden shadow-[0_25px_70px_rgba(8,21,42,0.4)]"
+    style="background-image: url('/assets/images/hero-banner.png');">
+    <div class="container relative z-40 px-4 sm:px-6 lg:px-8 mx-auto">
 
-      <div class="hero-content-wrap pt-24 sm:pt-28 md:pt-32 lg:pt-40 xl:pt-44 2xl:pt-50">
+      <div class="hero-content-wrap pt-16 sm:pt-20 md:pt-28 lg:pt-36 xl:pt-42 2xl:pt-48">
 
         <!-- Heading & Decorative Stars -->
-        <div class="relative">
+        <div class="relative px-2 sm:px-4">
 
           <!-- Top Left Star -->
-          <img src="assets/images/decorative-star.svg" alt="star"
-            class="absolute -top-3 left-2 sm:left-6 md:left-10 lg:left-12 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 pointer-events-none">
+          <img src="/assets/images/decorative-star.svg" alt="star"
+            class="absolute -top-3 left-0 sm:left-4 md:left-8 lg:left-12 w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 pointer-events-none">
 
           <!-- Top Right Star -->
-          <img src="assets/images/decorative-star.svg" alt="star"
-            class="absolute -top-4 right-2 sm:right-6 md:right-10 lg:right-16 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 animate-pulse pointer-events-none">
+          <img src="/assets/images/decorative-star.svg" alt="star"
+            class="absolute -top-4 right-0 sm:right-4 md:right-8 lg:right-16 w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 animate-pulse pointer-events-none">
 
           <!-- Main Heading -->
           <h1
-            class="text-white text-center schibsted-grotesk text-[30px] sm:text-[40px] md:text-[52px] lg:text-[64px] xl:text-[80px] 2xl:text-[94px] font-normal leading-[100%] tracking-[-0.6px] sm:tracking-[-0.8px] md:tracking-[-1px] lg:tracking-[-1.2px] xl:tracking-[-1.5px] 2xl:tracking-[-1.88px]">
+            class="text-white text-center schibsted-grotesk text-[28px] xs:text-[32px] sm:text-[42px] md:text-[52px] lg:text-[64px] xl:text-[80px] 2xl:text-[94px] font-normal leading-[110%] sm:leading-[100%] tracking-[-0.5px] sm:tracking-[-0.8px] md:tracking-[-1px] lg:tracking-[-1.2px] xl:tracking-[-1.5px] 2xl:tracking-[-1.88px]">
             Drive organic traffic from Google, ChatGPT, Perplexity, and Gemini — all from one specialist
           </h1>
 
           <!-- Bottom Left Star -->
-          <img src="assets/images/decorative-star.svg" alt="star"
-            class="absolute -bottom-4 sm:-bottom-5 left-[10%] sm:left-[15%] md:left-[18%] lg:left-[20%] w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 animate-pulse pointer-events-none">
+          <img src="/assets/images/decorative-star.svg" alt="star"
+            class="absolute -bottom-4 sm:-bottom-5 left-[5%] sm:left-[15%] md:left-[18%] lg:left-[20%] w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 animate-pulse pointer-events-none">
 
           <!-- Bottom Right Star -->
-          <img src="assets/images/decorative-star.svg" alt="star"
-            class="absolute -bottom-4 sm:-bottom-5 right-[10%] sm:right-[15%] md:right-[18%] lg:right-[20%] w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 animate-pulse pointer-events-none">
+          <img src="/assets/images/decorative-star.svg" alt="star"
+            class="absolute -bottom-4 sm:-bottom-5 right-[5%] sm:right-[15%] md:right-[18%] lg:right-[20%] w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 animate-pulse pointer-events-none">
 
         </div>
 
-
         <!-- Bottom Content -->
         <div
-          class="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-8 sm:gap-10 md:gap-12 lg:gap-8 xl:gap-12 2xl:gap-16 mt-16 sm:mt-20 md:mt-24 lg:mt-28 xl:mt-32 2xl:mt-25">
+          class="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-5 mt-12 sm:mt-16 md:mt-20 lg:mt-28 xl:mt-32">
 
           <!-- Bottom Left Content -->
-          <div class="w-full max-w-150 text-white text-center lg:text-left">
+          <div class="w-full lg:max-w-145 xl:max-w-155 text-white text-center lg:text-left">
 
-            <p
-              class="host--grotesk text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-lg 2xl:text-xl font-medium leading-[135%]">
-              Search is no longer just Google's blue links. I'm Shah Sultan — a Full SEO Expert and AI SEO, AEO, GEO
-              specialist with 10 years of experience. I drive organic traffic from every channel modern buyers use:
-              Google, ChatGPT, Gemini, Perplexity, and AI Overviews. 226 projects, 5,708 hours, $80k+ earned on Upwork.
+            <p class="host--grotesk text-white text-sm sm:text-base md:text-lg  xl:text-lg 2xl:text-xl font-medium ">
+              Search is no longer just Google's blue links. I'm Shah Sultan — a Full SEO Expert and AI SEO,
+              AEO, GEO specialist with 10 years of experience. I drive organic traffic from every channel modern buyers
+              use: Google, ChatGPT, Gemini, Perplexity, and AI Overviews. 226 projects, 5,708 hours, $80k+ earned
+              on Upwork.
             </p>
 
             <!-- Action Buttons -->
             <div
-              class="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 mt-8 sm:mt-9 md:mt-10 lg:mt-10 xl:mt-12">
+              class="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 mt-6 sm:mt-8 md:mt-10 lg:mt-8 xl:mt-12">
 
               <!-- Primary -->
               <a href="#"
-                class="w-full sm:w-auto px-5 sm:px-6 md:px-7 lg:px-6 xl:px-7 2xl:px-6 py-3 sm:py-3.5 md:py-4 lg:py-4 rounded-full bg-[#FF6F42] text-white font-bold text-base sm:text-lg md:text-xl leading-[120%] text-center">
-                Get a free Full SEO + AI SEO audit
+                class="text-shift-btn w-full sm:w-auto px-6 sm:px-6 md:px-7 lg:px-5 xl:px-7 2xl:px-6 py-3.5 sm:py-3.5 md:py-4 lg:py-3.5 xl:py-4 rounded-full bg-[#FF6F42] text-white font-bold text-base sm:text-lg md:text-xl lg:text-base xl:text-xl leading-[120%] text-center shadow-lg transition-transform active:scale-95">
+                <div class="ct ">Get a free Full SEO + AI SEO audit</div>
               </a>
 
               <!-- Secondary -->
               <a href="#"
-                class="w-full sm:w-auto px-5 sm:px-6 md:px-7 lg:px-6 xl:px-7 2xl:px-6 py-3 sm:py-3.5 md:py-4 lg:py-4 rounded-full bg-white text-[#FF6F42] font-bold text-base sm:text-lg md:text-xl leading-[120%] text-center">
-                View my works
+                class="text-shift-btn w-full sm:w-auto px-6 sm:px-6 md:px-7 lg:px-6 xl:px-7 2xl:px-6 py-3.5 sm:py-3.5 md:py-4 lg:py-3.5 xl:py-4 rounded-full bg-white text-[#FF6F42] font-bold text-base sm:text-lg md:text-xl lg:text-base xl:text-xl leading-[120%] text-center shadow-lg transition-transform active:scale-95">
+                <div class="ct">View my works</div>
               </a>
 
             </div>
           </div>
 
-
           <!-- Bottom Right Content / Stats Card -->
           <div
-            class="w-full sm:w-auto max-w-[650px] lg:max-w-[620px] xl:max-w-[680px] 2xl:max-w-none p-4 sm:p-5 md:p-6 lg:p-6 xl:p-7 2xl:p-6 rounded-2xl sm:rounded-3xl md:rounded-[32px] lg:rounded-[36px] xl:rounded-[40px] border border-white/20 bg-white/5 backdrop-blur-[15px] flex flex-col gap-3 sm:gap-4">
+            class="flex max-w-full lg:max-w-175 flex-col items-center gap-4 sm:gap-2 p-5 sm:p-8 rounded-4xl sm:rounded-[40px] border border-white/20 bg-white/5 backdrop-blur-[15px] w-full shadow-2xl">
 
             <!-- Top Stats Row -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5 md:gap-3 text-white">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full text-white">
 
               <!-- Rating -->
-              <div
-                class="bg-black/10 rounded-lg sm:rounded-xl p-3 sm:p-3.5 md:p-4 flex flex-col items-center justify-center text-center">
-
-                <div class="flex items-center gap-0.5 sm:gap-1 mb-1.5 sm:mb-2">
-                  <img src="assets/images/rating-star.svg" alt="star" class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
-                  <img src="assets/images/rating-star.svg" alt="star" class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
-                  <img src="assets/images/rating-star.svg" alt="star" class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
-                  <img src="assets/images/rating-star.svg" alt="star" class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
-                  <img src="assets/images/rating-star.svg" alt="star" class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
+              <div class="flex w-full flex-col items-start gap-1.75 rounded-xl bg-white/10 p-3 sm:p-4">
+                <div class="flex w-full min-w-0 items-center gap-0.5 sm:gap-1 mb-1 overflow-hidden">
+                  <img src="/assets/images/rating-star.svg" alt="star" class="size-4 shrink-0 object-contain ">
+                  <img src="/assets/images/rating-star.svg" alt="star" class="size-4 shrink-0 object-contain ">
+                  <img src="/assets/images/rating-star.svg" alt="star" class="size-4 shrink-0 object-contain ">
+                  <img src="/assets/images/rating-star.svg" alt="star" class="size-4 shrink-0 object-contain ">
+                  <img src="/assets/images/rating-star.svg" alt="star" class="size-4 shrink-0 object-contain ">
                 </div>
 
-                <span class="text-xs sm:text-sm font-semibold text-white/50">
+                <span class="text-xs font-semibold text-white/70 sm:text-sm sm:text-white/50">
                   100% JSS
                 </span>
               </div>
 
 
               <!-- Projects -->
-              <div
-                class="bg-black/10 rounded-lg sm:rounded-xl p-3 sm:p-3.5 md:p-4 flex flex-col items-center justify-center text-center">
-
-                <span class="text-white text-lg sm:text-lg md:text-xl font-bold leading-[124%] mb-1.5 sm:mb-2">
+              <div class="flex p-3 sm:p-4 flex-col items-start gap-1.75 rounded-xl bg-white/10 w-full">
+                <span class="text-white text-lg sm:text-xl font-bold leading-[124%] mb-1">
                   220+
                 </span>
-
-                <span class="text-xs sm:text-sm font-semibold text-white/50">
+                <span class="text-xs sm:text-sm font-semibold text-white/70 sm:text-white/50">
                   Projects
                 </span>
               </div>
 
-
               <!-- Hours -->
-              <div
-                class="bg-black/10 rounded-lg sm:rounded-xl p-3 sm:p-3.5 md:p-4 flex flex-col items-center justify-center text-center">
-
-                <span class="text-white text-lg sm:text-lg md:text-xl font-bold leading-[124%] mb-1.5 sm:mb-2">
+              <div class="flex p-3 sm:p-4 flex-col items-start gap-1.75 rounded-xl bg-white/10 w-full">
+                <span class="text-white text-lg sm:text-xl font-bold leading-[124%] mb-1">
                   5,708
                 </span>
-
-                <span class="text-xs sm:text-sm font-semibold text-white/50">
+                <span class="text-xs sm:text-sm font-semibold text-white/70 sm:text-white/50">
                   Hours
                 </span>
               </div>
 
-
               <!-- Earned -->
-              <div
-                class="bg-black/10 rounded-lg sm:rounded-xl p-3 sm:p-3.5 md:p-4 flex flex-col items-center justify-center text-center">
-
-                <span class="text-white text-lg sm:text-lg md:text-xl font-bold leading-[124%] mb-1.5 sm:mb-2">
+              <div class="flex p-3 sm:p-4 flex-col items-start gap-1.75 rounded-xl bg-white/10 w-full">
+                <span class="text-white text-lg sm:text-xl font-bold leading-[124%] mb-1">
                   $80k+
                 </span>
-
-                <span class="text-xs sm:text-sm font-semibold text-white/50">
+                <span class="text-xs sm:text-sm font-semibold text-white/70 sm:text-white/50">
                   Earned
                 </span>
               </div>
 
             </div>
 
-
             <!-- Bottom Tags -->
-            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-1.5 sm:gap-2 md:gap-2.5 pt-1">
-
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1 w-full">
               <span
-                class="px-3 sm:px-4 md:px-5 lg:px-5 xl:px-6 py-2 sm:py-2.5 md:py-3 rounded-full bg-white text-[#020914] font-bold text-sm sm:text-base md:text-lg lg:text-xl">
+                class="px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white text-[#020914] font-bold text-xs sm:text-sm md:text-base lg:text-lg leading-[124%]">
                 AI SEO
               </span>
-
               <span
-                class="px-3 sm:px-4 md:px-5 lg:px-5 xl:px-6 py-2 sm:py-2.5 md:py-3 rounded-full bg-white text-[#020914] font-bold text-sm sm:text-base md:text-lg lg:text-xl">
+                class="px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white text-[#020914] font-bold text-xs sm:text-sm md:text-base lg:text-lg leading-[124%]">
                 AEO
               </span>
-
               <span
-                class="px-3 sm:px-4 md:px-5 lg:px-5 xl:px-6 py-2 sm:py-2.5 md:py-3 rounded-full bg-white text-[#020914] font-bold text-sm sm:text-base md:text-lg lg:text-xl">
+                class="px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white text-[#020914] font-bold text-xs sm:text-sm md:text-base lg:text-lg leading-[124%]">
                 GEO
               </span>
-
               <span
-                class="px-3 sm:px-4 md:px-5 lg:px-5 xl:px-6 py-2 sm:py-2.5 md:py-3 rounded-full bg-white text-[#020914] font-bold text-sm sm:text-base md:text-lg lg:text-xl">
+                class="px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white text-[#020914] font-bold text-xs sm:text-sm md:text-base lg:text-lg leading-[124%]">
                 Drive Organic Traffic
               </span>
-
             </div>
 
           </div>
@@ -303,32 +267,459 @@
 
       </div>
 
-
     </div>
   </section>
   <!-- Banner section -->
 
 
-  <section class="min-h-screen">
+  <!-- Upwork Profile Card -->
+  <section class="section-padding bg-white" data-theme="dark">
+    <div class="container ">
 
+      <!-- Section Header -->
+      <div class="mb-6 lg:mb-8 xl:mb-12">
+        <h2
+          class="schibsted-grotesk text-[#020914] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[48px] xl:text-[56px] 2xl:text-[64px] font-normal leading-[100%] tracking-[-0.64px]">
+          Verified track record on Upwork
+        </h2>
+        <p
+          class="mt-2 md:mt-4  text-[#8E9298]/80 text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] 2xl:text-[20px]">
+          Every number below is verifiable on my public Upwork profile
+        </p>
+      </div>
+
+      <!-- Main Card Container -->
+      <div
+        class="relative overflow-hidden bg-white border border-[#ADB4BD] rounded-3xl lg:rounded-[44px] p-6 sm:p-10 lg:p-12 backdrop-blur-[10px] flex flex-col gap-5 lg:gap-8 2xl:gap-12">
+
+        <!-- Background Blur Element -->
+        <div class="absolute pointer-events-none z-0"
+          style="width: 952px; height: 885px; right: -604px; top: -735px; border-radius: 952px; opacity: 0.2; background: #2267C2; filter: blur(137px);">
+        </div>
+
+        <!-- Top Profile Row: Avatar, Title & Button -->
+        <div
+          class="relative z-10 flex flex-col sm:flex-row items-center sm:items-center gap-6 sm:gap-8 text-center sm:text-left">
+          <!-- Profile Image (220px by 220px) -->
+          <div class="w-40 h-40 sm:w-55 sm:h-55 rounded-full overflow-hidden shrink-0 bg-orange-100">
+            <img src="assets/images/profile-circle-person.png" alt="Shah Sultan" class="w-full h-full object-cover">
+          </div>
+
+          <!-- Details & CTA -->
+          <div class="flex-1 flex flex-col justify-center">
+            <h3
+              class="text-[#020914] schibsted-grotesk text-[28px] sm:text-[30px] md:text-[32px] lg:text-[42px] xl:text-[45px] 2xl:text-[48px] font-bold leading-[100%] tracking-[-0.48px]">
+              Top Rated Plus Freelancer
+            </h3>
+            <p
+              class="text-[#8E9298]/80 text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] 2xl:text-[20px] mt-2 md:mt-4">
+              10 years of consistent 5-star work on the world's largest freelance platform
+            </p>
+
+            <!-- Upwork Button -->
+            <div class="mt-6 flex justify-center sm:justify-start">
+              <a href="#" class="text-shift-btn group inline-flex items-center gap-1
+    sm:gap-1.5 lg:gap-2 xl:gap-2.5
+    p-[3px_3px_3px_16px]
+    sm:p-[4px_4px_4px_24px]
+    rounded-[500px] bg-[#FF6F42] text-white font-bold
+    text-xs sm:text-sm lg:text-base xl:text-lg 2xl:text-[20px]
+    leading-[124%] shrink-0">
+
+                <!-- Strict masking wrapper for the text -->
+                <div class="relative overflow-hidden block whitespace-nowrap pr-1">
+                  <div class="ct">View my Upwork profile</div>
+                </div>
+
+                <!-- Upwork Icon -->
+                <div id="ctaIcon" class="relative z-10 select-none pointer-events-none
+      w-9 h-9
+      sm:w-10 sm:h-10
+      lg:w-12 lg:h-12
+      flex items-center justify-center shrink-0
+      bg-[#FF6F42] rounded-full
+      transition-transform duration-600
+      group-hover:rotate-20">
+
+                  <img src="assets/images/upwork-circle-green.svg" alt="Upwork" class="w-full h-full object-contain">
+                </div>
+
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+
+          <!-- Inner Card 1 -->
+          <div
+            class="bg-[#EFF3F8] rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8 flex flex-col gap-1.75 items-center sm:items-start justify-center text-center sm:text-left">
+            <span
+              class="text-[#020914] text-[24px] sm:text-[28px] md:text-[30px] lg:text-[32px] xl:text-[38px] 2xl:text-[40px] font-bold leading-[124%]">
+              226
+            </span>
+            <span class="text-sm sm:text-base font-medium text-[#8E9298] leading-[124%]">
+              Projects completed
+            </span>
+          </div>
+
+          <!-- Inner Card 2 -->
+          <div
+            class="bg-[#EFF3F8] rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8 flex flex-col gap-1.75 items-center sm:items-start justify-center text-center sm:text-left">
+            <span
+              class="text-[#020914] text-[24px] sm:text-[28px] md:text-[30px] lg:text-[32px] xl:text-[38px] 2xl:text-[40px] font-bold leading-[124%]">
+              5,708
+            </span>
+            <span class="text-sm sm:text-base font-medium text-[#8E9298] leading-[124%]">
+              Hours logged
+            </span>
+          </div>
+
+          <!-- Inner Card 3 -->
+          <div
+            class="bg-[#EFF3F8] rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8 flex flex-col gap-1.75 items-center sm:items-start justify-center text-center sm:text-left">
+            <span
+              class="text-[#020914] text-[24px] sm:text-[28px] md:text-[30px] lg:text-[32px] xl:text-[38px] 2xl:text-[40px] font-bold leading-[124%]">
+              $80k+
+            </span>
+            <span class="text-sm sm:text-base font-medium text-[#8E9298] leading-[124%]">
+              Total earnings
+            </span>
+          </div>
+
+          <!-- Inner Card 4 -->
+          <div
+            class="bg-[#EFF3F8] rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8 flex flex-col gap-1.75 items-center sm:items-start justify-center text-center sm:text-left">
+            <span
+              class="text-[#020914] text-[24px] sm:text-[28px] md:text-[30px] lg:text-[32px] xl:text-[38px] 2xl:text-[40px] font-bold leading-[124%]">
+              100%
+            </span>
+            <span class="text-sm sm:text-base font-medium text-[#8E9298] leading-[124%]">
+              Job Success Score
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
   </section>
- 
+  <!-- Upwork Profile Card -->
 
-<!-- Footer Section -->
-  <footer class="relative overflow-hidden text-white">
+  <!-- Brand logo marquee section -->
+  <section
+    class="relative py-20 pb-16 sm:pb-24 md:py-32 lg:py-50 bg-transparent overflow-hidden -mt-[80px] md:-mt-[100px]">
+
+    <!-- Absolute Curved Shape Image filling the full section bounds -->
+    <div class="absolute inset-0 w-full h-full pointer-events-none z-0">
+      <img src="assets/images/brand-slider-background.png" alt="" class="w-full h-full object-cover md:object-fill">
+    </div>
+
+    <div class="container relative z-10 flex flex-col items-center gap-6 sm:gap-8 py-4 sm:py-8">
+
+      <!-- Section Title / Trust Copy -->
+      <h3
+        class="pt-5 text-white text-center text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[30px] 2xl:text-[32px] font-bold  leading-snug sm:leading-normal">
+        Trusted by 200+ businesses across e-commerce, SaaS, and service industries
+      </h3>
+
+      <!-- Splide Marquee Container -->
+      <div id="brand-slider" class="splide w-full mt-2 sm:mt-4 pb-10" aria-label="Trusted Brands">
+        <div class="splide__track overflow-hidden">
+          <ul class="splide__list flex items-center">
+
+            <!-- Logo Item -->
+            <li class="splide__slide !flex justify-center px-2 sm:px-3">
+              <div
+                class="bg-white rounded-[18px] sm:rounded-[24px] px-5 py-3 sm:px-6 sm:py-5 md:px-[30px] md:py-6 flex items-center justify-center shadow-sm w-full">
+                <img src="assets/images/brand-logo-1.svg" alt="Brand Logo" class="h-6 md:h-7.5 w-auto object-contain">
+              </div>
+            </li>
+
+            <!-- Logo Item -->
+            <li class="splide__slide !flex justify-center px-2 sm:px-3">
+              <div
+                class="bg-white rounded-[18px] sm:rounded-[24px] px-5 py-3 sm:px-6 sm:py-5 md:px-[30px] md:py-6 flex items-center justify-center shadow-sm w-full">
+                <img src="assets/images/brand-logo-2.svg" alt="Brand Logo" class="h-6 md:h-7.5 w-auto object-contain">
+              </div>
+            </li>
+
+            <!-- Logo Item -->
+            <li class="splide__slide !flex justify-center px-2 sm:px-3">
+              <div
+                class="bg-white rounded-[18px] sm:rounded-[24px] px-5 py-3 sm:px-6 sm:py-5 md:px-[30px] md:py-6 flex items-center justify-center shadow-sm w-full">
+                <img src="assets/images/brand-logo-3.svg" alt="Brand Logo" class="h-6 md:h-7.5 w-auto object-contain">
+              </div>
+            </li>
+
+            <!-- Logo Item -->
+            <li class="splide__slide !flex justify-center px-2 sm:px-3">
+              <div
+                class="bg-white rounded-[18px] sm:rounded-[24px] px-5 py-3 sm:px-6 sm:py-5 md:px-[30px] md:py-6 flex items-center justify-center shadow-sm w-full">
+                <img src="assets/images/brand-logo-4.svg" alt="Brand Logo" class="h-6 md:h-7.5 w-auto object-contain">
+              </div>
+            </li>
+
+            <!-- Logo Item -->
+            <li class="splide__slide !flex justify-center px-2 sm:px-3">
+              <div
+                class="bg-white rounded-[18px] sm:rounded-[24px] px-5 py-3 sm:px-6 sm:py-5 md:px-[30px] md:py-6 flex items-center justify-center shadow-sm w-full">
+                <img src="assets/images/brand-logo-5.svg" alt="Brand Logo" class="h-6 md:h-7.5 w-auto object-contain">
+              </div>
+            </li>
+
+            <!-- Logo Item -->
+            <li class="splide__slide !flex justify-center px-2 sm:px-3">
+              <div
+                class="bg-white rounded-[18px] sm:rounded-[24px] px-5 py-3 sm:px-6 sm:py-5 md:px-[30px] md:py-6 flex items-center justify-center shadow-sm w-full">
+                <img src="assets/images/brand-logo-6.svg" alt="Brand Logo" class="h-6 md:h-7.5 w-auto object-contain">
+              </div>
+            </li>
+
+            <!-- Logo Item -->
+            <li class="splide__slide !flex justify-center px-2 sm:px-3">
+              <div
+                class="bg-white rounded-[18px] sm:rounded-[24px] px-5 py-3 sm:px-6 sm:py-5 md:px-[30px] md:py-6 flex items-center justify-center shadow-sm w-full">
+                <img src="assets/images/brand-logo-7.svg" alt="Brand Logo" class="h-6 md:h-7.5 w-auto object-contain">
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- Brand logo marquee section -->
+
+
+
+<section class="relative bg-[#020914] py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+  
+  <div class="container mx-auto max-w-7xl flex flex-col items-center">
     
-    <!-- Main Upper Footer Section (with background image) -->
-    <div class="relative bg-cover bg-center rounded-t-[40px] sm:rounded-t-[48px] md:rounded-t-[56px] lg:rounded-t-[68px] xl:rounded-t-[80px] 2xl:rounded-t-[94px]
-" style="background-image: url('assets/images/main-footer-bg.png');">
-      <div class="container mx-auto px-4 pt-16 pb-20 relative z-10">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mb-16">
+      <h2 class="text-white text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold tracking-tight leading-tight mb-4 font-jakarta">
+        Full SEO & AI SEO — <span class="font-normal text-slate-300">5 specialized services to drive organic traffic</span>
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base leading-relaxed font-urbanist">
+        I help businesses drive organic traffic across every modern search channel — from Google’s traditional results to AI answer engines and generative search.
+      </p>
+    </div>
+
+    <!-- Services Grid (3 Columns Desktop: Card 1 spans 2 cols, Cards 2-5 take 1 col each) -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full mb-12">
+      
+      <!-- 1. Full SEO (Featured Card - Spans 2 Columns) -->
+      <div class="lg:col-span-2 group/card relative rounded-[32px] p-[1px] transition-all duration-300">
+        <!-- Hover Border Wrapper -->
+        <div class="absolute inset-0 rounded-[32px] opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" style="background: linear-gradient(285deg, #FF6F42 3.63%, #2267C2 59.85%);"></div>
         
+        <a href="work-details.html" class="project-card group relative bg-[#0b1320] border border-slate-800/80 group-hover/card:border-transparent rounded-[31px] p-6 sm:p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 items-center gap-6 lg:gap-8 backdrop-blur-[2px] cursor-none block h-full transition-all duration-300">
+          
+          <!-- Local Following Cursor Badge -->
+          <div class="custom-cursor pointer-events-none absolute left-0 top-0 z-50 hidden lg:flex items-center justify-center gap-2.5 rounded-full bg-[#CCFF01] px-5 py-2.5 font-urbanist text-base md:text-xl font-medium leading-[120%] text-black shadow-lg opacity-0 scale-75 -rotate-6 transition-opacity duration-200">
+            <span>View</span>
+            <img src="assets/images/secondary-arrow-white.svg" alt="arrow" class="h-4 w-4 object-contain sm:h-6 sm:w-6 brightness-0" />
+          </div>
+
+          <!-- Image Container -->
+          <div class="lg:col-span-6 relative w-full h-56 sm:h-64 lg:h-[260px] rounded-2xl overflow-hidden bg-transparent flex items-center justify-center pt-8 lg:pt-0">
+            <img src="assets/images/project-1.png" alt="Full SEO" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105" />
+          </div>
+
+          <!-- Content Container -->
+          <div class="lg:col-span-6 flex flex-col justify-between h-full pt-4 lg:pt-0">
+            <div>
+              <!-- Most Requested Badge on Text Content Side -->
+              <div class="mb-3">
+                <span class="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md font-urbanist">
+                  Most requested
+                </span>
+              </div>
+
+              <h3 class="font-jakarta text-white text-2xl sm:text-[28px] font-bold leading-[120%] mb-3 group-hover:text-orange-400 transition-all duration-300">
+                Full SEO
+              </h3>
+              <p class="font-urbanist text-sm sm:text-base text-slate-400 leading-[150%]">
+                End-to-end traditional SEO: technical, on-page, content, and links. The proven foundation every AI-search strategy still depends on.
+              </p>
+            </div>
+            
+            <div class="pt-8 flex justify-end">
+              <span class="inline-flex items-center gap-1 font-urbanist text-orange-500 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                Learn More 
+                <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- 2. AI SEO -->
+      <div class="group/card relative rounded-[32px] p-[1px] transition-all duration-300">
+        <div class="absolute inset-0 rounded-[32px] opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" style="background: linear-gradient(285deg, #FF6F42 3.63%, #2267C2 59.85%);"></div>
+        <a href="work-details.html" class="project-card group relative bg-[#0b1320] border border-slate-800/80 group-hover/card:border-transparent rounded-[31px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-none shadow-xl h-full">
+          <div class="custom-cursor pointer-events-none absolute left-0 top-0 z-50 hidden lg:flex items-center justify-center gap-2.5 rounded-full bg-[#CCFF01] px-5 py-2.5 font-urbanist text-base md:text-xl font-medium leading-[120%] text-black shadow-lg opacity-0 scale-75 -rotate-6 transition-opacity duration-200">
+            <span>View</span>
+            <img src="assets/images/secondary-arrow-white.svg" alt="arrow" class="h-4 w-4 object-contain sm:h-6 sm:w-6 brightness-0" />
+          </div>
+
+          <div>
+            <div class="relative w-full h-44 sm:h-48 rounded-2xl overflow-hidden flex items-center justify-center mb-6">
+              <img src="assets/images/ai-chip-icon.png" alt="AI SEO" class="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <h3 class="font-jakarta text-white text-xl font-bold mb-3 group-hover:text-orange-400 transition-all duration-300">
+              AI SEO
+            </h3>
+            <p class="font-urbanist text-sm text-slate-400 leading-[150%]">
+              Optimize your brand to be cited, recommended, and surfaced by ChatGPT, Claude, Gemini, and Perplexity. The new front page of the internet.
+            </p>
+          </div>
+          
+          <div class="pt-8 flex justify-end">
+            <span class="inline-flex items-center gap-1 font-urbanist text-orange-500 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+              Learn More 
+              <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 3. AEO -->
+      <div class="group/card relative rounded-[32px] p-[1px] transition-all duration-300">
+        <div class="absolute inset-0 rounded-[32px] opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" style="background: linear-gradient(285deg, #FF6F42 3.63%, #2267C2 59.85%);"></div>
+        <a href="work-details.html" class="project-card group relative bg-[#0b1320] border border-slate-800/80 group-hover/card:border-transparent rounded-[31px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-none shadow-xl h-full">
+          <div class="custom-cursor pointer-events-none absolute left-0 top-0 z-50 hidden lg:flex items-center justify-center gap-2.5 rounded-full bg-[#CCFF01] px-5 py-2.5 font-urbanist text-base md:text-xl font-medium leading-[120%] text-black shadow-lg opacity-0 scale-75 -rotate-6 transition-opacity duration-200">
+            <span>View</span>
+            <img src="assets/images/secondary-arrow-white.svg" alt="arrow" class="h-4 w-4 object-contain sm:h-6 sm:w-6 brightness-0" />
+          </div>
+
+          <div>
+            <div class="relative w-full h-44 sm:h-48 rounded-2xl overflow-hidden flex items-center justify-center mb-6">
+              <img src="assets/images/aeo-mailbox-icon.png" alt="AEO" class="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <h3 class="font-jakarta text-white text-xl font-bold mb-3 group-hover:text-orange-400 transition-all duration-300">
+              AEO — Answer Engine Optimization
+            </h3>
+            <p class="font-urbanist text-sm text-slate-400 leading-[150%]">
+              Win featured snippets, People Also Ask, and direct answers in voice search. Be the answer, not just a result.
+            </p>
+          </div>
+          
+          <div class="pt-8 flex justify-end">
+            <span class="inline-flex items-center gap-1 font-urbanist text-orange-500 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+              Learn More 
+              <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 4. GEO -->
+      <div class="group/card relative rounded-[32px] p-[1px] transition-all duration-300">
+        <div class="absolute inset-0 rounded-[32px] opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" style="background: linear-gradient(285deg, #FF6F42 3.63%, #2267C2 59.85%);"></div>
+        <a href="work-details.html" class="project-card group relative bg-[#0b1320] border border-slate-800/80 group-hover/card:border-transparent rounded-[31px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-none shadow-xl h-full">
+          <div class="custom-cursor pointer-events-none absolute left-0 top-0 z-50 hidden lg:flex items-center justify-center gap-2.5 rounded-full bg-[#CCFF01] px-5 py-2.5 font-urbanist text-base md:text-xl font-medium leading-[120%] text-black shadow-lg opacity-0 scale-75 -rotate-6 transition-opacity duration-200">
+            <span>View</span>
+            <img src="assets/images/secondary-arrow-white.svg" alt="arrow" class="h-4 w-4 object-contain sm:h-6 sm:w-6 brightness-0" />
+          </div>
+
+          <div>
+            <div class="relative w-full h-44 sm:h-48 rounded-2xl overflow-hidden flex items-center justify-center mb-6">
+              <img src="assets/images/geo-globe-icon.png" alt="GEO" class="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <h3 class="font-jakarta text-white text-xl font-bold mb-3 group-hover:text-orange-400 transition-all duration-300">
+              GEO — Generative Engine Optimization
+            </h3>
+            <p class="font-urbanist text-sm text-slate-400 leading-[150%]">
+              Get your content cited as a source in AI-generated responses. Structured content, schema, and authority signals built for LLMs.
+            </p>
+          </div>
+          
+          <div class="pt-8 flex justify-end">
+            <span class="inline-flex items-center gap-1 font-urbanist text-orange-500 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+              Learn More 
+              <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 5. SGE SEO -->
+      <div class="group/card relative rounded-[32px] p-[1px] transition-all duration-300">
+        <div class="absolute inset-0 rounded-[32px] opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" style="background: linear-gradient(285deg, #FF6F42 3.63%, #2267C2 59.85%);"></div>
+        <a href="work-details.html" class="project-card group relative bg-[#0b1320] border border-slate-800/80 group-hover/card:border-transparent rounded-[31px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-none shadow-xl h-full">
+          <div class="custom-cursor pointer-events-none absolute left-0 top-0 z-50 hidden lg:flex items-center justify-center gap-2.5 rounded-full bg-[#CCFF01] px-5 py-2.5 font-urbanist text-base md:text-xl font-medium leading-[120%] text-black shadow-lg opacity-0 scale-75 -rotate-6 transition-opacity duration-200">
+            <span>View</span>
+            <img src="assets/images/secondary-arrow-white.svg" alt="arrow" class="h-4 w-4 object-contain sm:h-6 sm:w-6 brightness-0" />
+          </div>
+
+          <div>
+            <div class="relative w-full h-44 sm:h-48 rounded-2xl overflow-hidden flex items-center justify-center mb-6">
+              <img src="assets/images/sge-target-icon.png" alt="SGE SEO" class="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <h3 class="font-jakarta text-white text-xl font-bold mb-3 group-hover:text-orange-400 transition-all duration-300">
+              SGE SEO
+            </h3>
+            <p class="font-urbanist text-sm text-slate-400 leading-[150%]">
+              Rank inside Google's Search Generative Experience and AI Overviews — where 60%+ of high-intent queries now end without a click.
+            </p>
+          </div>
+          
+          <div class="pt-8 flex justify-end">
+            <span class="inline-flex items-center gap-1 font-urbanist text-orange-500 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+              Learn More 
+              <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Bottom CTA Banner -->
+    <div class="w-full bg-[#FF6F42] rounded-[32px] p-6 sm:p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+      <div class="text-center md:text-left">
+        <h3 class="text-white text-2xl sm:text-3xl font-bold mb-2 font-jakarta">Need all five?</h3>
+        <p class="text-orange-100 text-sm sm:text-base font-urbanist">
+          Most clients combine 2–3 services for full search coverage. Book a free consultation and I'll recommend the right mix for your business.
+        </p>
+      </div>
+      <div>
+        <a href="#" class="inline-flex items-center justify-center bg-white text-slate-900 hover:bg-slate-100 font-bold px-7 py-4 rounded-full shadow-lg transition-all text-sm sm:text-base whitespace-nowrap font-urbanist">
+          Get a free strategy call
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Footer Section -->
+  <footer class="relative overflow-hidden text-white">
+
+    <!-- Main Upper Footer Section (with background image) -->
+    <div
+      class="relative bg-cover bg-center rounded-t-[40px] sm:rounded-t-[48px] md:rounded-t-[56px] lg:rounded-t-[68px] xl:rounded-t-[80px] 2xl:rounded-t-[94px]"
+      style="background-image: url('assets/images/main-footer-bg.png');">
+      <div class="container mx-auto px-4 pt-16 pb-20 relative z-10">
+
         <!-- Top Social / Contact Link Cards Row -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          
+
           <!-- LinkedIn Card -->
-          <a href="#" class="flex items-center gap-4 p-4 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-[15px] hover:bg-white/[0.08] transition-all">
+          <a href="#"
+            class="flex items-center gap-4 p-4 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-[15px] hover:bg-white/[0.08] transition-all">
             <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
             </div>
             <div>
               <h4 class="font-bold text-lg leading-tight">Linkedin</h4>
@@ -337,9 +728,13 @@
           </a>
 
           <!-- Twitter / X Card -->
-          <a href="#" class="flex items-center gap-4 p-4 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-[15px] hover:bg-white/[0.08] transition-all">
+          <a href="#"
+            class="flex items-center gap-4 p-4 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-[15px] hover:bg-white/[0.08] transition-all">
             <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
             </div>
             <div>
               <h4 class="font-bold text-lg leading-tight">Twitter / X</h4>
@@ -348,9 +743,13 @@
           </a>
 
           <!-- Email Card -->
-          <a href="mailto:shahsultan@gmail.com" class="flex items-center gap-4 p-4 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-[15px] hover:bg-white/[0.08] transition-all">
+          <a href="mailto:shahsultan@gmail.com"
+            class="flex items-center gap-4 p-4 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-[15px] hover:bg-white/[0.08] transition-all">
             <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-              <svg class="w-6 h-6 fill-none stroke-current stroke-2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <svg class="w-6 h-6 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
             </div>
             <div>
               <h4 class="font-bold text-lg leading-tight">Email</h4>
@@ -362,21 +761,27 @@
 
         <!-- Footer Navigation and Info Grid -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-          
+
           <!-- Brand / Description Column -->
           <div class="lg:col-span-5 flex flex-col gap-6">
             <h3 class="text-2xl md:text-3xl font-bold font-['Schibsted_Grotesk']">Shah Sultan</h3>
-            
+
             <!-- Badges / Tags -->
             <div class="flex flex-wrap gap-2.5 max-w-md">
-              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">Full SEO Expert</span>
+              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">Full SEO
+                Expert</span>
               <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">AI SEO</span>
               <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">AEO</span>
-              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">SEO Expert</span>
-              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">Drive Organic Traffic</span>
-              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">Top Rated Plus on Upwork</span>
-              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">226 projects</span>
-              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">5,708 hours</span>
+              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">SEO
+                Expert</span>
+              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">Drive Organic
+                Traffic</span>
+              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">Top Rated
+                Plus on Upwork</span>
+              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">226
+                projects</span>
+              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">5,708
+                hours</span>
               <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">$80k+</span>
             </div>
           </div>
@@ -422,8 +827,9 @@
     </div>
 
     <!-- Bottom Mini Footer (Radial BG & Big Logo) -->
-    <div class="relative bg-cover bg-center pt-24 pb-8 overflow-hidden text-center" style="background-image: url('assets/images/footer-bottom-radial.svg');">
-      
+    <div class="relative bg-cover bg-center pt-24 pb-8 overflow-hidden text-center"
+      style="background-image: url('assets/images/footer-bottom-radial.svg');">
+
       <!-- Floating Upwork CTA Button Overlap -->
       <!-- <div class="absolute top-6 left-1/2 -translate-x-1/2 z-20">
         <a href="#" class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-black text-white text-sm font-semibold shadow-2xl border border-white/10 hover:bg-gray-900 transition-all">
@@ -434,7 +840,8 @@
 
       <!-- Big Footer Logo Image -->
       <div class="flex justify-center mb-6">
-        <img src="assets/images/footer-bottom-big-logo.png" alt="Shah Sultan" class="w-full max-w-6xl object-contain opacity-90 select-none pointer-events-none">
+        <img src="assets/images/footer-bottom-big-logo.png" alt="Shah Sultan"
+          class="w-full max-w-6xl object-contain opacity-90 select-none pointer-events-none">
       </div>
 
       <!-- Copyright Text -->

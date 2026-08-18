@@ -133,3 +133,63 @@ html.lenis body {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
+
+/*  */
+/* Default or Light Section theme */
+#desktopNav {
+  background-color: #ffffff;
+  color: #291C69;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* When inside a dark section, apply this class */
+#desktopNav.nav-dark-theme {
+  background-color: #1861C5;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Style the internal links when dark theme is active */
+#desktopNav.nav-dark-theme a {
+  color: #ffffff;
+}
+#desktopNav.nav-dark-theme a.active-link {
+  background-color: #ffffff;
+  color: #020914;
+}
+
+#siteLogo img {
+  transition: transform 0.4s ease-in-out;
+}
+
+#siteLogo:hover img {
+  transform: scale(0.95);
+}
+
+
+/* buttons */
+/* Keep existing button designs untouched, add text-shift structure */
+.text-shift-btn {
+  overflow: hidden;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-shift-btn .ct {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.text-shift-btn .clone {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
