@@ -127,11 +127,23 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     if (window.innerWidth < 768) {
       if (window.scrollY > 15) {
-        siteHeader.classList.remove('mt-4', 'sm:mt-5');
-        siteHeader.classList.add('top-0', 'bg-[linear-gradient(180deg,#020914_0%,#1A2332_100%)]', 'backdrop-blur-md', 'py-2');
+        // Pin to top 0 and add background/padding
+        siteHeader.style.top = '0px';
+        siteHeader.style.marginTop = '0px';
+        siteHeader.style.backgroundColor = 'rgba(2, 9, 20, 0.9)';
+        siteHeader.style.backdropFilter = 'blur(12px)';
+        siteHeader.style.webkitBackdropFilter = 'blur(12px)';
+        siteHeader.style.paddingTop = '0.75rem';
+        siteHeader.style.paddingBottom = '0.75rem';
       } else {
-        siteHeader.classList.add('mt-4', 'sm:mt-5');
-        siteHeader.classList.remove('top-0', 'bg-[linear-gradient(180deg,#020914_0%,#1A2332_100%)]', 'backdrop-blur-md', 'py-2');
+        // Revert to original layout spacing
+        siteHeader.style.top = '0px';
+        siteHeader.style.marginTop = '';
+        siteHeader.style.backgroundColor = 'transparent';
+        siteHeader.style.backdropFilter = 'none';
+        siteHeader.style.webkitBackdropFilter = 'none';
+        siteHeader.style.paddingTop = '0px';
+        siteHeader.style.paddingBottom = '0px';
       }
     }
   });
@@ -260,20 +272,18 @@ document.querySelectorAll(".text-shift-btn").forEach((button) => {
   });
 
   tl.to(original.querySelectorAll(":scope > .char"), {
-    yPercent: -100,
-    autoAlpha: 0,
-    duration: 0.6,
-    stagger: 0.025,
-    ease: "power2.inOut"
-  })
+      yPercent: -100,
+      autoAlpha: 0,
+      duration: 0.6,
+      stagger: 0.025,
+      ease: "power2.inOut"
+    })
 
     .fromTo(
-      clone.querySelectorAll(".char"),
-      {
+      clone.querySelectorAll(".char"), {
         yPercent: 100,
         autoAlpha: 0
-      },
-      {
+      }, {
         yPercent: 0,
         autoAlpha: 1,
         duration: 0.6,
@@ -378,8 +388,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!cursor) return;
 
     // Smooth physics configuration (0.7s duration for smooth trailing)
-    const xTo = gsap.quickTo(cursor, "x", { duration: 0.7, ease: "power2.out" });
-    const yTo = gsap.quickTo(cursor, "y", { duration: 0.7, ease: "power2.out" });
+    const xTo = gsap.quickTo(cursor, "x", {
+      duration: 0.7,
+      ease: "power2.out"
+    });
+    const yTo = gsap.quickTo(cursor, "y", {
+      duration: 0.7,
+      ease: "power2.out"
+    });
 
     let prevX = 0;
 
@@ -396,7 +412,11 @@ document.addEventListener("DOMContentLoaded", () => {
       // Dynamic tilt during movement
       const deltaX = e.clientX - prevX;
       const tilt = Math.min(Math.max(deltaX * 0.15, -12), 12);
-      gsap.to(cursor, { rotation: -6 + tilt, duration: 0.4, ease: "power1.out" });
+      gsap.to(cursor, {
+        rotation: -6 + tilt,
+        duration: 0.4,
+        ease: "power1.out"
+      });
 
       prevX = e.clientX;
     });

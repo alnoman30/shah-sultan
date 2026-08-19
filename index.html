@@ -13,56 +13,45 @@
 <body>
 
   <!-- Main Header Shell -->
-  <header id="siteHeader"
-    class="fixed top-0 left-0 right-0 bg-transparent mt-4 sm:mt-5 md:mt-5 lg:mt-6 xl:mt-6 2xl:mt-6 z-50 transition-all duration-300">
+  <header id="siteHeader" class="site-header">
     <div class="container">
-
-      <div class="flex items-center justify-between gap-4 relative">
+      <div class="header-inner">
 
         <!-- logo -->
-        <a href="#" id="siteLogo" class="flex items-center shrink-0 z-50 relative">
-          <img src="assets/images/logo.png" alt="shah sultan" class="w-28 sm:w-32 md:w-36 lg:w-40 xl:w-44 2xl:w-46.25">
+        <a href="#" id="siteLogo" class="site-logo">
+          <img src="assets/images/logo.png" alt="shah sultan" class="logo-img">
         </a>
 
-        <!-- Desktop Navigation (Untouched) -->
-        <nav id="desktopNav"
-          class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-1.5 lg:gap-2 xl:gap-3 2xl:gap-3 p-1.5 lg:p-2 xl:p-3 rounded-[500px] host-grotesk bg-white transition-all duration-300 z-10">
-          <a href="#"
-            class="text-shift-btn px-4 py-2 md:px-4 md:py-2 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-6 2xl:py-3 rounded-[500px] bg-[#020914] text-white font-bold text-sm lg:text-base xl:text-[18px] 2xl:text-[18px] leading-[124%] duration-300 transition-colors">
+        <!-- Desktop Navigation -->
+        <nav id="desktopNav" class="desktop-nav">
+          <a href="#" class="text-shift-btn nav-btn-primary">
             <div class="ct">Home</div>
           </a>
-          <a href="#"
-            class="text-shift-btn px-4 py-2 md:px-4 md:py-2 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-6 2xl:py-3 rounded-[500px] text-[#291C69] font-bold text-sm lg:text-base xl:text-[18px] 2xl:text-[18px] leading-[124%] hover:bg-[#020914] hover:text-white duration-300 transition-colors">
+          <a href="#" class="text-shift-btn nav-btn-secondary">
             <div class="ct">Services</div>
           </a>
-          <a href="#"
-            class="text-shift-btn px-4 py-2 md:px-4 md:py-2 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-6 2xl:py-3 rounded-[500px] text-[#291C69] font-bold text-sm lg:text-base xl:text-[18px] 2xl:text-[18px] leading-[124%] hover:bg-[#020914] hover:text-white duration-300 transition-colors">
+          <a href="#" class="text-shift-btn nav-btn-secondary">
             <div class="ct">About</div>
           </a>
-          <a href="#"
-            class="text-shift-btn px-4 py-2 md:px-4 md:py-2 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-6 2xl:py-3 rounded-[500px] text-[#291C69] font-bold text-sm lg:text-base xl:text-[18px] 2xl:text-[18px] leading-[124%] hover:bg-[#020914] hover:text-white duration-300 transition-colors">
+          <a href="#" class="text-shift-btn nav-btn-secondary">
             <div class="ct">My Works</div>
           </a>
         </nav>
 
-        <!-- Desktop Hire Me (Untouched) -->
-        <a href="#" id="desktopCta"
-          class="hidden md:inline-flex items-center gap-1.5 lg:gap-2 xl:gap-2.5 p-[4px_4px_4px_24px] rounded-[500px] bg-[#FF5722] text-white font-bold text-sm lg:text-base xl:text-lg 2xl:text-[20px] leading-[124%] shrink-0 ml-auto z-10 transition-shadow duration-300 hover:shadow-[0_0_25px_rgba(255,87,34,0.6)]">
+        <!-- Desktop Hire Me -->
+        <a href="#" id="desktopCta" class="desktop-cta">
           <span>Hire me</span>
-          <div id="ctaIcon" class="select-none pointer-events-none w-12 h-12 flex items-center justify-center">
-            <img src="assets/images/upwork-circle-white.svg" alt="Upwork" class="w-full h-full object-contain">
+          <div id="ctaIcon" class="cta-icon">
+            <img src="assets/images/upwork-circle-white.svg" alt="Upwork" class="cta-img">
           </div>
         </a>
 
         <!-- Mobile Menu Toggle -->
-        <button id="menuToggle"
-          class="md:hidden text-white focus:outline-none p-1.5 sm:p-2 z-[70] relative ml-auto cursor-pointer">
-          <svg id="hamburgerIcon" class="w-7 h-7 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button id="menuToggle" class="menu-toggle">
+          <svg id="hamburgerIcon" class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
           </svg>
-          <svg id="closeIcon"
-            class="w-7 h-7 sm:w-8 sm:h-8 absolute top-1.5 left-1.5 sm:top-2 sm:left-2 opacity-0 scale-75" fill="none"
-            stroke="currentColor" viewBox="0 0 24 24">
+          <svg id="closeIcon" class="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
@@ -71,40 +60,20 @@
     </div>
 
     <!-- Mobile Dropdown Menu Card -->
-    <div id="mobileMenu"
-      class="absolute top-full left-4 right-4 mt-3 bg-[#020914]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-5 flex flex-col gap-4 z-[60] opacity-0 pointer-events-none md:hidden shadow-2xl origin-top">
-
-      <!-- Mobile Links -->
-      <a href="#"
-        class="mobile-link text-white text-lg font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition-colors">
-        Home
-      </a>
-
-      <a href="#"
-        class="mobile-link text-white text-lg font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition-colors">
-        Services
-      </a>
-
-      <a href="#"
-        class="mobile-link text-white text-lg font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition-colors">
-        About
-      </a>
-
-      <a href="#"
-        class="mobile-link text-white text-lg font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition-colors">
-        My Works
-      </a>
+    <div id="mobileMenu" class="mobile-menu">
+      <a href="#" class="mobile-link">Home</a>
+      <a href="#" class="mobile-link">Services</a>
+      <a href="#" class="mobile-link">About</a>
+      <a href="#" class="mobile-link">My Works</a>
 
       <!-- Mobile Hire Me -->
-      <div
-        class="mobile-link inline-flex items-center justify-between p-1.5 pl-5 rounded-[500px] bg-[#FF5722] text-white font-bold text-base mt-2">
+      <div class="mobile-cta">
         <span>Hire me</span>
-        <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center p-1">
+        <div class="mobile-cta-icon-wrap">
           <img src="https://api.iconify.design/simple-icons:upwork.svg?color=%2314a800" alt="Upwork"
-            class="w-5 h-5 object-contain">
+            class="mobile-cta-img">
         </div>
       </div>
-
     </div>
   </header>
   <!-- Main Header Shell -->

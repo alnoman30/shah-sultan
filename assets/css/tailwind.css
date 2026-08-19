@@ -141,40 +141,384 @@ html.lenis body {
   display: block;
 }
 
-/* Default or Light Section theme */
-#desktopNav {
+/* --- Header Layout Container & Base Styles --- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  margin-top: 1rem;
+  z-index: 50;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .site-header {
+    margin-top: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-header {
+    margin-top: 1.5rem;
+  }
+}
+
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  position: relative;
+}
+
+/* --- Logo Styles --- */
+.site-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  z-index: 50;
+  position: relative;
+}
+
+.logo-img {
+  width: 7rem;
+  /* w-28 */
+  transition: transform 0.4s ease-in-out;
+}
+
+@media (min-width: 640px) {
+  .logo-img {
+    width: 8rem;
+  }
+}
+
+/* sm:w-32 */
+@media (min-width: 768px) {
+  .logo-img {
+    width: 9rem;
+  }
+}
+
+/* md:w-36 */
+@media (min-width: 1024px) {
+  .logo-img {
+    width: 10rem;
+  }
+}
+
+/* lg:w-40 */
+@media (min-width: 1280px) {
+  .logo-img {
+    width: 11rem;
+  }
+}
+
+/* xl:w-44 */
+@media (min-width: 1536px) {
+  .logo-img {
+    width: 11.5625rem;
+  }
+}
+
+/* 2xl:w-46.25 */
+
+#siteLogo:hover .logo-img {
+  transform: scale(0.95);
+}
+
+/* --- Desktop Navigation --- */
+.desktop-nav {
+  display: none;
+  /* hidden on mobile */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem;
+  border-radius: 500px;
   background-color: #ffffff;
-  color: #291C69;
+  transition: background-color 0.3s ease, color 0.3s ease, all 0.3s ease;
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex;
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktop-nav {
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .desktop-nav {
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+}
+
+/* Nav Buttons Common / Primary / Secondary */
+.nav-btn-primary,
+.nav-btn-secondary {
+  position: relative;
+  overflow: hidden;
+  border-radius: 500px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 124%;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* When inside a dark section, apply this class */
+@media (min-width: 1024px) {
+
+  .nav-btn-primary,
+  .nav-btn-secondary {
+    font-size: 1rem;
+    padding: 0.625rem 1.25ln;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  .nav-btn-primary,
+  .nav-btn-secondary {
+    font-size: 18px;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+.nav-btn-primary {
+  background-color: #020914;
+  color: #ffffff;
+}
+
+.nav-btn-secondary {
+  color: #291C69;
+}
+
+.nav-btn-secondary:hover {
+  background-color: #020914;
+  color: #ffffff;
+}
+
+/* --- Dark Theme Trigger for Desktop Nav --- */
 #desktopNav.nav-dark-theme {
   background-color: #1861C5;
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Style the internal links when dark theme is active */
 #desktopNav.nav-dark-theme a {
   color: #ffffff;
 }
-#desktopNav.nav-dark-theme a.active-link {
+
+#desktopNav.nav-dark-theme a.active-link,
+#desktopNav.nav-dark-theme a:hover {
   background-color: #ffffff;
   color: #020914;
 }
 
-#siteLogo img {
-  transition: transform 0.4s ease-in-out;
+/* --- Desktop CTA Button (Hire me) --- */
+.desktop-cta {
+  display: none;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 4px 4px 4px 24px;
+  border-radius: 500px;
+  background-color: #FF5722;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 124%;
+  flex-shrink: 0;
+  margin-left: auto;
+  z-index: 10;
+  text-decoration: none;
+  transition: box-shadow 0.3s ease;
 }
 
-#siteLogo:hover img {
-  transform: scale(0.95);
+@media (min-width: 768px) {
+  .desktop-cta {
+    display: inline-flex;
+  }
 }
 
+@media (min-width: 1024px) {
+  .desktop-cta {
+    gap: 0.5rem;
+    font-size: 1rem;
+  }
+}
 
-/* buttons */
-/* Keep existing button designs untouched, add text-shift structure */
+@media (min-width: 1280px) {
+  .desktop-cta {
+    gap: 0.625rem;
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .desktop-cta {
+    font-size: 20px;
+  }
+}
+
+.desktop-cta:hover {
+  box-shadow: 0 0 25px rgba(255, 87, 34, 0.6);
+}
+
+.cta-icon {
+  user-select: none;
+  pointer-events: none;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* --- Mobile Menu Toggle Button --- */
+.menu-toggle {
+  display: block;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  outline: none;
+  padding: 0.375rem;
+  z-index: 70;
+  position: relative;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.menu-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .menu-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.close-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  position: absolute;
+  top: 0.375rem;
+  left: 0.375rem;
+  opacity: 0;
+  transform: scale(0.75);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .close-icon {
+    width: 2rem;
+    height: 2rem;
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+}
+
+/* --- Mobile Dropdown Menu Card --- */
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 1rem;
+  right: 1rem;
+  margin-top: 0.75rem;
+  background: rgba(2, 9, 20, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 60;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform-origin: top;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+.mobile-link {
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.mobile-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.375rem 0.375rem 0.375rem 1.25rem;
+  border-radius: 500px;
+  background-color: #FF5722;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.mobile-cta-icon-wrap {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 500px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+}
+
+.mobile-cta-img {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+}
+
+/* --- Text Shift Button Structure (Preserved) --- */
 .text-shift-btn {
   position: relative;
   overflow: hidden;
@@ -191,10 +535,8 @@ html.lenis body {
   position: absolute;
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100%;
-
   white-space: nowrap;
   pointer-events: none;
 }
@@ -202,7 +544,6 @@ html.lenis body {
 .text-shift-btn .char {
   display: inline-block;
 }
-
 
 /* Testimonial sections css */
 /* --- Custom Splide Pagination Styles --- */
