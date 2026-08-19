@@ -10,50 +10,42 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body class="k">
+<body>
 
   <!-- Main Header Shell -->
-  <header class="fixed top-0 left-0 right-0 bg-transparent mt-4 sm:mt-5 md:mt-5 lg:mt-6 xl:mt-6 2xl:mt-6 z-50">
+  <header id="siteHeader"
+    class="fixed top-0 left-0 right-0 bg-transparent mt-4 sm:mt-5 md:mt-5 lg:mt-6 xl:mt-6 2xl:mt-6 z-50 transition-all duration-300">
     <div class="container">
 
       <div class="flex items-center justify-between gap-4 relative">
 
         <!-- logo -->
-        <a href="#" id="siteLogo" class="flex items-center shrink-0 z-10">
+        <a href="#" id="siteLogo" class="flex items-center shrink-0 z-50 relative">
           <img src="assets/images/logo.png" alt="shah sultan" class="w-28 sm:w-32 md:w-36 lg:w-40 xl:w-44 2xl:w-46.25">
         </a>
 
-        <!-- Desktop Navigation  -->
+        <!-- Desktop Navigation (Untouched) -->
         <nav id="desktopNav"
           class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-1.5 lg:gap-2 xl:gap-3 2xl:gap-3 p-1.5 lg:p-2 xl:p-3 rounded-[500px] host-grotesk bg-white transition-all duration-300 z-10">
-
-          <!-- Home -->
           <a href="#"
             class="text-shift-btn px-4 py-2 md:px-4 md:py-2 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-6 2xl:py-3 rounded-[500px] bg-[#020914] text-white font-bold text-sm lg:text-base xl:text-[18px] 2xl:text-[18px] leading-[124%] duration-300 transition-colors">
             <div class="ct">Home</div>
           </a>
-
-          <!-- Services -->
           <a href="#"
             class="text-shift-btn px-4 py-2 md:px-4 md:py-2 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-6 2xl:py-3 rounded-[500px] text-[#291C69] font-bold text-sm lg:text-base xl:text-[18px] 2xl:text-[18px] leading-[124%] hover:bg-[#020914] hover:text-white duration-300 transition-colors">
             <div class="ct">Services</div>
           </a>
-
-          <!-- About -->
           <a href="#"
             class="text-shift-btn px-4 py-2 md:px-4 md:py-2 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-6 2xl:py-3 rounded-[500px] text-[#291C69] font-bold text-sm lg:text-base xl:text-[18px] 2xl:text-[18px] leading-[124%] hover:bg-[#020914] hover:text-white duration-300 transition-colors">
             <div class="ct">About</div>
           </a>
-
-          <!-- My Works -->
           <a href="#"
             class="text-shift-btn px-4 py-2 md:px-4 md:py-2 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-6 2xl:py-3 rounded-[500px] text-[#291C69] font-bold text-sm lg:text-base xl:text-[18px] 2xl:text-[18px] leading-[124%] hover:bg-[#020914] hover:text-white duration-300 transition-colors">
             <div class="ct">My Works</div>
           </a>
-
         </nav>
 
-        <!-- Desktop Hire Me -->
+        <!-- Desktop Hire Me (Untouched) -->
         <a href="#" id="desktopCta"
           class="hidden md:inline-flex items-center gap-1.5 lg:gap-2 xl:gap-2.5 p-[4px_4px_4px_24px] rounded-[500px] bg-[#FF5722] text-white font-bold text-sm lg:text-base xl:text-lg 2xl:text-[20px] leading-[124%] shrink-0 ml-auto z-10 transition-shadow duration-300 hover:shadow-[0_0_25px_rgba(255,87,34,0.6)]">
           <span>Hire me</span>
@@ -63,7 +55,8 @@
         </a>
 
         <!-- Mobile Menu Toggle -->
-        <button id="menuToggle" class="md:hidden text-white focus:outline-none p-1.5 sm:p-2 z-50 relative ml-auto">
+        <button id="menuToggle"
+          class="md:hidden text-white focus:outline-none p-1.5 sm:p-2 z-[70] relative ml-auto cursor-pointer">
           <svg id="hamburgerIcon" class="w-7 h-7 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
           </svg>
@@ -77,41 +70,39 @@
       </div>
     </div>
 
-    <!-- Mobile Menu Overlay -->
+    <!-- Mobile Dropdown Menu Card -->
     <div id="mobileMenu"
-      class="fixed inset-0 bg-[#020914]/95 backdrop-blur-md flex flex-col items-center justify-center gap-5 sm:gap-6 z-40 opacity-0 pointer-events-none md:hidden px-6">
+      class="absolute top-full left-4 right-4 mt-3 bg-[#020914]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-5 flex flex-col gap-4 z-[60] opacity-0 pointer-events-none md:hidden shadow-2xl origin-top">
 
       <!-- Mobile Links -->
-      <a href="#" class="mobile-link text-white text-xl sm:text-2xl font-bold">
+      <a href="#"
+        class="mobile-link text-white text-lg font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition-colors">
         Home
       </a>
 
-      <a href="#" class="mobile-link text-white text-xl sm:text-2xl font-bold">
+      <a href="#"
+        class="mobile-link text-white text-lg font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition-colors">
         Services
       </a>
 
-      <a href="#" class="mobile-link text-white text-xl sm:text-2xl font-bold">
+      <a href="#"
+        class="mobile-link text-white text-lg font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition-colors">
         About
       </a>
 
-      <a href="#" class="mobile-link text-white text-xl sm:text-2xl font-bold">
+      <a href="#"
+        class="mobile-link text-white text-lg font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition-colors">
         My Works
       </a>
 
-
       <!-- Mobile Hire Me -->
       <div
-        class="inline-flex items-center gap-2 sm:gap-[10px] p-[3px_3px_3px_18px] sm:p-[4px_4px_4px_24px] rounded-[500px] bg-[#FF5722] text-white font-bold text-base sm:text-[20px] leading-[124%] mt-3 sm:mt-4">
-
+        class="mobile-link inline-flex items-center justify-between p-1.5 pl-5 rounded-[500px] bg-[#FF5722] text-white font-bold text-base mt-2">
         <span>Hire me</span>
-
-        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center p-1">
-
+        <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center p-1">
           <img src="https://api.iconify.design/simple-icons:upwork.svg?color=%2314a800" alt="Upwork"
-            class="w-5 h-5 sm:w-6 sm:h-6 object-contain">
-
+            class="w-5 h-5 object-contain">
         </div>
-
       </div>
 
     </div>
@@ -120,8 +111,8 @@
 
   <!-- Banner section -->
   <section
-    class="relative bg-[#020914] bg-cover bg-center pt-8 pb-16 sm:pb-20 md:pb-24 lg:pb-28 rounded-b-[32px] sm:rounded-b-[48px] md:rounded-b-[56px] lg:rounded-b-[68px] xl:rounded-b-[80px] 2xl:rounded-b-[94px] overflow-hidden shadow-[0_25px_70px_rgba(8,21,42,0.4)]"
-    style="background-image: url('/assets/images/hero-banner.png');">
+    class="relative bg-[#020914] bg-cover bg-center pt-8 pb-16 sm:pb-20 md:pb-24 lg:pb-28 rounded-b-4xl sm:rounded-b-[48px] md:rounded-b-[56px] lg:rounded-b-[68px] xl:rounded-b-[80px] 2xl:rounded-b-[94px] overflow-hidden shadow-[0_25px_70px_rgba(8,21,42,0.4)]"
+    style="background-image: url('/assets/images/hero-banner.webp');">
     <div class="container relative z-40 px-4 sm:px-6 lg:px-8 mx-auto">
 
       <div class="hero-content-wrap pt-16 sm:pt-20 md:pt-28 lg:pt-36 xl:pt-42 2xl:pt-48">
@@ -173,13 +164,13 @@
 
               <!-- Primary -->
               <a href="#"
-                class="text-shift-btn w-full sm:w-auto px-6 sm:px-6 md:px-7 lg:px-5 xl:px-7 2xl:px-6 py-3.5 sm:py-3.5 md:py-4 lg:py-3.5 xl:py-4 rounded-full bg-[#FF6F42] text-white font-bold text-base sm:text-lg md:text-xl lg:text-base xl:text-xl leading-[120%] text-center shadow-lg transition-transform active:scale-95">
+                class="text-shift-btn w-full sm:w-auto px-6 sm:px-6 md:px-7 lg:px-5 xl:px-7 2xl:px-6 py-3.5 sm:py-3.5 md:py-4 lg:py-3.5 xl:py-4 rounded-full bg-[#FF6F42] text-white font-bold text-base sm:text-lg md:text-xl lg:text-base xl:text-xl leading-[120%] text-center transition-transform active:scale-95">
                 <div class="ct ">Get a free Full SEO + AI SEO audit</div>
               </a>
 
               <!-- Secondary -->
               <a href="#"
-                class="text-shift-btn w-full sm:w-auto px-6 sm:px-6 md:px-7 lg:px-6 xl:px-7 2xl:px-6 py-3.5 sm:py-3.5 md:py-4 lg:py-3.5 xl:py-4 rounded-full bg-white text-[#FF6F42] font-bold text-base sm:text-lg md:text-xl lg:text-base xl:text-xl leading-[120%] text-center shadow-lg transition-transform active:scale-95">
+                class="text-shift-btn w-full sm:w-auto px-6 sm:px-6 md:px-7 lg:px-6 xl:px-7 2xl:px-6 py-3.5 sm:py-3.5 md:py-4 lg:py-3.5 xl:py-4 rounded-full bg-white text-[#FF6F42] font-bold text-base sm:text-lg md:text-xl lg:text-base xl:text-xl leading-[120%] text-center  transition-transform active:scale-95">
                 <div class="ct">View my works</div>
               </a>
 
@@ -279,7 +270,7 @@
       <!-- Section Header -->
       <div class="mb-6 lg:mb-8 xl:mb-12">
         <h2
-          class="schibsted-grotesk text-[#020914] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[48px] xl:text-[56px] 2xl:text-[64px] font-normal leading-[100%] tracking-[-0.64px]">
+          class="schibsted-grotesk text-[#020914] text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] xl:text-[48px] 2xl:text-[64px] font-normal leading-[100%] tracking-[-0.64px]">
           Verified track record on Upwork
         </h2>
         <p
@@ -289,8 +280,8 @@
       </div>
 
       <!-- Main Card Container -->
-      <div
-        class="relative overflow-hidden bg-white border border-[#ADB4BD] rounded-3xl lg:rounded-[44px] p-6 sm:p-10 lg:p-12 backdrop-blur-[10px] flex flex-col gap-5 lg:gap-8 2xl:gap-12">
+      <div id="stats-section"
+        class="relative overflow-hidden bg-white border border-[#ADB4BD] rounded-3xl lg:rounded-[44px] p-4 sm:p-8 lg:p-12 backdrop-blur-[10px] flex flex-col gap-5 sm:gap-6 lg:gap-8 2xl:gap-12">
 
         <!-- Background Blur Element -->
         <div class="absolute pointer-events-none z-0"
@@ -299,32 +290,27 @@
 
         <!-- Top Profile Row: Avatar, Title & Button -->
         <div
-          class="relative z-10 flex flex-col sm:flex-row items-center sm:items-center gap-6 sm:gap-8 text-center sm:text-left">
-          <!-- Profile Image (220px by 220px) -->
-          <div class="w-40 h-40 sm:w-55 sm:h-55 rounded-full overflow-hidden shrink-0 bg-orange-100">
-            <img src="assets/images/profile-circle-person.png" alt="Shah Sultan" class="w-full h-full object-cover">
+          class="relative z-10 flex flex-col sm:flex-row items-center sm:items-center gap-5 sm:gap-8 text-center sm:text-left">
+          <!-- Profile Image -->
+          <div class="w-32 h-32 sm:w-44 sm:h-44 lg:w-55 lg:h-55 rounded-full overflow-hidden shrink-0 bg-orange-100">
+            <img src="assets/images/profile-circle-person.webp" alt="Shah Sultan" class="w-full h-full object-cover">
           </div>
 
           <!-- Details & CTA -->
           <div class="flex-1 flex flex-col justify-center">
             <h3
-              class="text-[#020914] schibsted-grotesk text-[28px] sm:text-[30px] md:text-[32px] lg:text-[42px] xl:text-[45px] 2xl:text-[48px] font-bold leading-[100%] tracking-[-0.48px]">
+              class="text-[#020914] schibsted-grotesk text-2xl sm:text-[28px] md:text-[32px] lg:text-[42px] xl:text-[45px] 2xl:text-[48px] font-bold leading-[100%] tracking-[-0.48px]">
               Top Rated Plus Freelancer
             </h3>
             <p
-              class="text-[#8E9298]/80 text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] 2xl:text-[20px] mt-2 md:mt-4">
+              class="text-[#8E9298]/80 text-xs sm:text-sm md:text-base lg:text-[17px] xl:text-[18px] 2xl:text-[20px] mt-1.5 sm:mt-2 md:mt-4">
               10 years of consistent 5-star work on the world's largest freelance platform
             </p>
 
             <!-- Upwork Button -->
-            <div class="mt-6 flex justify-center sm:justify-start">
-              <a href="#" class="text-shift-btn group inline-flex items-center gap-1
-    sm:gap-1.5 lg:gap-2 xl:gap-2.5
-    p-[3px_3px_3px_16px]
-    sm:p-[4px_4px_4px_24px]
-    rounded-[500px] bg-[#FF6F42] text-white font-bold
-    text-xs sm:text-sm lg:text-base xl:text-lg 2xl:text-[20px]
-    leading-[124%] shrink-0">
+            <div class="mt-4 sm:mt-6 flex justify-center sm:justify-start">
+              <a href="#"
+                class="text-shift-btn group inline-flex items-center gap-1 sm:gap-1.5 lg:gap-2 xl:gap-2.5 p-[3px_3px_3px_16px] sm:p-[4px_4px_4px_24px] rounded-[500px] bg-[#FF6F42] text-white font-bold text-xs sm:text-sm lg:text-base xl:text-lg 2xl:text-[20px] leading-[124%] shrink-0">
 
                 <!-- Strict masking wrapper for the text -->
                 <div class="relative overflow-hidden block whitespace-nowrap pr-1">
@@ -332,15 +318,8 @@
                 </div>
 
                 <!-- Upwork Icon -->
-                <div id="ctaIcon" class="relative z-10 select-none pointer-events-none
-      w-9 h-9
-      sm:w-10 sm:h-10
-      lg:w-12 lg:h-12
-      flex items-center justify-center shrink-0
-      bg-[#FF6F42] rounded-full
-      transition-transform duration-600
-      group-hover:rotate-20">
-
+                <div id="ctaIcon"
+                  class="relative z-10 select-none pointer-events-none w-8 h-8 sm:w-9 sm:h-9 lg:w-12 lg:h-12 flex items-center justify-center shrink-0 bg-[#FF6F42] rounded-full transition-transform duration-600 group-hover:rotate-20">
                   <img src="assets/images/upwork-circle-green.svg" alt="Upwork" class="w-full h-full object-contain">
                 </div>
 
@@ -355,48 +334,49 @@
 
           <!-- Inner Card 1 -->
           <div
-            class="bg-[#EFF3F8] rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8 flex flex-col gap-1.75 items-center sm:items-start justify-center text-center sm:text-left">
+            class="bg-[#EFF3F8] rounded-2xl md:rounded-3xl p-3.5 sm:p-4 md:p-6 lg:p-8 flex flex-col gap-1 sm:gap-1.75 items-center sm:items-start justify-center text-center sm:text-left">
             <span
-              class="text-[#020914] text-[24px] sm:text-[28px] md:text-[30px] lg:text-[32px] xl:text-[38px] 2xl:text-[40px] font-bold leading-[124%]">
-              226
+              class="text-[#020914] text-xl sm:text-[28px] md:text-[30px] lg:text-[32px] xl:text-[38px] 2xl:text-[40px] font-bold leading-[124%]">
+              <span class="stat-counter" data-target="226">0</span>
             </span>
-            <span class="text-sm sm:text-base font-medium text-[#8E9298] leading-[124%]">
+            <span class="text-xs sm:text-sm md:text-base font-medium text-[#8E9298] leading-[124%]">
               Projects completed
             </span>
           </div>
 
           <!-- Inner Card 2 -->
           <div
-            class="bg-[#EFF3F8] rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8 flex flex-col gap-1.75 items-center sm:items-start justify-center text-center sm:text-left">
+            class="bg-[#EFF3F8] rounded-2xl md:rounded-3xl p-3.5 sm:p-4 md:p-6 lg:p-8 flex flex-col gap-1 sm:gap-1.75 items-center sm:items-start justify-center text-center sm:text-left">
             <span
-              class="text-[#020914] text-[24px] sm:text-[28px] md:text-[30px] lg:text-[32px] xl:text-[38px] 2xl:text-[40px] font-bold leading-[124%]">
-              5,708
+              class="text-[#020914] text-xl sm:text-[28px] md:text-[30px] lg:text-[32px] xl:text-[38px] 2xl:text-[40px] font-bold leading-[124%]">
+              <span class="stat-counter" data-target="5708">0</span>
             </span>
-            <span class="text-sm sm:text-base font-medium text-[#8E9298] leading-[124%]">
+            <span class="text-xs sm:text-sm md:text-base font-medium text-[#8E9298] leading-[124%]">
               Hours logged
             </span>
           </div>
 
           <!-- Inner Card 3 -->
           <div
-            class="bg-[#EFF3F8] rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8 flex flex-col gap-1.75 items-center sm:items-start justify-center text-center sm:text-left">
+            class="bg-[#EFF3F8] rounded-2xl md:rounded-3xl p-3.5 sm:p-4 md:p-6 lg:p-8 flex flex-col gap-1 sm:gap-1.75 items-center sm:items-start justify-center text-center sm:text-left">
             <span
-              class="text-[#020914] text-[24px] sm:text-[28px] md:text-[30px] lg:text-[32px] xl:text-[38px] 2xl:text-[40px] font-bold leading-[124%]">
-              $80k+
+              class="text-[#020914] text-xl sm:text-[28px] md:text-[30px] lg:text-[32px] xl:text-[38px] 2xl:text-[40px] font-bold leading-[124%]">
+              <span class="stat-preffix">$</span><span class="stat-counter" data-target="80">0</span><span
+                class="stat-suffix">k+</span>
             </span>
-            <span class="text-sm sm:text-base font-medium text-[#8E9298] leading-[124%]">
+            <span class="text-xs sm:text-sm md:text-base font-medium text-[#8E9298] leading-[124%]">
               Total earnings
             </span>
           </div>
 
           <!-- Inner Card 4 -->
           <div
-            class="bg-[#EFF3F8] rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8 flex flex-col gap-1.75 items-center sm:items-start justify-center text-center sm:text-left">
+            class="bg-[#EFF3F8] rounded-2xl md:rounded-3xl p-3.5 sm:p-4 md:p-6 lg:p-8 flex flex-col gap-1 sm:gap-1.75 items-center sm:items-start justify-center text-center sm:text-left">
             <span
-              class="text-[#020914] text-[24px] sm:text-[28px] md:text-[30px] lg:text-[32px] xl:text-[38px] 2xl:text-[40px] font-bold leading-[124%]">
-              100%
+              class="text-[#020914] text-xl sm:text-[28px] md:text-[30px] lg:text-[32px] xl:text-[38px] 2xl:text-[40px] font-bold leading-[124%]">
+              <span class="stat-counter" data-target="100">0</span><span class="stat-suffix">%</span>
             </span>
-            <span class="text-sm sm:text-base font-medium text-[#8E9298] leading-[124%]">
+            <span class="text-xs sm:text-sm md:text-base font-medium text-[#8E9298] leading-[124%]">
               Job Success Score
             </span>
           </div>
@@ -410,12 +390,12 @@
   <!-- Upwork Profile Card -->
 
   <!-- Brand logo marquee section -->
-  <section
-    class="relative py-20 pb-16 sm:pb-24 md:py-32 lg:py-50 bg-transparent overflow-hidden -mt-[80px] md:-mt-[100px]">
+  <section class="relative py-20 pb-16 sm:pb-24 md:py-32 lg:py-50 bg-transparent overflow-hidden -mt-20 md:-mt-25 z-20"
+    data-theme="dark">
 
     <!-- Absolute Curved Shape Image filling the full section bounds -->
     <div class="absolute inset-0 w-full h-full pointer-events-none z-0">
-      <img src="assets/images/brand-slider-background.png" alt="" class="w-full h-full object-cover md:object-fill">
+      <img src="assets/images/brand-slider-background.webp" alt="" class="w-full h-full object-cover md:object-fill">
     </div>
 
     <div class="container relative z-10 flex flex-col items-center gap-6 sm:gap-8 py-4 sm:py-8">
@@ -496,329 +476,1291 @@
   <!-- Brand logo marquee section -->
 
 
+  <!-- Service section -->
+  <section
+    class="relative bg-[#020914] pt-40 md:pt-50 xl:pt-75 pb-12 md:pb-16 xl:pb-24 2xl:pb-30  -mt-50 lg:-mt-62.5 z-10 overflow-hidden ">
 
-<section class="relative bg-[#020914] py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-  
-  <div class="container mx-auto max-w-7xl flex flex-col items-center">
-    
-    <!-- Section Header -->
-    <div class="text-center max-w-3xl mb-16">
-      <h2 class="text-white text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold tracking-tight leading-tight mb-4 font-jakarta">
-        Full SEO & AI SEO — <span class="font-normal text-slate-300">5 specialized services to drive organic traffic</span>
-      </h2>
-      <p class="text-slate-400 text-sm sm:text-base leading-relaxed font-urbanist">
-        I help businesses drive organic traffic across every modern search channel — from Google’s traditional results to AI answer engines and generative search.
-      </p>
+    <div class="container flex flex-col items-center">
+
+      <!-- Section Header -->
+      <div class="text-center max-w-184 2xl:max-w-none 2xl:w-full mx-auto mb-6 lg:mb-8 xl:mb-12 2xl:mb-15">
+        <h2
+          class="schibsted-grotesk text-white text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] xl:text-[48px] 2xl:text-[64px] font-normal leading-[100%] tracking-[-0.64px]">
+          Full SEO & AI SEO — 5 specialized services to drive organic traffic
+        </h2>
+        <p
+          class="mt-2 md:mt-4  text-[#8E9298]/80 text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] 2xl:text-[20px]">
+          I help businesses drive organic traffic across every modern search channel — from Google's traditional results
+          to AI answer engines and generative search.
+        </p>
+      </div>
+
+      <!-- Services Grid  -->
+      <div
+        class="grid grid-cols-1 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-6 2xl:gap-8 w-full mb-6 lg:mb-8 xl:mb-12 2xl:mb-15">
+
+        <!-- 1. Full SEO  -->
+        <div
+          class="lg:col-span-2 group/card relative rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] overflow-hidden transition-all duration-300">
+          <!-- Hover Border Wrapper -->
+          <div
+            class="absolute inset-0 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-0.5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none z-20"
+            style="background: linear-gradient(285deg, #FF6F42 3.63%, #2267C2 59.85%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude;">
+          </div>
+
+          <!-- Hover Background Blur Glow -->
+          <div
+            class="absolute opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none"
+            style="width: 704px; height: 723px; position: absolute; right: -396px; bottom: -605px; border-radius: 723px; background: #2267C2; filter: blur(137px); z-index: 1;">
+          </div>
+
+          <div
+            class="service-card group relative bg-white/5 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-1.25 grid grid-cols-1 lg:grid-cols-12 items-stretch backdrop-blur-[2px]  h-full xl:min-h-132.5 transition-all duration-300 z-10">
+
+            <!-- Image Container  -->
+            <div
+              class="lg:col-span-5 relative w-full h-54 sm:h-70 lg:h-auto rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] overflow-hidden bg-black">
+              <img src="assets/images/service-card-01.webp" alt="Full SEO"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            </div>
+
+            <!-- Content Container -->
+            <div class="lg:col-span-7 flex flex-col justify-between p-5 sm:p-8 ">
+              <div>
+                <!-- Most Requested Badge -->
+                <div class="mb-3 md:mb-4 lg:mb-6">
+                  <span
+                    class="inline-flex items-center px-3 py-1.5 lg:px-6 lg:py-2 rounded-full text-sm sm:text-base md:text-lg lg:text-xl font-bold leading-[120%] text-white bg-[linear-gradient(90deg,#FF6F42_0%,#2267C2_100%)]">
+                    Most requested
+                  </span>
+                </div>
+
+                <h3
+                  class="text-white text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] xl:text-[34px] 2xl:text-[40px] font-semibold leading-[100%] tracking-[-0.4px] group-hover:text-[#FF6F42] transition-all duration-300">
+                  Full SEO
+                </h3>
+                <p class="text-white/60 text-sm sm:text-base md:text-[18px] font-medium leading-none mt-3 md:mt-4">
+                  End-to-end traditional SEO: technical, on-page, content, and links. The proven foundation every
+                  AI-search strategy still depends on.
+                </p>
+              </div>
+
+              <div class="pt-6 flex justify-end">
+                <a href="work-details.html"
+                  class="text-shift-btn group/btn inline-flex items-center text-sm sm:text-base md:text-lg font-bold leading-[120%] text-[#FF6F42] gap-2.5 shrink-0  overflow-hidden ">
+                  <span class="ct">Learn More</span>
+                  <span class="relative inline-block w-5 h-5 md:w-6 md:h-6 overflow-hidden">
+                    <img src="assets/images/top-right-arrow.svg" alt="arrow"
+                      class="absolute inset-0 w-full h-full transition-transform duration-500 group-hover/btn:translate-x-full group-hover/btn:-translate-y-full">
+                    <img src="assets/images/top-right-arrow.svg" alt="arrow"
+                      class="absolute inset-0 w-full h-full transition-transform duration-500 -translate-x-full translate-y-full group-hover/btn:translate-x-0 group-hover/btn:translate-y-0">
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. AI SEO -->
+        <div
+          class="group/card relative rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] overflow-hidden transition-all duration-300">
+          <div
+            class="absolute inset-0 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-0.5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none z-20"
+            style="background: linear-gradient(285deg, #FF6F42 3.63%, #2267C2 59.85%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude;">
+          </div>
+          <div
+            class="absolute opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none"
+            style="width: 704px; height: 723px; position: absolute; right: -396px; bottom: -605px; border-radius: 723px; background: #2267C2; filter: blur(137px); z-index: 1;">
+          </div>
+
+          <div
+            class="service-card group relative bg-white/5 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-1.25 flex flex-col justify-between transition-all duration-300 h-full xl:min-h-132.5 z-10">
+
+            <div class="flex flex-col grow">
+              <div
+                class="relative w-full h-48 sm:h-52 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] overflow-hidden bg-black mb-6">
+                <img src="assets/images/service-card-02.webp" alt="AI SEO"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              </div>
+              <div class="px-3 sm:px-4">
+                <h3
+                  class="text-white text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px]  font-semibold leading-[130%] tracking-[-0.28px] group-hover:text-[#FF6F42] transition-all duration-300">
+                  AI SEO
+                </h3>
+                <p class="text-white/60 text-sm sm:text-base md:text-[18px] font-medium leading-none mt-3 md:mt-4">
+                  Optimize your brand to be cited, recommended, and surfaced by ChatGPT, Claude, Gemini, and Perplexity.
+                  The new front page of the internet.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-3 sm:p-4 pt-6 flex justify-end">
+              <a href="work-details.html"
+                class="text-shift-btn group/btn inline-flex items-center text-sm sm:text-base md:text-lg font-bold leading-[120%] text-[#FF6F42] gap-2.5 shrink-0  overflow-hidden ">
+                <span class="ct">Learn More</span>
+                <span class="relative inline-block w-5 h-5 md:w-6 md:h-6 overflow-hidden">
+                  <img src="assets/images/top-right-arrow.svg" alt="arrow"
+                    class="absolute inset-0 w-full h-full transition-transform duration-500 group-hover/btn:translate-x-full group-hover/btn:-translate-y-full">
+                  <img src="assets/images/top-right-arrow.svg" alt="arrow"
+                    class="absolute inset-0 w-full h-full transition-transform duration-500 -translate-x-full translate-y-full group-hover/btn:translate-x-0 group-hover/btn:translate-y-0">
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. AEO -->
+        <div
+          class="group/card relative rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] overflow-hidden transition-all duration-300">
+          <div
+            class="absolute inset-0 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-0.5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none z-20"
+            style="background: linear-gradient(285deg, #FF6F42 3.63%, #2267C2 59.85%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude;">
+          </div>
+          <div
+            class="absolute opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none"
+            style="width: 704px; height: 723px; position: absolute; right: -396px; bottom: -605px; border-radius: 723px; background: #2267C2; filter: blur(137px); z-index: 1;">
+          </div>
+
+          <div
+            class="service-card group relative bg-white/5 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-1.25 flex flex-col justify-between transition-all duration-300 h-full xl:min-h-132.5 z-10">
+
+            <div class="flex flex-col grow">
+              <div
+                class="relative w-full h-48 sm:h-52 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] overflow-hidden bg-black mb-6">
+                <img src="assets/images/service-card-03.webp" alt=" AEO — Answer Engine Optimization"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              </div>
+              <div class="px-3 sm:px-4">
+                <h3
+                  class="text-white text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px]  font-semibold leading-[130%] tracking-[-0.28px] group-hover:text-[#FF6F42] transition-all duration-300">
+                  AEO — Answer Engine Optimization
+                </h3>
+                <p class="text-white/60 text-sm sm:text-base md:text-[18px] font-medium leading-none mt-3 md:mt-4">
+                  Win featured snippets, People Also Ask, and direct answers in voice search. Be the answer, not just a
+                  result.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-3 sm:p-4 pt-6 flex justify-end">
+              <a href="work-details.html"
+                class="text-shift-btn group/btn inline-flex items-center text-sm sm:text-base md:text-lg font-bold leading-[120%] text-[#FF6F42] gap-2.5 shrink-0  overflow-hidden ">
+                <span class="ct">Learn More</span>
+                <span class="relative inline-block w-5 h-5 md:w-6 md:h-6 overflow-hidden">
+                  <img src="assets/images/top-right-arrow.svg" alt="arrow"
+                    class="absolute inset-0 w-full h-full transition-transform duration-500 group-hover/btn:translate-x-full group-hover/btn:-translate-y-full">
+                  <img src="assets/images/top-right-arrow.svg" alt="arrow"
+                    class="absolute inset-0 w-full h-full transition-transform duration-500 -translate-x-full translate-y-full group-hover/btn:translate-x-0 group-hover/btn:translate-y-0">
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. GEO -->
+        <div
+          class="group/card relative rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] overflow-hidden transition-all duration-300">
+          <div
+            class="absolute inset-0 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-0.5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none z-20"
+            style="background: linear-gradient(285deg, #FF6F42 3.63%, #2267C2 59.85%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude;">
+          </div>
+          <div
+            class="absolute opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none"
+            style="width: 704px; height: 723px; position: absolute; right: -396px; bottom: -605px; border-radius: 723px; background: #2267C2; filter: blur(137px); z-index: 1;">
+          </div>
+
+          <div
+            class="service-card group relative bg-white/5 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-1.25 flex flex-col justify-between transition-all duration-300 h-full xl:min-h-132.5 z-10">
+
+            <div class="flex flex-col grow">
+              <div
+                class="relative w-full h-48 sm:h-52 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] overflow-hidden bg-black mb-6">
+                <img src="assets/images/service-card-04.webp" alt="GEO — Generative Engine Optimization"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              </div>
+              <div class="px-3 sm:px-4">
+                <h3
+                  class="text-white text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px]  font-semibold leading-[130%] tracking-[-0.28px] group-hover:text-[#FF6F42] transition-all duration-300">
+                  GEO — Generative Engine Optimization
+                </h3>
+                <p class="text-white/60 text-sm sm:text-base md:text-[18px] font-medium leading-none mt-3 md:mt-4">
+                  Get your content cited as a source in AI-generated responses. Structured content, schema, and
+                  authority signals built for LLMs.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-3 sm:p-4 pt-6 flex justify-end">
+              <a href="work-details.html"
+                class="text-shift-btn group/btn inline-flex items-center text-sm sm:text-base md:text-lg font-bold leading-[120%] text-[#FF6F42] gap-2.5 shrink-0  overflow-hidden ">
+                <span class="ct">Learn More</span>
+                <span class="relative inline-block w-5 h-5 md:w-6 md:h-6 overflow-hidden">
+                  <img src="assets/images/top-right-arrow.svg" alt="arrow"
+                    class="absolute inset-0 w-full h-full transition-transform duration-500 group-hover/btn:translate-x-full group-hover/btn:-translate-y-full">
+                  <img src="assets/images/top-right-arrow.svg" alt="arrow"
+                    class="absolute inset-0 w-full h-full transition-transform duration-500 -translate-x-full translate-y-full group-hover/btn:translate-x-0 group-hover/btn:translate-y-0">
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. SGE SEO -->
+        <div
+          class="group/card relative rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] overflow-hidden transition-all duration-300">
+          <div
+            class="absolute inset-0 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-0.5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none z-20"
+            style="background: linear-gradient(285deg, #FF6F42 3.63%, #2267C2 59.85%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude;">
+          </div>
+          <div
+            class="absolute opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none"
+            style="width: 704px; height: 723px; position: absolute; right: -396px; bottom: -605px; border-radius: 723px; background: #2267C2; filter: blur(137px); z-index: 1;">
+          </div>
+
+          <div
+            class="service-card group relative bg-white/5 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-1.25 flex flex-col justify-between transition-all duration-300 h-full xl:min-h-132.5 z-10">
+
+            <div class="flex flex-col grow">
+              <div
+                class="relative w-full h-48 sm:h-52 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] overflow-hidden bg-black mb-6">
+                <img src="assets/images/service-card-05.webp" alt="SGE SEO"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              </div>
+              <div class="px-3 sm:px-4">
+                <h3
+                  class="text-white text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px]  font-semibold leading-[130%] tracking-[-0.28px] group-hover:text-[#FF6F42] transition-all duration-300">
+                  SGE SEO
+                </h3>
+                <p class="text-white/60 text-sm sm:text-base md:text-[18px] font-medium leading-none mt-3 md:mt-4">
+                  Rank inside Google's Search Generative Experience and AI Overviews — where 60%+ of high-intent queries
+                  now end without a click.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-3 sm:p-4 pt-6 flex justify-end">
+              <a href="work-details.html"
+                class="text-shift-btn group/btn inline-flex items-center text-sm sm:text-base md:text-lg font-bold leading-[120%] text-[#FF6F42] gap-2.5 shrink-0  overflow-hidden ">
+                <span class="ct">Learn More</span>
+                <span class="relative inline-block w-5 h-5 md:w-6 md:h-6 overflow-hidden">
+                  <img src="assets/images/top-right-arrow.svg" alt="arrow"
+                    class="absolute inset-0 w-full h-full transition-transform duration-500 group-hover/btn:translate-x-full group-hover/btn:-translate-y-full">
+                  <img src="assets/images/top-right-arrow.svg" alt="arrow"
+                    class="absolute inset-0 w-full h-full transition-transform duration-500 -translate-x-full translate-y-full group-hover/btn:translate-x-0 group-hover/btn:translate-y-0">
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- Bottom CTA Banner -->
+      <div
+        class="w-full bg-[#FF6F42] rounded-2xl md:rounded-3xl lg:rounded-[36px] p-6 sm:p-8  flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+        <div class="text-center md:text-left">
+          <h4
+            class="text-white schibsted-grotesk text-[24px] md:text-[28px] lg:text-[32px] xl:text-[40px] leading-[100%] tracking-[-0.4px]">
+            Need all five?</h4>
+          <p
+            class="text-white text-sm sm:text-base md:text-lg font-medium leading-tight md:leading-normal mt-3 md:mt-4">
+            Most clients combine 2–3 services for full search coverage. Book a free consultation and I'll recommend the
+            right mix for your business.
+          </p>
+        </div>
+        <div>
+          <a href="#"
+            class="text-shift-btn inline-flex items-center justify-center bg-white text-[#020914] font-semibold leading-[120%] px-3 md:px-6 py-2 md:py-4 rounded-full transition-all text-sm sm:text-base md:text-lg xl:text-xl whitespace-nowrap">
+            <span class="ct">Get a free strategy call</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- Service section -->
+
+  <!-- Why Business Hire me section  -->
+  <section class="relative bg-white section-padding overflow-hidden" data-theme="dark">
+
+    <!-- Bottom Left Corner Shape (Responsive) -->
+    <div class="absolute bottom-0 left-0 z-0 pointer-events-none w-48 sm:w-64 md:w-80 lg:w-112.5 xl:w-137.5 2xl:w-160">
+      <img src="assets/images/wbhme-grid-shape.png" alt="Decorative bottom left shape"
+        class="w-full h-auto object-contain">
     </div>
 
-    <!-- Services Grid (3 Columns Desktop: Card 1 spans 2 cols, Cards 2-5 take 1 col each) -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full mb-12">
-      
-      <!-- 1. Full SEO (Featured Card - Spans 2 Columns) -->
-      <div class="lg:col-span-2 group/card relative rounded-[32px] p-[1px] transition-all duration-300">
-        <!-- Hover Border Wrapper -->
-        <div class="absolute inset-0 rounded-[32px] opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" style="background: linear-gradient(285deg, #FF6F42 3.63%, #2267C2 59.85%);"></div>
-        
-        <a href="work-details.html" class="project-card group relative bg-[#0b1320] border border-slate-800/80 group-hover/card:border-transparent rounded-[31px] p-6 sm:p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 items-center gap-6 lg:gap-8 backdrop-blur-[2px] cursor-none block h-full transition-all duration-300">
-          
-          <!-- Local Following Cursor Badge -->
-          <div class="custom-cursor pointer-events-none absolute left-0 top-0 z-50 hidden lg:flex items-center justify-center gap-2.5 rounded-full bg-[#CCFF01] px-5 py-2.5 font-urbanist text-base md:text-xl font-medium leading-[120%] text-black shadow-lg opacity-0 scale-75 -rotate-6 transition-opacity duration-200">
-            <span>View</span>
-            <img src="assets/images/secondary-arrow-white.svg" alt="arrow" class="h-4 w-4 object-contain sm:h-6 sm:w-6 brightness-0" />
+    <div class="container relative z-10">
+      <!-- Main Grid Container: Left 4 cols, Right 8 cols -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- Left Column (Span 4): Sticky Section Title -->
+        <div class="lg:col-span-4 lg:sticky lg:top-8 text-center lg:text-start">
+          <h2
+            class="schibsted-grotesk text-[#020914] text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] xl:text-[48px] 2xl:text-[64px] font-normal leading-[100%] tracking-[-0.64px]">
+            Why businesses hire me
+          </h2>
+        </div>
+
+        <!-- Right Column (Span 8): Grid Layout for Cards and Central Image -->
+        <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 lg:gap-8">
+
+          <!-- Card 1 -->
+          <div
+            class="group bg-[#EFF3F8] rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-4 md:p-6 lg:p-8 flex flex-col">
+            <!-- Icon Background -->
+            <div
+              class="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-30 xl:h-30 2xl:w-33.25 2xl:h-33.25 rounded-full flex items-center justify-center mb-8 md:mb-10 lg:mb-12 xl:mb-14 2xl:mb-16 border-2 border-white"
+              style="background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);">
+              <img src="assets/images/wbhm-icon-1.svg" alt="SEO Icon"
+                class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 object-contain">
+            </div>
+            <!-- Content -->
+            <h3
+              class="text-[#020914] group-hover:text-[#FF6F42] text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] 2xl:text-[32px] font-semibold leading-[130%] tracking-[-0.32px] mb-4 transition-all duration-300">
+              10 years specialized in SEO
+            </h3>
+            <p class="text-[#8E9298] text-sm sm:text-base md:text-lg font-medium leading-none opacity-80">
+              A decade focused exclusively on SEO. I've seen every major Google algorithm update since 2014 and adapted
+              strategies that still work today.
+            </p>
           </div>
 
-          <!-- Image Container -->
-          <div class="lg:col-span-6 relative w-full h-56 sm:h-64 lg:h-[260px] rounded-2xl overflow-hidden bg-transparent flex items-center justify-center pt-8 lg:pt-0">
-            <img src="assets/images/project-1.png" alt="Full SEO" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105" />
+          <!-- Card 2 -->
+          <div
+            class="group bg-[#EFF3F8] rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-4 md:p-6 lg:p-8 flex flex-col">
+            <!-- Icon Background -->
+            <div
+              class="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-30 xl:h-30 2xl:w-33.25 2xl:h-33.25 rounded-full flex items-center justify-center mb-8 md:mb-10 lg:mb-12 xl:mb-14 2xl:mb-16 border-2 border-white"
+              style="background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);">
+              <img src="assets/images/wbhm-icon-2.svg" alt="SEO Icon"
+                class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 object-contain">
+            </div>
+            <!-- Content -->
+            <h3
+              class="text-[#020914] group-hover:text-[#FF6F42] text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] 2xl:text-[32px] font-semibold leading-[130%] tracking-[-0.32px] mb-4 transition-all duration-300">
+              5,708 hours of execution
+            </h3>
+            <p class="text-[#8E9298] text-sm sm:text-base md:text-lg font-medium leading-none opacity-80">
+              Nearly 6,000 hours of actual hands-on SEO work — not just strategy decks. I do the work that delivers
+              results.
+            </p>
           </div>
 
-          <!-- Content Container -->
-          <div class="lg:col-span-6 flex flex-col justify-between h-full pt-4 lg:pt-0">
-            <div>
-              <!-- Most Requested Badge on Text Content Side -->
-              <div class="mb-3">
-                <span class="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md font-urbanist">
-                  Most requested
+          <!-- Central Big Rounded Image (Spans full width of the 8-col grid) -->
+          <div
+            class="sm:col-span-2 w-full h-[260px] md:h-[340px] lg:h-[390px] xl:h-[430px] 2xl:h-[473px] rounded-[80px] md:rounded-[170px] lg:rounded-[195px] xl:rounded-[215px] 2xl:rounded-[230px] overflow-hidden">
+            <img src="assets/images/wbhm-big-shape.webp" alt="SEO Robot Hand" class="w-full h-full object-cover">
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="group bg-[#EFF3F8] rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-4 md:p-6 lg:p-8 flex flex-col">
+            <!-- Icon Background -->
+            <div
+              class="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-30 xl:h-30 2xl:w-33.25 2xl:h-33.25 rounded-full flex items-center justify-center mb-8 md:mb-10 lg:mb-12 xl:mb-14 2xl:mb-16 border-2 border-white"
+              style="background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);">
+              <img src="assets/images/wbhm-icon-3.svg" alt="SEO Icon"
+                class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 object-contain">
+            </div>
+            <!-- Content -->
+            <h3
+              class="text-[#020914] group-hover:text-[#FF6F42] text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] 2xl:text-[32px] font-semibold leading-[130%] tracking-[-0.32px] mb-4 transition-all duration-300">
+              226 successful projects
+            </h3>
+            <p class="text-[#8E9298] text-sm sm:text-base md:text-lg font-medium leading-none opacity-80">
+              From small local businesses to enterprise SaaS. Every project verified through Upwork's escrow and review
+              system.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="group bg-[#EFF3F8] rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-4 md:p-6 lg:p-8 flex flex-col">
+            <!-- Icon Background -->
+            <div
+              class="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-30 xl:h-30 2xl:w-33.25 2xl:h-33.25 rounded-full flex items-center justify-center mb-8 md:mb-10 lg:mb-12 xl:mb-14 2xl:mb-16 border-2 border-white"
+              style="background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);">
+              <img src="assets/images/wbhm-icon-4.svg" alt="SEO Icon"
+                class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 object-contain">
+            </div>
+            <!-- Content -->
+            <h3
+              class="text-[#020914] group-hover:text-[#FF6F42] text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] 2xl:text-[32px] font-semibold leading-[130%] tracking-[-0.32px] mb-4 transition-all duration-300">
+              Clear communication
+            </h3>
+            <p class="text-[#8E9298] text-sm sm:text-base md:text-lg font-medium leading-none opacity-80">
+              Weekly updates, transparent reporting, no jargon. You'll always know what I'm doing and why.
+            </p>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="group bg-[#EFF3F8] rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-4 md:p-6 lg:p-8 flex flex-col">
+            <!-- Icon Background -->
+            <div
+              class="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-30 xl:h-30 2xl:w-33.25 2xl:h-33.25 rounded-full flex items-center justify-center mb-8 md:mb-10 lg:mb-12 xl:mb-14 2xl:mb-16 border-2 border-white"
+              style="background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);">
+              <img src="assets/images/wbhm-icon-5.svg" alt="SEO Icon"
+                class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 object-contain">
+            </div>
+            <!-- Content -->
+            <h3
+              class="text-[#020914] group-hover:text-[#FF6F42] text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] 2xl:text-[32px] font-semibold leading-[130%] tracking-[-0.32px] mb-4 transition-all duration-300">
+              Global client base
+            </h3>
+            <p class="text-[#8E9298] text-sm sm:text-base md:text-lg font-medium leading-none opacity-80">
+              Worked with clients in the US, UK, Australia, Canada, and Europe. Familiar with diverse markets.
+            </p>
+          </div>
+
+          <!-- Card 6 -->
+          <div
+            class="group bg-[#EFF3F8] rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-4 md:p-6 lg:p-8 flex flex-col">
+            <!-- Icon Background -->
+            <div
+              class="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-30 xl:h-30 2xl:w-33.25 2xl:h-33.25 rounded-full flex items-center justify-center mb-8 md:mb-10 lg:mb-12 xl:mb-14 2xl:mb-16 border-2 border-white"
+              style="background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);">
+              <img src="assets/images/wbhm-icon-6.svg" alt="SEO Icon"
+                class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 object-contain">
+            </div>
+            <!-- Content -->
+            <h3
+              class="text-[#020914] group-hover:text-[#FF6F42] text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] 2xl:text-[32px] font-semibold leading-[130%] tracking-[-0.32px] mb-4 transition-all duration-300">
+              Built for retainers
+            </h3>
+            <p class="text-[#8E9298] text-sm sm:text-base md:text-lg font-medium leading-none opacity-80">
+              Most clients work with me for 12+ months. I optimize for sustained growth, not one-off projects.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Why Business Hire me section  -->
+
+  <!-- Proccess section -->
+  <section id="process-section"
+    class="relative bg-linear-to-b from-[#020914] to-[#143B78] section-padding overflow-hidden">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="text-center max-w-184 2xl:max-w-none 2xl:w-full mx-auto mb-6 lg:mb-8 xl:mb-12 2xl:mb-15">
+        <h2
+          class="schibsted-grotesk text-white text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] xl:text-[48px] 2xl:text-[64px] font-normal leading-[100%] tracking-[-0.64px]">
+          My proven 4-step SEO process
+        </h2>
+        <p
+          class="mt-2 md:mt-4  text-[#8E9298]/80 text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] 2xl:text-[20px]">
+          A systematic approach refined across 226 projects
+        </p>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="process-card-wrapper grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-6">
+
+        <!-- Step 01 Card -->
+        <div
+          class="group process-card relative flex flex-col pt-16 px-6 pb-8 min-h-75 md:min-h-90 transition-all duration-300">
+          <!-- Default Background Image -->
+          <div class="absolute inset-0 z-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+            <img src="assets/images/proccess-card-bg.png" alt="Card Background" class="w-full h-full object-fill">
+          </div>
+          <!-- Hover Background Image -->
+          <div class="absolute inset-0 z-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+            <img src="assets/images/proccess-card-hover.png" alt="Card Hover Background"
+              class="w-full h-full object-fill">
+          </div>
+
+          <!-- Top Number Badge -->
+          <div
+            class="absolute top-2 left-1/2 -translate-x-1/2 z-10 w-20.75 h-20.75 rounded-full bg-[#0F2B57] flex items-center justify-center text-white text-[28px] font-extrabold">
+            01
+          </div>
+
+          <!-- Card Content -->
+          <div class="relative z-10 mt-auto flex flex-col">
+            <div class="min-h-10 md:min-h-20 flex items-end">
+              <h3
+                class="text-white group-hover:text-[#FF6F42] text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] 2xl:text-[32px] font-semibold leading-[130%] tracking-[-0.32px] transition-all duration-300">
+                Discovery
+              </h3>
+            </div>
+            <div class="mt-4 min-h-20">
+              <p class="text-white text-sm sm:text-base md:text-lg font-medium opacity-80 leading-relaxed">
+                Free 30-min call. Goals, current state, market analysis, competitor landscape.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 02 Card -->
+        <div
+          class="group process-card relative flex flex-col pt-16 px-6 pb-8 min-h-75 md:min-h-90 transition-all duration-300">
+          <!-- Default Background Image -->
+          <div class="absolute inset-0 z-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+            <img src="assets/images/proccess-card-bg.png" alt="Card Background" class="w-full h-full object-fill">
+          </div>
+          <!-- Hover Background Image -->
+          <div class="absolute inset-0 z-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+            <img src="assets/images/proccess-card-hover.png" alt="Card Hover Background"
+              class="w-full h-full object-fill">
+          </div>
+
+          <!-- Top Number Badge -->
+          <div
+            class="absolute top-2 left-1/2 -translate-x-1/2 z-10 w-20.75 h-20.75 rounded-full bg-[#0F2B57] flex items-center justify-center text-white text-[28px] font-extrabold">
+            02
+          </div>
+
+          <!-- Card Content -->
+          <div class="relative z-10 mt-auto flex flex-col">
+            <div class="min-h-10 md:min-h-20 flex items-end">
+              <h3
+                class="text-white group-hover:text-[#FF6F42] text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] 2xl:text-[32px] font-semibold leading-[130%] tracking-[-0.32px] transition-all duration-300">
+                Audit + Strategy
+              </h3>
+            </div>
+            <div class="mt-4 min-h-20">
+              <p class="text-white text-sm sm:text-base md:text-lg font-medium opacity-80 leading-relaxed">
+                Deep technical and content audit. Custom roadmap with prioritized actions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 03 Card -->
+        <div
+          class="group process-card relative flex flex-col pt-16 px-6 pb-8 min-h-75 md:min-h-90 transition-all duration-300">
+          <!-- Default Background Image -->
+          <div class="absolute inset-0 z-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+            <img src="assets/images/proccess-card-bg.png" alt="Card Background" class="w-full h-full object-fill">
+          </div>
+          <!-- Hover Background Image -->
+          <div class="absolute inset-0 z-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+            <img src="assets/images/proccess-card-hover.png" alt="Card Hover Background"
+              class="w-full h-full object-fill">
+          </div>
+
+          <!-- Top Number Badge -->
+          <div
+            class="absolute top-2 left-1/2 -translate-x-1/2 z-10 w-20.75 h-20.75 rounded-full bg-[#0F2B57] flex items-center justify-center text-white text-[28px] font-extrabold">
+            03
+          </div>
+
+          <!-- Card Content -->
+          <div class="relative z-10 mt-auto flex flex-col">
+            <div class="min-h-10 md:min-h-20 flex items-end">
+              <h3
+                class="text-white group-hover:text-[#FF6F42] text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] 2xl:text-[32px] font-semibold leading-[130%] tracking-[-0.32px] transition-all duration-300">
+                Execute
+              </h3>
+            </div>
+            <div class="mt-4 min-h-20">
+              <p class="text-white text-sm sm:text-base md:text-lg font-medium opacity-80 leading-relaxed">
+                Implementation in priority order. Weekly progress updates and transparent reporting.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 04 Card -->
+        <div
+          class="group process-card relative flex flex-col pt-16 px-6 pb-8 min-h-75 md:min-h-90 transition-all duration-300">
+          <!-- Default Background Image -->
+          <div class="absolute inset-0 z-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+            <img src="assets/images/proccess-card-bg.png" alt="Card Background" class="w-full h-full object-fill">
+          </div>
+          <!-- Hover Background Image -->
+          <div class="absolute inset-0 z-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+            <img src="assets/images/proccess-card-hover.png" alt="Card Hover Background"
+              class="w-full h-full object-fill">
+          </div>
+
+          <!-- Top Number Badge -->
+          <div
+            class="absolute top-2 left-1/2 -translate-x-1/2 z-10 w-20.75 h-20.75 rounded-full bg-[#0F2B57] flex items-center justify-center text-white text-[28px] font-extrabold">
+            04
+          </div>
+
+          <!-- Card Content -->
+          <div class="relative z-10 mt-auto flex flex-col">
+            <div class="min-h-10 md:min-h-20 flex items-end">
+              <h3
+                class="text-white group-hover:text-[#FF6F42] text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] 2xl:text-[32px] font-semibold leading-[130%] tracking-[-0.32px] transition-all duration-300">
+                Scale
+              </h3>
+            </div>
+            <div class="mt-4 min-h-20">
+              <p class="text-white text-sm sm:text-base md:text-lg font-medium opacity-80 leading-relaxed">
+                Track rankings, traffic, conversions. Continuous optimization for sustained growth.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Proccess section -->
+
+  <!-- Project showcase section -->
+  <section class="relative bg-white section-padding overflow-hidden" data-theme="dark">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="text-center max-w-184 2xl:max-w-none 2xl:w-full mx-auto mb-6 lg:mb-8 xl:mb-12 2xl:mb-15">
+        <h2
+          class="schibsted-grotesk text-[#020914] text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] xl:text-[48px] 2xl:text-[64px] font-normal leading-[100%] tracking-[-0.64px]">
+          Featured works
+        </h2>
+        <p
+          class="mt-2 md:mt-4  text-[#8E9298]/80 text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] 2xl:text-[20px]">
+          Real results from real clients.
+        </p>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 lg:gap-8 mb-6 lg:mb-8 xl:mb-12 2xl:mb-15">
+
+        <!-- Work Card item -->
+        <a href="work-details.html"
+          class="group/card relative rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] transition-all duration-300">
+          <!-- Gradient Border on Hover -->
+          <div
+            class="absolute inset-0 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-0.5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none z-20"
+            style="background: linear-gradient(285deg, #FF6F42 3.63%, #2267C2 59.85%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude;">
+          </div>
+          <!-- Default Subtle Border -->
+          <div
+            class="absolute inset-0 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] border border-gray-100 pointer-events-none z-20 transition-opacity duration-300 group-hover/card:opacity-0">
+          </div>
+
+          <!-- Project Card Container -->
+          <div
+            class="project-card group relative bg-white rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-1.25 flex flex-col justify-between transition-all duration-300 h-full shadow-xl shadow-gray-100 cursor-none overflow-hidden z-10">
+
+            <div class="flex flex-col grow">
+              <!-- Image Wrapper -->
+              <div
+                class="relative w-full h-60 md:h-72 lg:h-80 xl:h-96  rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] overflow-hidden bg-gray-50">
+                <img src="assets/images/featured-work-01.webp" alt="+412% organic traffic in 8 months"
+                  class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              </div>
+            </div>
+
+            <div class="featured-content-wrap p-4 md:p-6 lg:p-8">
+              <!-- Content Area -->
+              <div class="">
+                <div
+                  class="inline-flex items-center gap-1 sm:gap-2 text-xs sm:text-sm md:text-base lg:text-lg font-medium leading-[120%] text-[#FF6F42] px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 bg-[#FFF4F0] rounded-full mb-3 md:mb-6">
+                  <span>Shopify</span>
+                  <span class="w-px h-3 sm:h-4 bg-[#FF6F42]"></span>
+                  <span>Fashion</span>
+                  <span class="w-px h-3 sm:h-4 bg-[#FF6F42]"></span>
+                  <span>USA</span>
+                </div>
+                <h3
+                  class="text-[#020914] schibsted-grotesk text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] 2xl:text-[36px] leading-[130%] tracking-[-0.36px] group-hover:text-[#FF6F42] transition-all duration-300">
+                  +412% organic traffic in 8 months
+                </h3>
+              </div>
+              <!-- Bottom Metrics -->
+              <div class="flex flex-wrap gap-2 md:gap-3 mt-6 md:mt-8 xl:mt-10 2xl:mt-12">
+                <span
+                  class="bg-[#EDF0F5] px-3 py-1.5 md:px-6 md:py-3 rounded-full text-[#020914] text-xs sm:text-base md:text-lg lg:text-xl font-medium leading-[120%]">
+                  +412% traffic
+                </span>
+                <span
+                  class="bg-[#EDF0F5] px-3 py-1.5 md:px-6 md:py-3 rounded-full text-[#020914] text-xs sm:text-base md:text-lg lg:text-xl font-medium leading-[120%]">
+                  +289% sales
                 </span>
               </div>
 
-              <h3 class="font-jakarta text-white text-2xl sm:text-[28px] font-bold leading-[120%] mb-3 group-hover:text-orange-400 transition-all duration-300">
-                Full SEO
-              </h3>
-              <p class="font-urbanist text-sm sm:text-base text-slate-400 leading-[150%]">
-                End-to-end traditional SEO: technical, on-page, content, and links. The proven foundation every AI-search strategy still depends on.
-              </p>
             </div>
-            
-            <div class="pt-8 flex justify-end">
-              <span class="inline-flex items-center gap-1 font-urbanist text-orange-500 font-semibold text-sm group-hover:translate-x-1 transition-transform">
-                Learn More 
-                <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-              </span>
+
+            <!-- Custom Cursor Badge -->
+            <div
+              class="custom-cursor pointer-events-none absolute z-50 px-4 py-4 md:px-5 md:py-5 lg:px-5 lg:py-5 xl:px-6 xl:py-6 2xl:px-[24px] 2xl:py-[26px] rounded-full bg-[#FF6F42] text-white text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-2xl font-semibold leading-[120%] flex items-center justify-center opacity-0 scale-40">
+              Read case study
             </div>
           </div>
         </a>
-      </div>
 
-      <!-- 2. AI SEO -->
-      <div class="group/card relative rounded-[32px] p-[1px] transition-all duration-300">
-        <div class="absolute inset-0 rounded-[32px] opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" style="background: linear-gradient(285deg, #FF6F42 3.63%, #2267C2 59.85%);"></div>
-        <a href="work-details.html" class="project-card group relative bg-[#0b1320] border border-slate-800/80 group-hover/card:border-transparent rounded-[31px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-none shadow-xl h-full">
-          <div class="custom-cursor pointer-events-none absolute left-0 top-0 z-50 hidden lg:flex items-center justify-center gap-2.5 rounded-full bg-[#CCFF01] px-5 py-2.5 font-urbanist text-base md:text-xl font-medium leading-[120%] text-black shadow-lg opacity-0 scale-75 -rotate-6 transition-opacity duration-200">
-            <span>View</span>
-            <img src="assets/images/secondary-arrow-white.svg" alt="arrow" class="h-4 w-4 object-contain sm:h-6 sm:w-6 brightness-0" />
+        <!-- Work Card item -->
+        <a href="work-details.html"
+          class="group/card relative rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] transition-all duration-300">
+          <!-- Gradient Border on Hover -->
+          <div
+            class="absolute inset-0 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-0.5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none z-20"
+            style="background: linear-gradient(285deg, #FF6F42 3.63%, #2267C2 59.85%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude;">
+          </div>
+          <!-- Default Subtle Border -->
+          <div
+            class="absolute inset-0 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] border border-gray-100 pointer-events-none z-20 transition-opacity duration-300 group-hover/card:opacity-0">
           </div>
 
-          <div>
-            <div class="relative w-full h-44 sm:h-48 rounded-2xl overflow-hidden flex items-center justify-center mb-6">
-              <img src="assets/images/ai-chip-icon.png" alt="AI SEO" class="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+          <!-- Project Card Container -->
+          <div
+            class="project-card group relative bg-white rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-1.25 flex flex-col justify-between transition-all duration-300 h-full shadow-xl shadow-gray-100 cursor-none overflow-hidden z-10">
+
+            <div class="flex flex-col grow">
+              <!-- Image Wrapper -->
+              <div
+                class="relative w-full h-60 md:h-72 lg:h-80 xl:h-96  rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] overflow-hidden bg-gray-50">
+                <img src="assets/images/featured-work-02.webp" alt="Top 3 ranking for 47 commercial keywords"
+                  class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              </div>
             </div>
-            <h3 class="font-jakarta text-white text-xl font-bold mb-3 group-hover:text-orange-400 transition-all duration-300">
-              AI SEO
-            </h3>
-            <p class="font-urbanist text-sm text-slate-400 leading-[150%]">
-              Optimize your brand to be cited, recommended, and surfaced by ChatGPT, Claude, Gemini, and Perplexity. The new front page of the internet.
-            </p>
-          </div>
-          
-          <div class="pt-8 flex justify-end">
-            <span class="inline-flex items-center gap-1 font-urbanist text-orange-500 font-semibold text-sm group-hover:translate-x-1 transition-transform">
-              Learn More 
-              <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-            </span>
+
+            <div class="featured-content-wrap p-4 md:p-6 lg:p-8">
+              <!-- Content Area -->
+              <div class="">
+                <div
+                  class="inline-flex items-center gap-1 sm:gap-2 text-xs sm:text-sm md:text-base lg:text-lg font-medium leading-[120%] text-[#FF6F42] px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 bg-[#FFF4F0] rounded-full mb-3 md:mb-6">
+                  <span>SaaS</span>
+                  <span class="w-px h-3 sm:h-4 bg-[#FF6F42]"></span>
+                  <span>B2B</span>
+                  <span class="w-px h-3 sm:h-4 bg-[#FF6F42]"></span>
+                  <span>UK</span>
+                </div>
+                <h3
+                  class="text-[#020914] schibsted-grotesk text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] 2xl:text-[36px] leading-[130%] tracking-[-0.36px] group-hover:text-[#FF6F42] transition-all duration-300">
+                  Top 3 ranking for 47 commercial keywords
+                </h3>
+              </div>
+              <!-- Bottom Metrics -->
+              <div class="flex flex-wrap gap-2 md:gap-3 mt-6 md:mt-8 xl:mt-10 2xl:mt-12">
+                <span
+                  class="bg-[#EDF0F5] px-3 py-1.5 md:px-6 md:py-3 rounded-full text-[#020914] text-xs sm:text-base md:text-lg lg:text-xl font-medium leading-[120%]">
+                  47 KWs top 3
+                </span>
+                <span
+                  class="bg-[#EDF0F5] px-3 py-1.5 md:px-6 md:py-3 rounded-full text-[#020914] text-xs sm:text-base md:text-lg lg:text-xl font-medium leading-[120%]">
+                  +340% leads
+                </span>
+              </div>
+
+            </div>
+
+            <!-- Custom Cursor Badge -->
+            <div
+              class="custom-cursor pointer-events-none absolute z-50 px-4 py-4 md:px-5 md:py-5 lg:px-5 lg:py-5 xl:px-6 xl:py-6 2xl:px-[24px] 2xl:py-[26px] rounded-full bg-[#FF6F42] text-white text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-2xl font-semibold leading-[120%] flex items-center justify-center opacity-0 scale-40">
+              Read case study
+            </div>
           </div>
         </a>
-      </div>
 
-      <!-- 3. AEO -->
-      <div class="group/card relative rounded-[32px] p-[1px] transition-all duration-300">
-        <div class="absolute inset-0 rounded-[32px] opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" style="background: linear-gradient(285deg, #FF6F42 3.63%, #2267C2 59.85%);"></div>
-        <a href="work-details.html" class="project-card group relative bg-[#0b1320] border border-slate-800/80 group-hover/card:border-transparent rounded-[31px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-none shadow-xl h-full">
-          <div class="custom-cursor pointer-events-none absolute left-0 top-0 z-50 hidden lg:flex items-center justify-center gap-2.5 rounded-full bg-[#CCFF01] px-5 py-2.5 font-urbanist text-base md:text-xl font-medium leading-[120%] text-black shadow-lg opacity-0 scale-75 -rotate-6 transition-opacity duration-200">
-            <span>View</span>
-            <img src="assets/images/secondary-arrow-white.svg" alt="arrow" class="h-4 w-4 object-contain sm:h-6 sm:w-6 brightness-0" />
+        <!-- Work Card item -->
+        <a href="work-details.html"
+          class="group/card relative rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] transition-all duration-300">
+          <!-- Gradient Border on Hover -->
+          <div
+            class="absolute inset-0 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-0.5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none z-20"
+            style="background: linear-gradient(285deg, #FF6F42 3.63%, #2267C2 59.85%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude;">
+          </div>
+          <!-- Default Subtle Border -->
+          <div
+            class="absolute inset-0 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] border border-gray-100 pointer-events-none z-20 transition-opacity duration-300 group-hover/card:opacity-0">
           </div>
 
-          <div>
-            <div class="relative w-full h-44 sm:h-48 rounded-2xl overflow-hidden flex items-center justify-center mb-6">
-              <img src="assets/images/aeo-mailbox-icon.png" alt="AEO" class="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+          <!-- Project Card Container -->
+          <div
+            class="project-card group relative bg-white rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-1.25 flex flex-col justify-between transition-all duration-300 h-full shadow-xl shadow-gray-100 cursor-none overflow-hidden z-10">
+
+            <div class="flex flex-col grow">
+              <!-- Image Wrapper -->
+              <div
+                class="relative w-full h-60 md:h-72 lg:h-80 xl:h-96  rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] overflow-hidden bg-gray-50">
+                <img src="assets/images/featured-work-03.webp" alt="92% rank recovery post-migration"
+                  class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              </div>
             </div>
-            <h3 class="font-jakarta text-white text-xl font-bold mb-3 group-hover:text-orange-400 transition-all duration-300">
-              AEO — Answer Engine Optimization
-            </h3>
-            <p class="font-urbanist text-sm text-slate-400 leading-[150%]">
-              Win featured snippets, People Also Ask, and direct answers in voice search. Be the answer, not just a result.
-            </p>
-          </div>
-          
-          <div class="pt-8 flex justify-end">
-            <span class="inline-flex items-center gap-1 font-urbanist text-orange-500 font-semibold text-sm group-hover:translate-x-1 transition-transform">
-              Learn More 
-              <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-            </span>
+
+            <div class="featured-content-wrap p-4 md:p-6 lg:p-8">
+              <!-- Content Area -->
+              <div class="">
+                <div
+                  class="inline-flex items-center gap-1 sm:gap-2 text-xs sm:text-sm md:text-base lg:text-lg font-medium leading-[120%] text-[#FF6F42] px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 bg-[#FFF4F0] rounded-full mb-3 md:mb-6">
+                  <span>Technical</span>
+                  <span class="w-px h-3 sm:h-4 bg-[#FF6F42]"></span>
+                  <span>Home goods</span>
+                  <span class="w-px h-3 sm:h-4 bg-[#FF6F42]"></span>
+                  <span>AU</span>
+                </div>
+                <h3
+                  class="text-[#020914] schibsted-grotesk text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] 2xl:text-[36px] leading-[130%] tracking-[-0.36px] group-hover:text-[#FF6F42] transition-all duration-300">
+                  92% rank recovery post-migration
+                </h3>
+              </div>
+              <!-- Bottom Metrics -->
+              <div class="flex flex-wrap gap-2 md:gap-3 mt-6 md:mt-8 xl:mt-10 2xl:mt-12">
+                <span
+                  class="bg-[#EDF0F5] px-3 py-1.5 md:px-6 md:py-3 rounded-full text-[#020914] text-xs sm:text-base md:text-lg lg:text-xl font-medium leading-[120%]">
+                  92% recovery
+                </span>
+                <span
+                  class="bg-[#EDF0F5] px-3 py-1.5 md:px-6 md:py-3 rounded-full text-[#020914] text-xs sm:text-base md:text-lg lg:text-xl font-medium leading-[120%]">
+                  6 weeks
+                </span>
+              </div>
+
+            </div>
+
+            <!-- Custom Cursor Badge -->
+            <div
+              class="custom-cursor pointer-events-none absolute z-50 px-4 py-4 md:px-5 md:py-5 lg:px-5 lg:py-5 xl:px-6 xl:py-6 2xl:px-[24px] 2xl:py-[26px] rounded-full bg-[#FF6F42] text-white text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-2xl font-semibold leading-[120%] flex items-center justify-center opacity-0 scale-40">
+              Read case study
+            </div>
           </div>
         </a>
-      </div>
 
-      <!-- 4. GEO -->
-      <div class="group/card relative rounded-[32px] p-[1px] transition-all duration-300">
-        <div class="absolute inset-0 rounded-[32px] opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" style="background: linear-gradient(285deg, #FF6F42 3.63%, #2267C2 59.85%);"></div>
-        <a href="work-details.html" class="project-card group relative bg-[#0b1320] border border-slate-800/80 group-hover/card:border-transparent rounded-[31px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-none shadow-xl h-full">
-          <div class="custom-cursor pointer-events-none absolute left-0 top-0 z-50 hidden lg:flex items-center justify-center gap-2.5 rounded-full bg-[#CCFF01] px-5 py-2.5 font-urbanist text-base md:text-xl font-medium leading-[120%] text-black shadow-lg opacity-0 scale-75 -rotate-6 transition-opacity duration-200">
-            <span>View</span>
-            <img src="assets/images/secondary-arrow-white.svg" alt="arrow" class="h-4 w-4 object-contain sm:h-6 sm:w-6 brightness-0" />
+        <!-- Work Card item -->
+        <a href="work-details.html"
+          class="group/card relative rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] transition-all duration-300">
+          <!-- Gradient Border on Hover -->
+          <div
+            class="absolute inset-0 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-0.5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none z-20"
+            style="background: linear-gradient(285deg, #FF6F42 3.63%, #2267C2 59.85%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude;">
+          </div>
+          <!-- Default Subtle Border -->
+          <div
+            class="absolute inset-0 rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] border border-gray-100 pointer-events-none z-20 transition-opacity duration-300 group-hover/card:opacity-0">
           </div>
 
-          <div>
-            <div class="relative w-full h-44 sm:h-48 rounded-2xl overflow-hidden flex items-center justify-center mb-6">
-              <img src="assets/images/geo-globe-icon.png" alt="GEO" class="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+          <!-- Project Card Container -->
+          <div
+            class="project-card group relative bg-white rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-1.25 flex flex-col justify-between transition-all duration-300 h-full shadow-xl shadow-gray-100 cursor-none overflow-hidden z-10">
+
+            <div class="flex flex-col grow">
+              <!-- Image Wrapper -->
+              <div
+                class="relative w-full h-60 md:h-72 lg:h-80 xl:h-96  rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] overflow-hidden bg-gray-50">
+                <img src="assets/images/featured-work-04.webp"
+                  alt="Hearth & Home: handled a Magento → Shopify migration without losing rankings"
+                  class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              </div>
             </div>
-            <h3 class="font-jakarta text-white text-xl font-bold mb-3 group-hover:text-orange-400 transition-all duration-300">
-              GEO — Generative Engine Optimization
-            </h3>
-            <p class="font-urbanist text-sm text-slate-400 leading-[150%]">
-              Get your content cited as a source in AI-generated responses. Structured content, schema, and authority signals built for LLMs.
-            </p>
-          </div>
-          
-          <div class="pt-8 flex justify-end">
-            <span class="inline-flex items-center gap-1 font-urbanist text-orange-500 font-semibold text-sm group-hover:translate-x-1 transition-transform">
-              Learn More 
-              <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-            </span>
+
+            <div class="featured-content-wrap p-4 md:p-6 lg:p-8">
+              <!-- Content Area -->
+              <div class="">
+                <div
+                  class="inline-flex items-center gap-1 sm:gap-2 text-xs sm:text-sm md:text-base lg:text-lg font-medium leading-[120%] text-[#FF6F42] px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 bg-[#FFF4F0] rounded-full mb-3 md:mb-6">
+                  <span>E-commerce</span>
+                  <span class="w-px h-3 sm:h-4 bg-[#FF6F42]"></span>
+                  <span>Home goods</span>
+                  <span class="w-px h-3 sm:h-4 bg-[#FF6F42]"></span>
+                  <span>AU</span>
+                  <span class="w-px h-3 sm:h-4 bg-[#FF6F42]"></span>
+                  <span>6 weeks</span>
+                </div>
+                <h3
+                  class="text-[#020914] schibsted-grotesk text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] 2xl:text-[36px] leading-[130%] tracking-[-0.36px] group-hover:text-[#FF6F42] transition-all duration-300">
+                  Hearth & Home: handled a Magento → Shopify migration without losing rankings
+                </h3>
+              </div>
+              <!-- Bottom Metrics -->
+              <div class="flex flex-wrap gap-2 md:gap-3 mt-6 md:mt-8 xl:mt-10 2xl:mt-12">
+                <span
+                  class="bg-[#EDF0F5] px-3 py-1.5 md:px-6 md:py-3 rounded-full text-[#020914] text-xs sm:text-base md:text-lg lg:text-xl font-medium leading-[120%]">
+                  92% recovery
+                </span>
+                <span
+                  class="bg-[#EDF0F5] px-3 py-1.5 md:px-6 md:py-3 rounded-full text-[#020914] text-xs sm:text-base md:text-lg lg:text-xl font-medium leading-[120%]">
+                  2,400 redirects
+                </span>
+              </div>
+
+            </div>
+
+            <!-- Custom Cursor Badge -->
+            <div
+              class="custom-cursor pointer-events-none absolute z-50 px-4 py-4 md:px-5 md:py-5 lg:px-5 lg:py-5 xl:px-6 xl:py-6 2xl:px-[24px] 2xl:py-[26px] rounded-full bg-[#FF6F42] text-white text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-2xl font-semibold leading-[120%] flex items-center justify-center opacity-0 scale-40">
+              Read case study
+            </div>
           </div>
         </a>
+
       </div>
 
-      <!-- 5. SGE SEO -->
-      <div class="group/card relative rounded-[32px] p-[1px] transition-all duration-300">
-        <div class="absolute inset-0 rounded-[32px] opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" style="background: linear-gradient(285deg, #FF6F42 3.63%, #2267C2 59.85%);"></div>
-        <a href="work-details.html" class="project-card group relative bg-[#0b1320] border border-slate-800/80 group-hover/card:border-transparent rounded-[31px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 cursor-none shadow-xl h-full">
-          <div class="custom-cursor pointer-events-none absolute left-0 top-0 z-50 hidden lg:flex items-center justify-center gap-2.5 rounded-full bg-[#CCFF01] px-5 py-2.5 font-urbanist text-base md:text-xl font-medium leading-[120%] text-black shadow-lg opacity-0 scale-75 -rotate-6 transition-opacity duration-200">
-            <span>View</span>
-            <img src="assets/images/secondary-arrow-white.svg" alt="arrow" class="h-4 w-4 object-contain sm:h-6 sm:w-6 brightness-0" />
-          </div>
-
-          <div>
-            <div class="relative w-full h-44 sm:h-48 rounded-2xl overflow-hidden flex items-center justify-center mb-6">
-              <img src="assets/images/sge-target-icon.png" alt="SGE SEO" class="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
-            </div>
-            <h3 class="font-jakarta text-white text-xl font-bold mb-3 group-hover:text-orange-400 transition-all duration-300">
-              SGE SEO
-            </h3>
-            <p class="font-urbanist text-sm text-slate-400 leading-[150%]">
-              Rank inside Google's Search Generative Experience and AI Overviews — where 60%+ of high-intent queries now end without a click.
-            </p>
-          </div>
-          
-          <div class="pt-8 flex justify-end">
-            <span class="inline-flex items-center gap-1 font-urbanist text-orange-500 font-semibold text-sm group-hover:translate-x-1 transition-transform">
-              Learn More 
-              <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-            </span>
-          </div>
+      <!-- Center View All Works Button -->
+      <div class="text-center">
+        <a href="#"
+          class="text-shift-btn inline-block px-3 py-2 md:px-6 md:py-4 bg-[#FF6F42] text-white text-sm sm:text-base md:text-lg lg:text-xl font-semibold leading-[120%] rounded-full ">
+          <span class="ct">View all works</span>
         </a>
       </div>
 
     </div>
+  </section>
+  <!-- Project showcase section -->
 
-    <!-- Bottom CTA Banner -->
-    <div class="w-full bg-[#FF6F42] rounded-[32px] p-6 sm:p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
-      <div class="text-center md:text-left">
-        <h3 class="text-white text-2xl sm:text-3xl font-bold mb-2 font-jakarta">Need all five?</h3>
-        <p class="text-orange-100 text-sm sm:text-base font-urbanist">
-          Most clients combine 2–3 services for full search coverage. Book a free consultation and I'll recommend the right mix for your business.
+  <!-- Testimonial section -->
+  <section class="relative bg-[linear-gradient(182deg,#EAF2FF_26%,#FFF_98.53%)] section-padding overflow-hidden"
+    data-theme="dark">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="text-center max-w-184 2xl:max-w-none 2xl:w-full mx-auto mb-6 lg:mb-8 xl:mb-12 2xl:mb-15">
+        <h2
+          class="schibsted-grotesk text-[#020914] text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] xl:text-[48px] 2xl:text-[64px] font-normal leading-[100%] tracking-[-0.64px]">
+          What clients say
+        </h2>
+      </div>
+
+      <!-- Splide Slider Container -->
+      <div class="splide" id="testimonial-slider">
+        <div class="splide__track overflow-visible pb-10 lg:pb-15">
+          <ul class="splide__list ">
+
+            <!-- Testimonial Card 01 -->
+            <li class="splide__slide">
+              <div
+                class="group card-gradient-border relative rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-8 flex flex-col justify-between overflow-hidden min-h-75 md:min-h-100 lg:min-h-130 transition-all duration-300 shadow-[0_8px_30px_rgba(0,0,0,0.08)]"
+                style="background: linear-gradient(190deg, #FFF7AC 0.48%, #FFF 7.06%);">
+
+                <img src="assets/images/testimonial-quote.svg" alt="Quote"
+                  class="absolute bottom-4 right-4 pointer-events-none w-20 sm:w-24 md:w-28 lg:w-31.5 z-0" />
+
+                <div class="relative z-10 flex items-center justify-between mb-6 md:mb-8">
+                  <ul class="flex items-center gap-1">
+                    <li><img src="assets/images/rating-star.svg" alt="5 Stars" class="h-4 md:h-5 xl:h-7 w-auto"></li>
+                    <li><img src="assets/images/rating-star.svg" alt="5 Stars" class="h-4 md:h-5 xl:h-7 w-auto"></li>
+                    <li><img src="assets/images/rating-star.svg" alt="5 Stars" class="h-4 md:h-5 xl:h-7 w-auto"></li>
+                    <li><img src="assets/images/rating-star.svg" alt="5 Stars" class="h-4 md:h-5 xl:h-7 w-auto"></li>
+                    <li><img src="assets/images/rating-star.svg" alt="5 Stars" class="h-4 md:h-5 xl:h-7 w-auto"></li>
+                  </ul>
+                  <div>
+                    <img src="assets/images/testimonial-upwork.svg" alt="Upwork" class="h-7 md:h-8.75  w-auto">
+                  </div>
+                </div>
+
+                <div class="relative z-10 mb-8 grow">
+                  <p
+                    class="text-[#8E9298] text-base sm:text-lg md:text-xl xl:text-[24px] italic font-medium leading-normal opacity-80">
+                    "Shah is the best SEO specialist I've ever worked with. He fixed technical issues that 3 previous
+                    agencies missed and grew our organic revenue by 280% in 6 months. Genuinely cares about results."
+                  </p>
+                </div>
+
+                <div class="relative z-10 flex items-center gap-4 pt-4 mt-auto">
+                  <img src="assets/images/client-avatar-01.png" alt="Michael Chen"
+                    class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover shrink-0">
+                  <div>
+                    <h3
+                      class="text-[#020914] text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] font-semibold leading-[130%] tracking-[-0.28px]">
+                      Michael Chen</h3>
+                    <p class="text-[#8E9298] text-sm font-normal ">CEO · Fashion brand (Shopify)</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Testimonial Card 02 -->
+            <li class="splide__slide">
+              <div
+                class="group card-gradient-border relative rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-8 flex flex-col justify-between overflow-hidden min-h-75 md:min-h-100 lg:min-h-130 transition-all duration-300 shadow-[0_8px_30px_rgba(0,0,0,0.08)]"
+                style="background: linear-gradient(190deg, #FFF7AC 0.48%, #FFF 7.06%);">
+
+                <img src="assets/images/testimonial-quote.svg" alt="Quote"
+                  class="absolute bottom-4 right-4 pointer-events-none w-20 sm:w-24 md:w-28 lg:w-31.5 z-0" />
+
+                <div class="relative z-10 flex items-center justify-between mb-6 md:mb-8">
+                  <ul class="flex items-center gap-1">
+                    <li><img src="assets/images/rating-star.svg" alt="5 Stars" class="h-4 md:h-5 xl:h-7 w-auto"></li>
+                    <li><img src="assets/images/rating-star.svg" alt="5 Stars" class="h-4 md:h-5 xl:h-7 w-auto"></li>
+                    <li><img src="assets/images/rating-star.svg" alt="5 Stars" class="h-4 md:h-5 xl:h-7 w-auto"></li>
+                    <li><img src="assets/images/rating-star.svg" alt="5 Stars" class="h-4 md:h-5 xl:h-7 w-auto"></li>
+                    <li><img src="assets/images/rating-star.svg" alt="5 Stars" class="h-4 md:h-5 xl:h-7 w-auto"></li>
+                  </ul>
+                  <div>
+                    <img src="assets/images/testimonial-upwork.svg" alt="Upwork" class="h-7 md:h-8.75  w-auto">
+                  </div>
+                </div>
+
+                <div class="relative z-10 mb-8 grow">
+                  <p
+                    class="text-[#8E9298] text-base sm:text-lg md:text-xl xl:text-[24px] italic font-medium leading-normal opacity-80">
+                    "Shah is the best SEO specialist I've ever worked with. He fixed technical issues that 3 previous
+                    agencies missed and grew our organic revenue by 280% in 6 months. Genuinely cares about results."
+                  </p>
+                </div>
+
+                <div class="relative z-10 flex items-center gap-4 pt-4 mt-auto">
+                  <img src="assets/images/client-avatar-01.png" alt="Michael Chen"
+                    class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover shrink-0">
+                  <div>
+                    <h3
+                      class="text-[#020914] text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] font-semibold leading-[130%] tracking-[-0.28px]">
+                      Michael Chen</h3>
+                    <p class="text-[#8E9298] text-sm font-normal ">CEO · Fashion brand (Shopify)</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- Testimonial Card 03 -->
+            <li class="splide__slide">
+              <div
+                class="group card-gradient-border relative rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-8 flex flex-col justify-between overflow-hidden min-h-75 md:min-h-100 lg:min-h-130 transition-all duration-300 shadow-[0_8px_30px_rgba(0,0,0,0.08)]"
+                style="background: linear-gradient(190deg, #FFF7AC 0.48%, #FFF 7.06%);">
+
+                <img src="assets/images/testimonial-quote.svg" alt="Quote"
+                  class="absolute bottom-4 right-4 pointer-events-none w-20 sm:w-24 md:w-28 lg:w-31.5 z-0" />
+
+                <div class="relative z-10 flex items-center justify-between mb-6 md:mb-8">
+                  <ul class="flex items-center gap-1">
+                    <li><img src="assets/images/rating-star.svg" alt="5 Stars" class="h-4 md:h-5 xl:h-7 w-auto"></li>
+                    <li><img src="assets/images/rating-star.svg" alt="5 Stars" class="h-4 md:h-5 xl:h-7 w-auto"></li>
+                    <li><img src="assets/images/rating-star.svg" alt="5 Stars" class="h-4 md:h-5 xl:h-7 w-auto"></li>
+                    <li><img src="assets/images/rating-star.svg" alt="5 Stars" class="h-4 md:h-5 xl:h-7 w-auto"></li>
+                    <li><img src="assets/images/rating-star.svg" alt="5 Stars" class="h-4 md:h-5 xl:h-7 w-auto"></li>
+                  </ul>
+                  <div>
+                    <img src="assets/images/testimonial-upwork.svg" alt="Upwork" class="h-7 md:h-8.75  w-auto">
+                  </div>
+                </div>
+
+                <div class="relative z-10 mb-8 grow">
+                  <p
+                    class="text-[#8E9298] text-base sm:text-lg md:text-xl xl:text-[24px] italic font-medium leading-normal opacity-80">
+                    "Shah is the best SEO specialist I've ever worked with. He fixed technical issues that 3 previous
+                    agencies missed and grew our organic revenue by 280% in 6 months. Genuinely cares about results."
+                  </p>
+                </div>
+
+                <div class="relative z-10 flex items-center gap-4 pt-4 mt-auto">
+                  <img src="assets/images/client-avatar-01.png" alt="Michael Chen"
+                    class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover shrink-0">
+                  <div>
+                    <h3
+                      class="text-[#020914] text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] font-semibold leading-[130%] tracking-[-0.28px]">
+                      Michael Chen</h3>
+                    <p class="text-[#8E9298] text-sm font-normal ">CEO · Fashion brand (Shopify)</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- Testimonial Card 04 -->
+            <li class="splide__slide">
+              <div
+                class="group card-gradient-border relative rounded-2xl md:rounded-3xl lg:rounded-4xl xl:rounded-[36px] p-8 flex flex-col justify-between overflow-hidden min-h-75 md:min-h-100 lg:min-h-130 transition-all duration-300 shadow-[0_8px_30px_rgba(0,0,0,0.08)]"
+                style="background: linear-gradient(190deg, #FFF7AC 0.48%, #FFF 7.06%);">
+
+                <img src="assets/images/testimonial-quote.svg" alt="Quote"
+                  class="absolute bottom-4 right-4 pointer-events-none w-20 sm:w-24 md:w-28 lg:w-31.5 z-0" />
+
+                <div class="relative z-10 flex items-center justify-between mb-6 md:mb-8">
+                  <ul class="flex items-center gap-1">
+                    <li><img src="assets/images/rating-star.svg" alt="5 Stars" class="h-4 md:h-5 xl:h-7 w-auto"></li>
+                    <li><img src="assets/images/rating-star.svg" alt="5 Stars" class="h-4 md:h-5 xl:h-7 w-auto"></li>
+                    <li><img src="assets/images/rating-star.svg" alt="5 Stars" class="h-4 md:h-5 xl:h-7 w-auto"></li>
+                    <li><img src="assets/images/rating-star.svg" alt="5 Stars" class="h-4 md:h-5 xl:h-7 w-auto"></li>
+                    <li><img src="assets/images/rating-star.svg" alt="5 Stars" class="h-4 md:h-5 xl:h-7 w-auto"></li>
+                  </ul>
+                  <div>
+                    <img src="assets/images/testimonial-upwork.svg" alt="Upwork" class="h-7 md:h-8.75  w-auto">
+                  </div>
+                </div>
+
+                <div class="relative z-10 mb-8 grow">
+                  <p
+                    class="text-[#8E9298] text-base sm:text-lg md:text-xl xl:text-[24px] italic font-medium leading-normal opacity-80">
+                    "Shah is the best SEO specialist I've ever worked with. He fixed technical issues that 3 previous
+                    agencies missed and grew our organic revenue by 280% in 6 months. Genuinely cares about results."
+                  </p>
+                </div>
+
+                <div class="relative z-10 flex items-center gap-4 pt-4 mt-auto">
+                  <img src="assets/images/client-avatar-01.png" alt="Michael Chen"
+                    class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover shrink-0">
+                  <div>
+                    <h3
+                      class="text-[#020914] text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] font-semibold leading-[130%] tracking-[-0.28px]">
+                      Michael Chen</h3>
+                    <p class="text-[#8E9298] text-sm font-normal ">CEO · Fashion brand (Shopify)</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- Testimonial section -->
+
+  <!-- CTA Section -->
+  <section class="relative bg-cover bg-center bg-no-repeat pt-12 md:pt-16 lg:pt-24 pb-25 md:pb-50 overflow-hidden"
+    style="background-image: url('assets/images/cta-banner.png');">
+
+
+    <!-- Positioned Grid / Shape Overlay Image on Top Right Corner -->
+    <img src="assets/images/cta-grid-shape.png" alt="Grid Pattern Shape"
+      class="hidden! md:block! absolute top-0 right-0 pointer-events-none md:w-55 lg:w-75 2xl:w-[320px] h-auto object-contain z-0">
+
+    <!-- Main Container -->
+    <div class="container relative  z-10">
+      <div class="max-w-135 xl:max-w-5xl mx-auto text-center">
+
+        <!-- Heading -->
+        <h2
+          class="text-white schibsted-grotesk  text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] xl:text-[48px] 2xl:text-[64px] font-normal leading-[120%] tracking-[-0.64px]">
+          Ready to drive more organic traffic with Full SEO + AI SEO?
+        </h2>
+
+        <!-- Subtitle Details -->
+        <p
+          class="text-white text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] 2xl:text-[20px] font-medium opacity-80 mt-3 md:mt-6">
+          Free 30-minute SEO consultation · No obligation · No sales pitch
         </p>
-      </div>
-      <div>
-        <a href="#" class="inline-flex items-center justify-center bg-white text-slate-900 hover:bg-slate-100 font-bold px-7 py-4 rounded-full shadow-lg transition-all text-sm sm:text-base whitespace-nowrap font-urbanist">
-          Get a free strategy call
-        </a>
+
+        <!-- Action Button -->
+        <div class="mt-6 lg:mt-8 xl:mt-12">
+          <a href="#contact"
+            class="inline-block text-shift-btn bg-[#020914] text-sm sm:text-base md:text-lg lg:text-xl font-semibold leading-[120%] text-white px-3 py-2 md:px-6 md:py-4 rounded-full ">
+            <span class="ct">Book your free call</span>
+          </a>
+        </div>
+
       </div>
     </div>
-
-  </div>
-</section>
+  </section>
 
   <!-- Footer Section -->
-  <footer class="relative overflow-hidden text-white">
+  <footer class="relative overflow-hidden text-white -mt-15 md:-mt-30">
 
     <!-- Main Upper Footer Section (with background image) -->
     <div
-      class="relative bg-cover bg-center rounded-t-[40px] sm:rounded-t-[48px] md:rounded-t-[56px] lg:rounded-t-[68px] xl:rounded-t-[80px] 2xl:rounded-t-[94px]"
+      class="relative bg-cover bg-center rounded-t-[40px] sm:rounded-t-[48px] md:rounded-t-[56px] lg:rounded-t-[68px] xl:rounded-t-[80px] 2xl:rounded-t-[94px] section-padding"
       style="background-image: url('assets/images/main-footer-bg.png');">
-      <div class="container mx-auto px-4 pt-16 pb-20 relative z-10">
+      <div class="container relative z-10">
 
         <!-- Top Social / Contact Link Cards Row -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 lg:gap-6 mb-6 lg:mb-8 xl:mb-12 2xl:mb-15">
 
           <!-- LinkedIn Card -->
           <a href="#"
-            class="flex items-center gap-4 p-4 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-[15px] hover:bg-white/[0.08] transition-all">
-            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                <path
-                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-              </svg>
+            class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 lg:p-6 rounded-full bg-white/5 backdrop-blur-xs hover:bg-white/15 transition-all">
+            <div
+              class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 2xl:w-17.5 2xl:h-17.5 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+              <img src="assets/images/linkedin.svg" alt="LinkedIn" class="w-5 sm:w-6 md:w-auto">
             </div>
-            <div>
-              <h4 class="font-bold text-lg leading-tight">Linkedin</h4>
-              <span class="text-sm text-gray-400">@shah_sultan</span>
+            <div class="min-w-0">
+              <h4
+                class="text-white text-base sm:text-lg lg:text-xl 2xl:text-2xl font-semibold leading-[130%] tracking-[-0.24px] truncate">
+                Linkedin
+              </h4>
+              <span
+                class="text-white text-xs sm:text-sm md:text-base lg:text-lg 2xl:text-xl leading-normal opacity-60 break-all">
+                @shah_sultan
+              </span>
             </div>
           </a>
 
           <!-- Twitter / X Card -->
           <a href="#"
-            class="flex items-center gap-4 p-4 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-[15px] hover:bg-white/[0.08] transition-all">
-            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path
-                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
+            class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 lg:p-6 rounded-full bg-white/5 backdrop-blur-xs hover:bg-white/15 transition-all">
+            <div
+              class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 2xl:w-17.5 2xl:h-17.5 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+              <img src="assets/images/twitter.svg" alt="Twitter" class="w-5 sm:w-6 md:w-auto">
             </div>
-            <div>
-              <h4 class="font-bold text-lg leading-tight">Twitter / X</h4>
-              <span class="text-sm text-gray-400">@shah_sultan</span>
+            <div class="min-w-0">
+              <h4
+                class="text-white text-base sm:text-lg lg:text-xl 2xl:text-2xl font-semibold leading-[130%] tracking-[-0.24px] truncate">
+                Twitter / X
+              </h4>
+              <span
+                class="text-white text-xs sm:text-sm md:text-base lg:text-lg 2xl:text-xl leading-normal opacity-60 break-all">
+                @shah_sultan
+              </span>
             </div>
           </a>
 
           <!-- Email Card -->
-          <a href="mailto:shahsultan@gmail.com"
-            class="flex items-center gap-4 p-4 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-[15px] hover:bg-white/[0.08] transition-all">
-            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-              <svg class="w-6 h-6 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
+          <a href="#"
+            class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 lg:p-6 rounded-full bg-white/5 backdrop-blur-xs hover:bg-white/15 transition-all">
+            <div
+              class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 2xl:w-17.5 2xl:h-17.5 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+              <img src="assets/images/envelope.svg" alt="Email" class="w-5 sm:w-6 md:w-auto">
             </div>
-            <div>
-              <h4 class="font-bold text-lg leading-tight">Email</h4>
-              <span class="text-sm text-gray-400">shahsultanemail.com</span>
+            <div class="min-w-0">
+              <h4
+                class="text-white text-base sm:text-lg lg:text-xl 2xl:text-2xl font-semibold leading-[130%] tracking-[-0.24px] truncate">
+                Email
+              </h4>
+              <span
+                class="text-white text-xs sm:text-sm md:text-base lg:text-lg 2xl:text-xl leading-normal opacity-60 break-all">
+                shahsultan@mail.com
+              </span>
             </div>
           </a>
 
         </div>
 
-        <!-- Footer Navigation and Info Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <!-- Footer Main Grid Structure -->
+        <div class="footer-grid">
 
-          <!-- Brand / Description Column -->
-          <div class="lg:col-span-5 flex flex-col gap-6">
-            <h3 class="text-2xl md:text-3xl font-bold font-['Schibsted_Grotesk']">Shah Sultan</h3>
+          <!-- Brand / Description Column (Span 4) -->
+          <div class="footer-brand-col">
+            <a href="index.html">
+              <img src="assets/images/footer-logo.svg" alt="shah sultan" class="footer-logo">
+            </a>
 
             <!-- Badges / Tags -->
-            <div class="flex flex-wrap gap-2.5 max-w-md">
-              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">Full SEO
-                Expert</span>
-              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">AI SEO</span>
-              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">AEO</span>
-              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">SEO
-                Expert</span>
-              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">Drive Organic
-                Traffic</span>
-              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">Top Rated
-                Plus on Upwork</span>
-              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">226
-                projects</span>
-              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">5,708
-                hours</span>
-              <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">$80k+</span>
+            <div class="footer-badges">
+              <span class="footer-badge">Full SEO Expert</span>
+              <span class="footer-badge">AI SEO</span>
+              <span class="footer-badge">AEO</span>
+              <span class="footer-badge">GEO Expert</span>
+              <span class="footer-badge">Drive Organic Traffic</span>
+              <span class="footer-badge">Top Rated Plus on Upwork</span>
+              <span class="footer-badge">226 projects</span>
+              <span class="footer-badge">5,708 hours</span>
+              <span class="footer-badge">$80k+</span>
             </div>
           </div>
 
-          <!-- Services Links Column -->
-          <div class="lg:col-span-3 flex flex-col gap-4">
-            <h4 class="text-lg font-bold text-gray-200">Services</h4>
-            <ul class="flex flex-col gap-3 text-gray-400 text-sm font-medium">
-              <li><a href="#" class="hover:text-white transition-colors">Full SEO</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">AI SEO</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">AEO – Answer Engine</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">GEO – Generative Engine</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">B2B SEO</a></li>
-            </ul>
-          </div>
+          <!-- Right Links Section (Span 8) structured as a clean 3-column subgrid -->
+          <div class="footer-links-grid">
 
-          <!-- Pages Links Column -->
-          <div class="lg:col-span-2 flex flex-col gap-4">
-            <h4 class="text-lg font-bold text-gray-200">Pages</h4>
-            <ul class="flex flex-col gap-3 text-gray-400 text-sm font-medium">
-              <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">Services</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">My Works</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">About Me</a></li>
-            </ul>
-          </div>
-
-          <!-- Connect Column -->
-          <div class="lg:col-span-2 flex flex-col gap-4">
-            <h4 class="text-lg font-bold text-gray-200">Connect</h4>
-            <div class="flex flex-col gap-3 text-sm text-gray-400">
-              <a href="#" class="flex items-center gap-2 hover:text-white transition-colors">
-                <span class="inline-block w-2 h-2 rounded-full bg-[#14a800]"></span>
-                <span class="text-white font-medium">Upwork profile</span>
-              </a>
-              <p>All inquiries via Upwork</p>
+            <!-- Services Links Column -->
+            <div class="footer-col">
+              <h4 class="footer-heading">Services</h4>
+              <ul class="footer-list">
+                <li><a href="#" class="footer-link">Full SEO</a></li>
+                <li><a href="#" class="footer-link">AI SEO</a></li>
+                <li><a href="#" class="footer-link">AEO – Answer Engine</a></li>
+                <li><a href="#" class="footer-link">GEO – Generative Engine</a></li>
+                <li><a href="#" class="footer-link">B2B SEO</a></li>
+              </ul>
             </div>
+
+            <!-- Pages Links Column -->
+            <div class="footer-col">
+              <h4 class="footer-heading">Pages</h4>
+              <ul class="footer-list">
+                <li><a href="#" class="footer-link">Home</a></li>
+                <li><a href="#" class="footer-link">Services</a></li>
+                <li><a href="#" class="footer-link">My Works</a></li>
+                <li><a href="#" class="footer-link">About Me</a></li>
+              </ul>
+            </div>
+
+            <!-- Connect Column -->
+            <div class="footer-col">
+              <h4 class="footer-heading">Connect</h4>
+              <div class="footer-connect-box">
+                <a href="#" class="footer-connect-link">
+                  <img src="assets/images/footer-mini-up.svg" alt="upwork" class="footer-connect-icon">
+                  <span class="footer-connect-text">★ Upwork profile</span>
+                </a>
+                <p class="footer-inquiry-text">All inquiries via Upwork</p>
+              </div>
+            </div>
+
           </div>
 
         </div>
@@ -826,32 +1768,36 @@
       </div>
     </div>
 
-    <!-- Bottom Mini Footer (Radial BG & Big Logo) -->
-    <div class="relative bg-cover bg-center pt-24 pb-8 overflow-hidden text-center"
+    <!-- Footer Wrapped in an Anchor Tag -->
+    <a href="#" id="ctaCursorArea"
+      class="relative block w-full bg-cover bg-center py-3 overflow-hidden text-center no-underline cursor-pointer"
       style="background-image: url('assets/images/footer-bottom-radial.svg');">
 
-      <!-- Floating Upwork CTA Button Overlap -->
-      <!-- <div class="absolute top-6 left-1/2 -translate-x-1/2 z-20">
-        <a href="#" class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-black text-white text-sm font-semibold shadow-2xl border border-white/10 hover:bg-gray-900 transition-all">
-          <span>View my Upwork profile</span>
-          <span class="w-6 h-6 rounded-full bg-[#14a800] flex items-center justify-center text-white text-xs font-bold">Up</span>
-        </a>
-      </div> -->
+      <!-- Floating Upwork CTA Button (Changed to fixed and added transition classes) -->
+      <div id="floating-cursor"
+        class="fixed pointer-events-none opacity-0 transition-opacity duration-300 ease-out whitespace-nowrap inline-flex items-center gap-1.5 lg:gap-2 xl:gap-2.5 p-[4px_4px_4px_24px] rounded-[500px] bg-[#020914] text-white font-bold text-sm lg:text-base xl:text-lg 2xl:text-[20px] leading-[124%] shrink-0 z-50">
+        <span>View my Upwork profile</span>
+        <div id="ctaIcon" class="select-none pointer-events-none w-12 h-12 flex items-center justify-center">
+          <img src="assets/images/upwork-circle-white.svg" alt="Upwork" class="w-full h-full object-contain">
+        </div>
+      </div>
 
       <!-- Big Footer Logo Image -->
-      <div class="flex justify-center mb-6">
+      <div class="flex justify-center pointer-events-none">
         <img src="assets/images/footer-bottom-big-logo.png" alt="Shah Sultan"
           class="w-full max-w-6xl object-contain opacity-90 select-none pointer-events-none">
       </div>
+    </a>
 
-      <!-- Copyright Text -->
-      <div class="container mx-auto px-4 text-xs text-gray-400 relative z-10">
-        © 2026 Shah Sultan
-      </div>
 
+
+    <!-- Copyright Text -->
+    <div
+      class="text-center text-white/60 text-sm sm:text-base md:text-lg lg:text-xl font-semibold leading-[130%] py-2 md:py-3 bg-[linear-gradient(180deg,#020914_0%,#1A2332_100%)]">
+      © 2026 Shah Sultan
     </div>
-
   </footer>
+
   <!-- Footer Section -->
 
 

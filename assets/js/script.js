@@ -24,19 +24,24 @@ if (typeof Lenis !== 'undefined') {
   gsap.ticker.lagSmoothing(0);
 }
 
-// Header JS
 document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
   const hamburgerIcon = document.getElementById('hamburgerIcon');
   const closeIcon = document.getElementById('closeIcon');
   const mobileLinks = document.querySelectorAll('.mobile-link');
+  const siteHeader = document.getElementById('siteHeader');
 
   let isOpen = false;
 
-  // Initial states
+  // Initial states for dropdown animation
+  gsap.set(mobileMenu, {
+    scaleY: 0.9,
+    y: -10
+  });
+
   gsap.set(mobileLinks, {
-    y: 20,
+    y: 10,
     opacity: 0
   });
 
@@ -45,16 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
     scale: 0.75
   });
 
-  // Menu toggle
+  // Menu toggle (Dropdown animation)
   menuToggle.addEventListener('click', () => {
     isOpen = !isOpen;
 
     if (isOpen) {
-      // Open menu
       mobileMenu.style.pointerEvents = 'auto';
 
       gsap.to(mobileMenu, {
         opacity: 1,
+        scaleY: 1,
+        y: 0,
         duration: 0.3,
         ease: 'power2.out'
       });
@@ -62,10 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
       gsap.to(mobileLinks, {
         y: 0,
         opacity: 1,
-        stagger: 0.1,
-        duration: 0.4,
+        stagger: 0.05,
+        duration: 0.3,
         ease: 'power2.out',
-        delay: 0.1
+        delay: 0.05
       });
 
       // Hamburger → Close
@@ -86,7 +92,9 @@ document.addEventListener('DOMContentLoaded', () => {
       // Close menu
       gsap.to(mobileMenu, {
         opacity: 0,
-        duration: 0.3,
+        scaleY: 0.9,
+        y: -10,
+        duration: 0.25,
         ease: 'power2.in',
         onComplete: () => {
           mobileMenu.style.pointerEvents = 'none';
@@ -94,9 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       gsap.to(mobileLinks, {
-        y: 20,
+        y: 10,
         opacity: 0,
-        duration: 0.2
+        duration: 0.15
       });
 
       // Close → Hamburger
@@ -114,13 +122,25 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  // Mobile Header Backdrop & Top Pinning on Scroll (Mobile Only)
+  window.addEventListener('scroll', () => {
+    if (window.innerWidth < 768) {
+      if (window.scrollY > 15) {
+        siteHeader.classList.remove('mt-4', 'sm:mt-5');
+        siteHeader.classList.add('top-0', 'bg-[linear-gradient(180deg,#020914_0%,#1A2332_100%)]', 'backdrop-blur-md', 'py-2');
+      } else {
+        siteHeader.classList.add('mt-4', 'sm:mt-5');
+        siteHeader.classList.remove('top-0', 'bg-[linear-gradient(180deg,#020914_0%,#1A2332_100%)]', 'backdrop-blur-md', 'py-2');
+      }
+    }
+  });
 });
 
-// Desktop on Scroll header sticky
+// Desktop on Scroll header sticky & animations (Desktop Only)
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  // 1. Logo / CTA vanish animation
   if (window.innerWidth >= 768) {
     gsap.to("#siteLogo, #desktopCta", {
       scrollTrigger: {
@@ -136,7 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 2. Dynamic theme switcher
   document.querySelectorAll("section[data-theme='dark']").forEach((section) => {
     ScrollTrigger.create({
       trigger: section,
@@ -215,78 +234,308 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 
 // 1. Button Div Cloning
-const elems = document.querySelectorAll(".text-shift-btn .ct");
+document.querySelectorAll(".text-shift-btn .ct").forEach((ct) => {
 
-elems.forEach((elem) => {
-  const clone = elem.cloneNode(true);
-  clone.classList.add("clone");
+  const clone = ct.cloneNode(true);
+
   clone.classList.remove("ct");
-  elem.after(clone);
+  clone.classList.add("clone");
+
+  ct.appendChild(clone);
+
+  new SplitText(ct, {
+    type: "chars",
+    charsClass: "char"
+  });
 });
 
-// 2. SplitText (Requires GSAP Club / SplitText plugin)
-var btnSplitText = new SplitText(".text-shift-btn .ct, .text-shift-btn .clone", {
-  type: "chars"
-});
 
-// 3. Timeline Animation
-const buttons = document.querySelectorAll(".text-shift-btn");
+document.querySelectorAll(".text-shift-btn").forEach((button) => {
 
-buttons.forEach(function (item) {
-  const tl = gsap
-    .timeline({
-      paused: true
-    })
+  const original = button.querySelector(".ct");
+  const clone = button.querySelector(".clone");
+
+  const tl = gsap.timeline({
+    paused: true
+  });
+
+  tl.to(original.querySelectorAll(":scope > .char"), {
+    yPercent: -100,
+    autoAlpha: 0,
+    duration: 0.6,
+    stagger: 0.025,
+    ease: "power2.inOut"
+  })
+
     .fromTo(
-      item.querySelectorAll(".ct div"),
+      clone.querySelectorAll(".char"),
       {
-        yPercent: 0,
-        autoAlpha: 1
-      },
-      {
-        yPercent: -200,
-        stagger: 0.02,
-        duration: 0.8,
-        autoAlpha: 0,
-        ease: "power1.inOut"
-      }
-    )
-    .fromTo(
-      item.querySelectorAll(".clone div"),
-      {
-        yPercent: 200,
+        yPercent: 100,
         autoAlpha: 0
       },
       {
         yPercent: 0,
-        stagger: 0.02,
-        duration: 0.8,
         autoAlpha: 1,
-        ease: "power1.inOut"
+        duration: 0.6,
+        stagger: 0.025,
+        ease: "power2.inOut"
       },
       "<"
     );
 
-  item.addEventListener("mouseenter", () => tl.play());
-  item.addEventListener("mouseleave", () => tl.reverse());
+  button.addEventListener("mouseenter", () => tl.play());
+  button.addEventListener("mouseleave", () => tl.reverse());
+});
+
+
+// Brand marquee slider
+document.addEventListener('DOMContentLoaded', function () {
+  new Splide('#brand-slider', {
+    type: 'loop',
+    drag: 'free',
+    focus: 'center',
+    perPage: 7,
+    autoWidth: true,
+    gap: '16px',
+    arrows: false,
+    pagination: false,
+    autoScroll: {
+      speed: 1, // Adjust scrolling speed here (positive values scroll right-to-left)
+      pauseOnHover: false,
+      pauseOnFocus: false,
+    },
+  }).mount(window.splide.Extensions);
+});
+
+
+// Stats Counter js
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const statsSection = document.querySelector("#stats-section");
+
+  // Stop if stats section doesn't exist on this page
+  if (!statsSection) return;
+
+  const counters = statsSection.querySelectorAll(".stat-counter");
+  const statColumns = statsSection.querySelectorAll(".flex-col");
+
+
+  ScrollTrigger.create({
+    trigger: statsSection,
+    start: "top 80%",
+    once: true,
+
+    onEnter: () => {
+
+      // Counter animation
+      counters.forEach((counter) => {
+
+        const target = Number(
+          counter.getAttribute("data-target")
+        );
+
+        gsap.to(counter, {
+          innerText: target,
+          duration: 2,
+          ease: "power2.out",
+          snap: {
+            innerText: 1
+          },
+
+          onUpdate: function () {
+            counter.innerText = Math.floor(
+              Number(counter.innerText)
+            );
+          }
+        });
+
+      });
+
+
+      // Fade + scale animation
+      gsap.from(statColumns, {
+        y: 20,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power2.out"
+      });
+
+    }
+  });
+
 });
 
 
 // 
-  document.addEventListener('DOMContentLoaded', function () {
-    new Splide('#brand-slider', {
-      type: 'loop',
-      drag: 'free',
-      focus: 'center',
-      perPage: 7,
-      autoWidth: true,
-      gap: '16px',
-      arrows: false,
-      pagination: false,
-      autoScroll: {
-        speed: 1, // Adjust scrolling speed here (positive values scroll right-to-left)
-        pauseOnHover: false,
-        pauseOnFocus: false,
-      },
-    }).mount(window.splide.Extensions);
+//  Project showcase cursor pointer
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".project-card");
+
+  cards.forEach((card) => {
+    const cursor = card.querySelector(".custom-cursor");
+    if (!cursor) return;
+
+    // Smooth physics configuration (0.7s duration for smooth trailing)
+    const xTo = gsap.quickTo(cursor, "x", { duration: 0.7, ease: "power2.out" });
+    const yTo = gsap.quickTo(cursor, "y", { duration: 0.7, ease: "power2.out" });
+
+    let prevX = 0;
+
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+
+      // Center badge on mouse position relative to card boundaries
+      const mouseX = e.clientX - rect.left - cursor.offsetWidth / 2;
+      const mouseY = e.clientY - rect.top - cursor.offsetHeight / 2;
+
+      xTo(mouseX);
+      yTo(mouseY);
+
+      // Dynamic tilt during movement
+      const deltaX = e.clientX - prevX;
+      const tilt = Math.min(Math.max(deltaX * 0.15, -12), 12);
+      gsap.to(cursor, { rotation: -6 + tilt, duration: 0.4, ease: "power1.out" });
+
+      prevX = e.clientX;
+    });
+
+    // Reveal badge on enter
+    card.addEventListener("mouseenter", () => {
+      gsap.to(cursor, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.4,
+        ease: "back.out(1.5)",
+      });
+    });
+
+    // Hide badge on leave
+    card.addEventListener("mouseleave", () => {
+      gsap.to(cursor, {
+        opacity: 0,
+        scale: 0.4,
+        duration: 0.3,
+        ease: "power2.in",
+      });
+    });
   });
+});
+
+
+// Global H1, H2 reveal animation
+gsap.registerPlugin(ScrollTrigger);
+
+document.querySelectorAll("h1, h2").forEach((heading) => {
+  const split = new SplitText(heading, {
+    type: "lines",
+    linesClass: "split-line"
+  });
+
+  gsap.from(split.lines, {
+    yPercent: 120,
+    opacity: 0,
+    scale: 0.96,
+    filter: "blur(8px)",
+    duration: 1.1,
+    ease: "power4.out",
+    stagger: 0.1,
+    scrollTrigger: {
+      trigger: heading,
+      start: "top 85%",
+      once: true
+    }
+  });
+});
+
+
+// Testimonial splidejs 
+document.addEventListener('DOMContentLoaded', function () {
+  const splide = new Splide('#testimonial-slider', {
+    type: 'loop',
+    drag: 'free',
+    focus: 'center',
+    perPage: 3,
+    gap: '32px',
+    arrows: false,
+    pagination: true,
+
+    breakpoints: {
+      1024: {
+        perPage: 2,
+        gap: "24px"
+      },
+      640: {
+        perPage: 1,
+      }
+    }
+  });
+
+  // Only enable AutoScroll on screens larger than 640px
+  if (window.innerWidth > 640) {
+    splide.mount({
+      AutoScroll: window.splide.Extensions.AutoScroll
+    });
+  } else {
+    splide.mount();
+  }
+});
+
+// Footer big name crsor follow
+
+document.addEventListener("DOMContentLoaded", () => {
+  const watermarkContainer = document.getElementById("ctaCursorArea");
+  const floatingCursor = document.getElementById("floating-cursor");
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let cursorX = 0;
+  let cursorY = 0;
+  let isInside = false;
+
+  watermarkContainer.addEventListener("mouseenter", (e) => {
+    watermarkContainer.style.cursor = "none";
+    isInside = true;
+
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    // Snap instantly on entry so it doesn't glide in from a corner
+    cursorX = e.clientX;
+    cursorY = e.clientY;
+
+    floatingCursor.style.opacity = "1";
+  });
+
+  watermarkContainer.addEventListener("mouseleave", () => {
+    watermarkContainer.style.cursor = "default";
+    isInside = false;
+    floatingCursor.style.opacity = "0";
+  });
+
+  watermarkContainer.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  watermarkContainer.addEventListener("click", () => {
+    isInside = false;
+    floatingCursor.style.opacity = "0";
+    watermarkContainer.style.cursor = "default";
+  });
+
+  function animate() {
+    // Smooth trailing effect using viewport coordinates
+    cursorX += (mouseX - cursorX) * 0.15;
+    cursorY += (mouseY - cursorY) * 0.15;
+
+    // Offset slightly so it floats nicely next to the native cursor spot
+    floatingCursor.style.left = `${cursorX + 15}px`;
+    floatingCursor.style.top = `${cursorY - 25}px`;
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+});
