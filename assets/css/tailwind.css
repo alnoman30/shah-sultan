@@ -165,7 +165,6 @@ html.lenis body {
   }
 }
 
-
 .header-inner {
   display: flex;
   align-items: center;
@@ -185,45 +184,14 @@ html.lenis body {
 
 .logo-img {
   width: 7rem;
-  /* w-28 */
   transition: transform 0.4s ease-in-out;
 }
 
-@media (min-width: 640px) {
-  .logo-img {
-    width: 8rem;
-  }
-}
-
-/* sm:w-32 */
-@media (min-width: 768px) {
-  .logo-img {
-    width: 9rem;
-  }
-}
-
-/* md:w-36 */
-@media (min-width: 1024px) {
-  .logo-img {
-    width: 10rem;
-  }
-}
-
-/* lg:w-40 */
-@media (min-width: 1280px) {
-  .logo-img {
-    width: 11rem;
-  }
-}
-
-/* xl:w-44 */
-@media (min-width: 1536px) {
-  .logo-img {
-    width: 11.5625rem;
-  }
-}
-
-/* 2xl:w-46.25 */
+@media (min-width: 640px) { .logo-img { width: 8rem; } }
+@media (min-width: 768px) { .logo-img { width: 9rem; } }
+@media (min-width: 1024px) { .logo-img { width: 10rem; } }
+@media (min-width: 1280px) { .logo-img { width: 11rem; } }
+@media (min-width: 1536px) { .logo-img { width: 11.5625rem; } }
 
 #siteLogo:hover .logo-img {
   transform: scale(0.95);
@@ -232,7 +200,6 @@ html.lenis body {
 /* --- Desktop Navigation --- */
 .desktop-nav {
   display: none;
-  /* hidden on mobile */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -246,23 +213,13 @@ html.lenis body {
 }
 
 @media (min-width: 768px) {
-  .desktop-nav {
-    display: flex;
-  }
+  .desktop-nav { display: flex; }
 }
-
 @media (min-width: 1024px) {
-  .desktop-nav {
-    gap: 0.5rem;
-    padding: 0.5rem;
-  }
+  .desktop-nav { gap: 0.5rem; padding: 0.5rem; }
 }
-
 @media (min-width: 1280px) {
-  .desktop-nav {
-    gap: 0.75rem;
-    padding: 0.75rem;
-  }
+  .desktop-nav { gap: 0.75rem; padding: 0.75rem; }
 }
 
 /* Nav Buttons Common / Primary / Secondary */
@@ -280,16 +237,13 @@ html.lenis body {
 }
 
 @media (min-width: 1024px) {
-
   .nav-btn-primary,
   .nav-btn-secondary {
     font-size: 1rem;
-    padding: 0.625rem 1.25ln;
+    padding: 0.625rem 1.25rem;
   }
 }
-
 @media (min-width: 1280px) {
-
   .nav-btn-primary,
   .nav-btn-secondary {
     font-size: 18px;
@@ -311,6 +265,18 @@ html.lenis body {
   color: #ffffff;
 }
 
+/* --- Active State Design for Navigation --- */
+.desktop-nav a.active {
+  background-color: #020914 !important;
+  color: #ffffff !important;
+}
+
+.mobile-menu a.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #FF5722;
+  font-weight: 700;
+}
+
 /* --- Dark Theme Trigger for Desktop Nav --- */
 #desktopNav.nav-dark-theme {
   background-color: #1861C5;
@@ -322,7 +288,7 @@ html.lenis body {
   color: #ffffff;
 }
 
-#desktopNav.nav-dark-theme a.active-link,
+#desktopNav.nav-dark-theme a.active,
 #desktopNav.nav-dark-theme a:hover {
   background-color: #ffffff;
   color: #020914;
@@ -347,31 +313,10 @@ html.lenis body {
   transition: box-shadow 0.3s ease;
 }
 
-@media (min-width: 768px) {
-  .desktop-cta {
-    display: inline-flex;
-  }
-}
-
-@media (min-width: 1024px) {
-  .desktop-cta {
-    gap: 0.5rem;
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .desktop-cta {
-    gap: 0.625rem;
-    font-size: 1.125rem;
-  }
-}
-
-@media (min-width: 1536px) {
-  .desktop-cta {
-    font-size: 20px;
-  }
-}
+@media (min-width: 768px) { .desktop-cta { display: inline-flex; } }
+@media (min-width: 1024px) { .desktop-cta { gap: 0.5rem; font-size: 1rem; } }
+@media (min-width: 1280px) { .desktop-cta { gap: 0.625rem; font-size: 1.125rem; } }
+@media (min-width: 1536px) { .desktop-cta { font-size: 20px; } }
 
 .desktop-cta:hover {
   box-shadow: 0 0 25px rgba(255, 87, 34, 0.6);
@@ -408,9 +353,7 @@ html.lenis body {
 }
 
 @media (min-width: 768px) {
-  .menu-toggle {
-    display: none;
-  }
+  .menu-toggle { display: none; }
 }
 
 .menu-icon {
@@ -419,10 +362,7 @@ html.lenis body {
 }
 
 @media (min-width: 640px) {
-  .menu-icon {
-    width: 2rem;
-    height: 2rem;
-  }
+  .menu-icon { width: 2rem; height: 2rem; }
 }
 
 .close-icon {
@@ -469,9 +409,7 @@ html.lenis body {
 }
 
 @media (min-width: 768px) {
-  .mobile-menu {
-    display: none;
-  }
+  .mobile-menu { display: none; }
 }
 
 .mobile-link {
@@ -544,6 +482,7 @@ html.lenis body {
 .text-shift-btn .char {
   display: inline-block;
 }
+
 
 /* Testimonial sections css */
 /* --- Custom Splide Pagination Styles --- */

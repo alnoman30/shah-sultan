@@ -344,9 +344,6 @@
   .mb-8 {
     margin-bottom: calc(var(--spacing) * 8);
   }
-  .ml-auto {
-    margin-left: auto;
-  }
   .\!flex {
     display: flex !important;
   }
@@ -680,9 +677,6 @@
   }
   .bg-\[\#FF6F42\] {
     background-color: #FF6F42;
-  }
-  .bg-\[\#FF5722\] {
-    background-color: #FF5722;
   }
   .bg-\[\#FFF4F0\] {
     background-color: #FFF4F0;
@@ -1110,11 +1104,6 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
-  .transition-shadow {
-    transition-property: box-shadow;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
   .transition-transform {
     transition-property: transform, translate, scale, rotate;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -1188,10 +1177,6 @@
       .hover\:bg-white\/15:hover {
         background-color: color-mix(in oklab, var(--color-white) 15%, transparent);
       }
-    }
-    .hover\:shadow-\[0_0_25px_rgba\(255\,87\,34\,0\.6\)\]:hover {
-      --tw-shadow: 0 0 25px var(--tw-shadow-color, rgba(255,87,34,0.6));
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
   .active\:scale-95:active {
@@ -2327,7 +2312,7 @@ html.lenis, html.lenis body {
 @media (min-width: 1024px) {
   .nav-btn-primary, .nav-btn-secondary {
     font-size: 1rem;
-    padding: 0.625rem 1.25ln;
+    padding: 0.625rem 1.25rem;
   }
 }
 @media (min-width: 1280px) {
@@ -2347,6 +2332,15 @@ html.lenis, html.lenis body {
   background-color: #020914;
   color: #ffffff;
 }
+.desktop-nav a.active {
+  background-color: #020914 !important;
+  color: #ffffff !important;
+}
+.mobile-menu a.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #FF5722;
+  font-weight: 700;
+}
 #desktopNav.nav-dark-theme {
   background-color: #1861C5;
   color: #ffffff;
@@ -2355,7 +2349,7 @@ html.lenis, html.lenis body {
 #desktopNav.nav-dark-theme a {
   color: #ffffff;
 }
-#desktopNav.nav-dark-theme a.active-link, #desktopNav.nav-dark-theme a:hover {
+#desktopNav.nav-dark-theme a.active, #desktopNav.nav-dark-theme a:hover {
   background-color: #ffffff;
   color: #020914;
 }
