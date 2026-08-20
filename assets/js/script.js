@@ -301,22 +301,32 @@ document.querySelectorAll(".text-shift-btn").forEach((button) => {
 
 
 // Brand marquee slider
-document.addEventListener('DOMContentLoaded', function () {
-  new Splide('#brand-slider', {
-    type: 'loop',
-    drag: 'free',
-    focus: 'center',
-    perPage: 7,
-    autoWidth: true,
-    gap: '16px',
-    arrows: false,
-    pagination: false,
-    autoScroll: {
-      speed: 1, // Adjust scrolling speed here (positive values scroll right-to-left)
-      pauseOnHover: false,
-      pauseOnFocus: false,
-    },
-  }).mount(window.splide.Extensions);
+document.addEventListener("DOMContentLoaded", () => {
+  try {
+    const slider = document.querySelector("#brand-slider");
+
+    if (!slider || typeof Splide === "undefined") return;
+    if (!window.splide?.Extensions) return;
+
+    new Splide(slider, {
+      type: "loop",
+      drag: "free",
+      focus: "center",
+      perPage: 7,
+      autoWidth: true,
+      gap: "16px",
+      arrows: false,
+      pagination: false,
+      autoScroll: {
+        speed: 1,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+      },
+    }).mount(window.splide.Extensions);
+
+  } catch (error) {
+    console.warn("Brand slider could not be initialized:", error);
+  }
 });
 
 
@@ -473,52 +483,84 @@ document.querySelectorAll("h1:not(.heading-exit), h2:not(.heading-exit)").forEac
 
 
 //  Text colro change animation
-gsap.registerPlugin(SplitText, ScrollTrigger);
+document.addEventListener("DOMContentLoaded", () => {
+  const text = document.querySelector(".text-color-change");
 
-const split = new SplitText(".text-color-change", {
-  type: "words",
-  wordsClass: "split-word"
-});
+  // Stop if this element isn't on the page
+  if (!text) return;
 
-gsap.to(split.words, {
-  color: "#020914",
-  stagger: 0.08,
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".text-color-change",
-    start: "top 80%",
-    end: "bottom 40%",
-    scrub: 1,
+  // Stop if GSAP/plugins aren't loaded
+  if (
+    typeof gsap === "undefined" ||
+    typeof SplitText === "undefined" ||
+    typeof ScrollTrigger === "undefined"
+  ) {
+    return;
   }
+
+  gsap.registerPlugin(SplitText, ScrollTrigger);
+
+  const split = new SplitText(text, {
+    type: "words",
+    wordsClass: "split-word",
+  });
+
+  gsap.to(split.words, {
+    color: "#020914",
+    stagger: 0.08,
+    ease: "none",
+
+    scrollTrigger: {
+      trigger: text,
+      start: "top 80%",
+      end: "bottom 40%",
+      scrub: 1,
+    },
+  });
 });
 
 // Testimonial splidejs 
-document.addEventListener('DOMContentLoaded', function () {
-  const splide = new Splide('#testimonial-slider', {
-    type: 'loop',
-    drag: 'free',
-    focus: 'center',
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.querySelector("#testimonial-slider");
+
+  // Stop if this page doesn't have the testimonial slider
+  if (!slider) return;
+
+  // Stop if Splide isn't loaded
+  if (typeof Splide === "undefined") return;
+
+  const splide = new Splide(slider, {
+    type: "loop",
+    drag: "free",
+    focus: "center",
     perPage: 3,
-    gap: '32px',
+    gap: "32px",
     arrows: false,
     pagination: true,
 
     breakpoints: {
       1024: {
         perPage: 2,
-        gap: "24px"
+        gap: "24px",
       },
       640: {
         perPage: 1,
-      }
-    }
+      },
+    },
   });
 
-  // Only enable AutoScroll on screens larger than 640px
+  // AutoScroll only on screens larger than 640px
   if (window.innerWidth > 640) {
-    splide.mount({
-      AutoScroll: window.splide.Extensions.AutoScroll
-    });
+    const autoScroll = window.splide?.Extensions?.AutoScroll;
+
+    if (autoScroll) {
+      splide.mount({
+        AutoScroll: autoScroll,
+      });
+    } else {
+      // Mount normally if AutoScroll isn't available
+      splide.mount();
+    }
   } else {
     splide.mount();
   }
