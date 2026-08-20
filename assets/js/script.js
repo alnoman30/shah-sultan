@@ -583,181 +583,137 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// 
-document.addEventListener("DOMContentLoaded", function () {
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const allProjectItems = Array.from(document.querySelectorAll(".project-item"));
-  const featuredItem = document.getElementById("featured-project-item");
-  const featuredNotFound = document.getElementById("featured-not-found");
-  const gridNotFound = document.getElementById("grid-not-found");
-  
-  // Pagination Settings
+// Works page filtersJS
+document.addEventListener("DOMContentLoaded", () => {
+  const items = [...document.querySelectorAll(".project-item")];
+  const featured = document.querySelector("#featured-project-item");
+  const filters = document.querySelectorAll(".filter-btn");
+  const gridNotFound = document.querySelector("#grid-not-found");
+  const featuredNotFound = document.querySelector("#featured-not-found");
+  const pagination = document.querySelector("#pagination-container");
+
   const itemsPerPage = 6;
   let currentPage = 1;
   let activeFilter = "all";
 
-  // Create or select a pagination container for the grid
-  let paginationContainer = document.getElementById("pagination-container");
-  const gridElement = document.querySelector(".grid");
-  
-  if (!paginationContainer) {
-    paginationContainer = document.createElement("div");
-    paginationContainer.id = "pagination-container";
-    paginationContainer.className = "flex justify-center items-center gap-2 mt-8 lg:mt-12";
-    const gridSection = gridElement?.parentElement || gridNotFound?.parentElement;
-    if (gridSection) gridSection.appendChild(paginationContainer);
+  function matchesFilter(item) {
+    if (activeFilter === "all") return true;
+
+    return (item.dataset.category || "")
+      .toLowerCase()
+      .includes(activeFilter.toLowerCase());
   }
-
-  // Prevent layout shift (collapsing height) by locking the grid container's minimum height
-  function setGridMinHeight() {
-    if (!gridElement || allProjectItems.length === 0) return;
-    
-    const sampleItems = allProjectItems.filter(item => item !== featuredItem).slice(0, itemsPerPage);
-    if (sampleItems.length === 0) return;
-
-    const previousStates = sampleItems.map(item => item.style.display);
-    sampleItems.forEach(item => { item.style.display = "block"; });
-
-    const measuredHeight = gridElement.offsetHeight;
-    if (measuredHeight > 0) {
-      gridElement.style.minHeight = `${measuredHeight}px`;
-    }
-
-    sampleItems.forEach((item, index) => { item.style.display = previousStates[index]; });
-  }
-
-  setTimeout(setGridMinHeight, 50);
 
   function updateView() {
-    // 1. Filter items for the "All works" grid (excluding featured item)
-    const filteredGridItems = allProjectItems.filter((item) => {
-      if (item === featuredItem) return false;
-      const categories = (item.getAttribute("data-category") || "").toLowerCase();
-      return activeFilter === "all" || categories.includes(activeFilter.toLowerCase());
-    });
+    // Grid items
+    const gridItems = items.filter(item => item !== featured);
+    const filteredItems = gridItems.filter(matchesFilter);
 
-    // 2. Handle Featured Work Section visibility & its own Not Found message
-    if (featuredItem) {
-      const featuredCategories = (featuredItem.getAttribute("data-category") || "").toLowerCase();
-      const isFeaturedMatch = activeFilter === "all" || featuredCategories.includes(activeFilter.toLowerCase());
+    // Featured project
+    if (featured) {
+      const featuredMatches = matchesFilter(featured);
 
-      if (isFeaturedMatch) {
-        featuredItem.style.display = "grid";
-        if (featuredNotFound) featuredNotFound.classList.add("hidden");
-      } else {
-        featuredItem.style.display = "none";
-        if (featuredNotFound) {
-          featuredNotFound.classList.remove("hidden");
-          gsap.fromTo(featuredNotFound, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4 });
-        }
+      featured.style.display = featuredMatches ? "grid" : "none";
+
+      if (featuredNotFound) {
+        featuredNotFound.classList.toggle("hidden", featuredMatches);
       }
     }
 
-    // 3. Calculate pagination slices for grid items
-    const totalPages = Math.ceil(filteredGridItems.length / itemsPerPage);
-    if (currentPage > totalPages && totalPages > 0) {
-      currentPage = totalPages;
-    } else if (currentPage < 1) {
-      currentPage = 1;
-    }
-
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const currentItemsToShow = filteredGridItems.slice(startIndex, endIndex);
-
-    // 4. Separate grid items for GSAP hide/show transition
-    let itemsToHide = allProjectItems.filter(item => item !== featuredItem && !currentItemsToShow.includes(item));
-    let itemsToShow = currentItemsToShow;
-
-    // 5. Handle "All works" Grid Not Found message independently
-    if (filteredGridItems.length === 0) {
-      if (gridNotFound) {
-        gridNotFound.classList.remove("hidden");
-        gsap.fromTo(gridNotFound, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4 });
-      }
-      paginationContainer.innerHTML = "";
-    } else {
-      if (gridNotFound) gridNotFound.classList.add("hidden");
-      renderPaginationControls(totalPages);
-    }
-
-    // 6. Run GSAP Animations for grid cards
-    if (itemsToHide.length > 0) {
-      gsap.to(itemsToHide, {
-        opacity: 0,
-        scale: 0.95,
-        duration: 0.2,
-        onComplete: function() {
-          itemsToHide.forEach(item => { item.style.display = "none"; });
-        }
-      });
-    }
-
-    if (itemsToShow.length > 0) {
-      itemsToShow.forEach(item => { item.style.display = "block"; });
-      gsap.fromTo(
-        itemsToShow,
-        { opacity: 0, scale: 0.95, y: 15 },
-        {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          duration: 0.4,
-          stagger: 0.05,
-          overwrite: "auto",
-          ease: "power2.out"
-        }
+    // No results
+    if (gridNotFound) {
+      gridNotFound.classList.toggle(
+        "hidden",
+        filteredItems.length > 0
       );
     }
+
+    // Pagination
+    const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+    currentPage = Math.min(currentPage, Math.max(totalPages, 1));
+
+    const start = (currentPage - 1) * itemsPerPage;
+    const visibleItems = filteredItems.slice(start, start + itemsPerPage);
+
+    // Show/hide projects
+    gridItems.forEach(item => {
+      const shouldShow = visibleItems.includes(item);
+
+      item.style.display = shouldShow ? "block" : "none";
+    });
+
+    renderPagination(totalPages);
   }
 
-  function renderPaginationControls(totalPages) {
-    if (totalPages <= 1) {
-      paginationContainer.innerHTML = "";
+  function renderPagination(totalPages) {
+    if (!pagination || totalPages <= 1) {
+      if (pagination) pagination.innerHTML = "";
       return;
     }
 
-    let html = "";
-    // Previous Button
-    html += `<button class="px-4 py-2 rounded-full bg-gray-100 text-[#020914] font-medium disabled:opacity-40" ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1}, event)">Prev</button>`;
+    pagination.innerHTML = `
+      <button
+        class="px-4 py-2 rounded-full bg-gray-100 text-[#020914] font-medium"
+        ${currentPage === 1 ? "disabled" : ""}
+        data-page="${currentPage - 1}"
+      >
+        Prev
+      </button>
 
-    // Page Numbers
-    for (let i = 1; i <= totalPages; i++) {
-      const isActive = i === currentPage;
-      const btnClass = isActive ? "bg-[#FF6F42] text-white" : "bg-gray-100 text-[#020914]";
-      html += `<button class="w-10 h-10 rounded-full font-medium ${btnClass} transition-colors" onclick="changePage(${i}, event)">${i}</button>`;
-    }
+      ${Array.from({ length: totalPages }, (_, i) => {
+        const page = i + 1;
+        const active = page === currentPage;
 
-    // Next Button
-    html += `<button class="px-4 py-2 rounded-full bg-gray-100 text-[#020914] font-medium disabled:opacity-40" ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1}, event)">Next</button>`;
+        return `
+          <button
+            class="w-10 h-10 rounded-full font-medium ${
+              active
+                ? "bg-[#FF6F42] text-white"
+                : "bg-gray-100 text-[#020914]"
+            }"
+            data-page="${page}"
+          >
+            ${page}
+          </button>
+        `;
+      }).join("")}
 
-    paginationContainer.innerHTML = html;
+      <button
+        class="px-4 py-2 rounded-full bg-gray-100 text-[#020914] font-medium"
+        ${currentPage === totalPages ? "disabled" : ""}
+        data-page="${currentPage + 1}"
+      >
+        Next
+      </button>
+    `;
   }
 
-  // Seamless page change: prevents browser jumps and maintains smooth height lock
-  window.changePage = function(page, event) {
-    if (event) event.preventDefault();
-    currentPage = page;
-    updateView();
-  };
+  // Pagination clicks
+  pagination?.addEventListener("click", e => {
+    const button = e.target.closest("[data-page]");
+    if (!button || button.disabled) return;
 
-  // Filter Button Click Handlers
-  filterButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      filterButtons.forEach((btn) => {
+    currentPage = Number(button.dataset.page);
+    updateView();
+  });
+
+  // Filter clicks
+  filters.forEach(button => {
+    button.addEventListener("click", () => {
+      filters.forEach(btn => {
         btn.classList.remove("bg-[#FF6F42]", "text-white");
         btn.classList.add("bg-[#E9E9E9]", "text-[#020914]");
       });
-      
-      this.classList.remove("bg-[#E9E9E9]", "text-[#020914]");
-      this.classList.add("bg-[#FF6F42]", "text-white");
 
-      activeFilter = this.getAttribute("data-filter") || "all";
-      currentPage = 1; // Reset to page 1 on filter change
+      button.classList.add("bg-[#FF6F42]", "text-white");
+      button.classList.remove("bg-[#E9E9E9]", "text-[#020914]");
+
+      activeFilter = button.dataset.filter || "all";
+      currentPage = 1;
+
       updateView();
     });
   });
 
-  // Initial load execution
   updateView();
 });
