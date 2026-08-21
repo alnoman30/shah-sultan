@@ -151,11 +151,11 @@
             class="flex max-w-full lg:max-w-175 flex-col items-center gap-4 sm:gap-2 p-5 sm:p-8 rounded-4xl sm:rounded-[40px] border border-white/20 bg-white/5 backdrop-blur-[15px] w-full shadow-2xl">
 
             <!-- Top Stats Row -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full text-white">
+            <div id="stats-section" class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full text-white">
 
-              <!-- Rating -->
-              <div class="flex w-full flex-col items-start gap-1.75 rounded-xl bg-white/10 p-3 sm:p-4">
-                <div class="flex w-full min-w-0 items-center gap-0.5 sm:gap-1 mb-1 overflow-hidden">
+              <!-- Rating (JSS)  -->
+              <div class="flex w-full flex-col justify-between items-start gap-1.75 rounded-xl bg-white/10 p-3 sm:p-4">
+                <div class="flex w-full min-w-0 items-center gap-0.5 sm:gap-1 overflow-hidden">
                   <img src="assets/images/rating-star.svg" alt="star" class="size-4 shrink-0 object-contain ">
                   <img src="assets/images/rating-star.svg" alt="star" class="size-4 shrink-0 object-contain ">
                   <img src="assets/images/rating-star.svg" alt="star" class="size-4 shrink-0 object-contain ">
@@ -164,15 +164,14 @@
                 </div>
 
                 <span class="text-xs font-semibold text-white/70 sm:text-sm sm:text-white/50">
-                  100% JSS
+                  <span class="stat-counter" data-target="100">0</span><span class="stat-suffix">%</span> JSS
                 </span>
               </div>
-
 
               <!-- Projects -->
               <div class="flex p-3 sm:p-4 flex-col items-start gap-1.75 rounded-xl bg-white/10 w-full">
                 <span class="text-white text-lg sm:text-xl font-bold leading-[124%] mb-1">
-                  220+
+                  <span class="stat-counter" data-target="220">0</span><span class="stat-suffix">+</span>
                 </span>
                 <span class="text-xs sm:text-sm font-semibold text-white/70 sm:text-white/50">
                   Projects
@@ -182,7 +181,7 @@
               <!-- Hours -->
               <div class="flex p-3 sm:p-4 flex-col items-start gap-1.75 rounded-xl bg-white/10 w-full">
                 <span class="text-white text-lg sm:text-xl font-bold leading-[124%] mb-1">
-                  5,708
+                  <span class="stat-counter" data-target="5708">0</span>
                 </span>
                 <span class="text-xs sm:text-sm font-semibold text-white/70 sm:text-white/50">
                   Hours
@@ -192,7 +191,8 @@
               <!-- Earned -->
               <div class="flex p-3 sm:p-4 flex-col items-start gap-1.75 rounded-xl bg-white/10 w-full">
                 <span class="text-white text-lg sm:text-xl font-bold leading-[124%] mb-1">
-                  $80k+
+                  <span class="stat-prefix">$</span><span class="stat-counter" data-target="80">0</span><span
+                    class="stat-suffix">k+</span>
                 </span>
                 <span class="text-xs sm:text-sm font-semibold text-white/70 sm:text-white/50">
                   Earned
@@ -230,7 +230,6 @@
     </div>
   </section>
   <!-- Banner section -->
-
 
   <!-- Upwork Profile Card -->
   <section class="section-padding bg-white" data-theme="dark">
@@ -1563,7 +1562,7 @@
 
   <!-- CTA Section -->
   <section class="relative bg-cover bg-center bg-no-repeat pt-12 md:pt-16 lg:pt-24 pb-25 md:pb-50 overflow-hidden"
-    style="background-image: url('assets/images/cta-banner.png');">
+    style="background-image: url('assets/images/cta-banner.webp');">
 
 
     <!-- Positioned Grid / Shape Overlay Image on Top Right Corner -->
@@ -1599,12 +1598,12 @@
   </section>
 
   <!-- Footer Section -->
-  <footer class="relative overflow-hidden text-white -mt-15 md:-mt-30">
+  <footer class="relative  overflow-hidden text-white -mt-15 md:-mt-30">
 
     <!-- Main Upper Footer Section (with background image) -->
     <div
       class="relative bg-cover bg-center rounded-t-[40px] sm:rounded-t-[48px] md:rounded-t-[56px] lg:rounded-t-[68px] xl:rounded-t-[80px] 2xl:rounded-t-[94px] section-padding"
-      style="background-image: url('assets/images/main-footer-bg.png');">
+      style="background-image: url('assets/images/main-footer-bg.webp');">
       <div class="container relative z-10">
 
         <!-- Top Social / Contact Link Cards Row -->

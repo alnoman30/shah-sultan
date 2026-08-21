@@ -263,7 +263,7 @@ document.querySelectorAll(".text-shift-btn .ct").forEach((ct) => {
   });
 });
 
-
+// Text wave animation on hover
 document.querySelectorAll(".text-shift-btn").forEach((button) => {
 
   const original = button.querySelector(".ct");
@@ -274,24 +274,24 @@ document.querySelectorAll(".text-shift-btn").forEach((button) => {
   });
 
   tl.to(original.querySelectorAll(":scope > .char"), {
-      yPercent: -100,
-      autoAlpha: 0,
-      duration: 0.6,
-      stagger: 0.025,
-      ease: "power2.inOut"
-    })
+    yPercent: -100,
+    autoAlpha: 0,
+    duration: 0.6,
+    stagger: 0.025,
+    ease: "power2.inOut"
+  })
 
     .fromTo(
       clone.querySelectorAll(".char"), {
-        yPercent: 100,
-        autoAlpha: 0
-      }, {
-        yPercent: 0,
-        autoAlpha: 1,
-        duration: 0.6,
-        stagger: 0.025,
-        ease: "power2.inOut"
-      },
+      yPercent: 100,
+      autoAlpha: 0
+    }, {
+      yPercent: 0,
+      autoAlpha: 1,
+      duration: 0.6,
+      stagger: 0.025,
+      ease: "power2.inOut"
+    },
       "<"
     );
 
@@ -340,8 +340,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!statsSection) return;
 
   const counters = statsSection.querySelectorAll(".stat-counter");
-  const statColumns = statsSection.querySelectorAll(".flex-col");
-
+  
+  // Updated selector to target only the 4 stat cards inside the grid
+  const statColumns = statsSection.querySelectorAll(".grid > div");
 
   ScrollTrigger.create({
     trigger: statsSection,
@@ -374,8 +375,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       });
 
-
-      // Fade + scale animation
+      // Fade + scale animation for the stat cards
       gsap.from(statColumns, {
         y: 20,
         opacity: 0,
@@ -545,6 +545,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       640: {
         perPage: 1,
+        drag: true, 
       },
     },
   });
@@ -703,22 +704,21 @@ document.addEventListener("DOMContentLoaded", () => {
       </button>
 
       ${Array.from({ length: totalPages }, (_, i) => {
-        const page = i + 1;
-        const active = page === currentPage;
+      const page = i + 1;
+      const active = page === currentPage;
 
-        return `
+      return `
           <button
-            class="w-10 h-10 rounded-full font-medium ${
-              active
-                ? "bg-[#FF6F42] text-white"
-                : "bg-gray-100 text-[#020914]"
-            }"
+            class="w-10 h-10 rounded-full font-medium ${active
+          ? "bg-[#FF6F42] text-white"
+          : "bg-gray-100 text-[#020914]"
+        }"
             data-page="${page}"
           >
             ${page}
           </button>
         `;
-      }).join("")}
+    }).join("")}
 
       <button
         class="px-4 py-2 rounded-full bg-gray-100 text-[#020914] font-medium"
@@ -758,4 +758,63 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   updateView();
+});
+
+
+// FAQ System
+document.addEventListener("DOMContentLoaded", () => {
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  const plusPath = "M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z";
+  const crossPath = "M11.9968 10.5904L16.9466 5.64062L18.3608 7.05483L13.411 12.0046L18.3608 16.9543L16.9466 18.3685L11.9968 13.4188L7.04703 18.3685L5.63281 16.9543L10.5826 12.0046L5.63281 7.05483L7.04703 5.64062L11.9968 10.5904Z";
+
+  faqItems.forEach((item) => {
+    const toggleBtn = item.querySelector(".faq-toggle");
+    const content = item.querySelector(".faq-content");
+    const border = item.querySelector(".faq-border");
+    const icon = item.querySelector(".faq-icon");
+    const path = item.querySelector(".faq-path");
+
+    toggleBtn.addEventListener("click", () => {
+      const isOpen = item.classList.contains("active");
+
+      if (isOpen) {
+        // Collapse current item
+        gsap.to(content, { height: 0, opacity: 0, filter: "blur(8px)", duration: 0.4, ease: "power2.inOut" });
+        gsap.to(border, { opacity: 0, duration: 0.3 });
+        item.style.background = "#FFFFFF";
+        item.style.boxShadow = "0 0px 0px 0 rgba(0, 0, 0, 0)";
+        path.setAttribute("d", plusPath);
+        gsap.fromTo(icon, { rotation: 360, opacity: 0.5 }, { rotation: 0, opacity: 1, duration: 0.6, ease: "power2.inOut" });
+        item.classList.remove("active");
+      } else {
+        // Close all other items first (Exclusive Accordion)
+        faqItems.forEach((otherItem) => {
+          if (otherItem !== item && otherItem.classList.contains("active")) {
+            const otherContent = otherItem.querySelector(".faq-content");
+            const otherBorder = otherItem.querySelector(".faq-border");
+            const otherIcon = otherItem.querySelector(".faq-icon");
+            const otherPath = otherItem.querySelector(".faq-path");
+
+            gsap.to(otherContent, { height: 0, opacity: 0, filter: "blur(8px)", duration: 0.4, ease: "power2.inOut" });
+            gsap.to(otherBorder, { opacity: 0, duration: 0.3 });
+            otherItem.style.background = "#FFFFFF";
+            otherItem.style.boxShadow = "0 0px 0px 0 rgba(0, 0, 0, 0)";
+            otherPath.setAttribute("d", plusPath);
+            gsap.set(otherIcon, { rotation: 0, opacity: 1 });
+            otherItem.classList.remove("active");
+          }
+        });
+
+        // Open clicked item
+        gsap.to(content, { height: "auto", opacity: 1, filter: "blur(0px)", duration: 0.45, ease: "power2.out" });
+        gsap.to(border, { opacity: 1, duration: 0.3 });
+        item.style.background = "linear-gradient(122deg, #FFF 78.5%, #FF9574 99.02%)";
+        item.style.boxShadow = "0 20px 60px 0 rgba(0, 0, 0, 0.08)";
+        path.setAttribute("d", crossPath);
+        gsap.fromTo(icon, { rotation: -360, opacity: 0.5 }, { rotation: 0, opacity: 1, duration: 0.6, ease: "power2.out" });
+        item.classList.add("active");
+      }
+    });
+  });
 });
